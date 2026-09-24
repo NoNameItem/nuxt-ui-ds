@@ -1,0 +1,23 @@
+node_modules
+.nuxt
+.output
+dist/
+.DS_Store
+.superpowers
+
+# Приватный журнал: промпты, отчёты, спеки, планы, id проектов (см. CLAUDE.md)
+journal/
+
+# Локальные настройки инструментов сопровождающего; хуки beads работают через
+# core.hooksPath и из игнорируемой папки
+.beads/
+.agents/
+.codex/
+.claude/
+AGENTS.md
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
+.beads/proxieddb/

@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>parity · dashboard-panel--default</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { DashboardGroup, DashboardPanel, DashboardNavbar, DashboardToolbar, Button } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  return (
+    <DashboardGroup>
+      <DashboardPanel
+        header={<DashboardNavbar title="Title" />}
+        footer={<DashboardToolbar left={<Button label="Label" />} />}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+      </DashboardPanel>
+    </DashboardGroup>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

@@ -1,0 +1,1421 @@
+[
+ {
+  "key": "accordion",
+  "name": "Accordion",
+  "group": "data",
+  "slots": 9,
+  "variants": [
+   "disabled"
+  ],
+  "synth": false
+ },
+ {
+  "key": "alert",
+  "name": "Alert",
+  "group": "core",
+  "slots": 9,
+  "variants": [
+   "color",
+   "variant",
+   "orientation",
+   "title"
+  ],
+  "synth": false
+ },
+ {
+  "key": "auth-form",
+  "name": "AuthForm",
+  "group": "auth",
+  "slots": 16,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "avatar-group",
+  "name": "AvatarGroup",
+  "group": "core",
+  "slots": 2,
+  "variants": [
+   "size",
+   "color"
+  ],
+  "synth": false
+ },
+ {
+  "key": "avatar",
+  "name": "Avatar",
+  "group": "core",
+  "slots": 4,
+  "variants": [
+   "color",
+   "size"
+  ],
+  "synth": false
+ },
+ {
+  "key": "badge",
+  "name": "Badge",
+  "group": "core",
+  "slots": 6,
+  "variants": [
+   "fieldGroup",
+   "color",
+   "variant",
+   "size",
+   "square"
+  ],
+  "synth": false
+ },
+ {
+  "key": "banner",
+  "name": "Banner",
+  "group": "core",
+  "slots": 9,
+  "variants": [
+   "color",
+   "to"
+  ],
+  "synth": false
+ },
+ {
+  "key": "blog-post",
+  "name": "BlogPost",
+  "group": "page",
+  "slots": 12,
+  "variants": [
+   "orientation",
+   "variant",
+   "to",
+   "image"
+  ],
+  "synth": false
+ },
+ {
+  "key": "blog-posts",
+  "name": "BlogPosts",
+  "group": "page",
+  "slots": 0,
+  "variants": [
+   "orientation"
+  ],
+  "synth": true
+ },
+ {
+  "key": "breadcrumb",
+  "name": "Breadcrumb",
+  "group": "navigation",
+  "slots": 10,
+  "variants": [
+   "active",
+   "disabled",
+   "to",
+   "color"
+  ],
+  "synth": false
+ },
+ {
+  "key": "button",
+  "name": "Button",
+  "group": "core",
+  "slots": 6,
+  "variants": [
+   "fieldGroup",
+   "color",
+   "variant",
+   "size",
+   "block",
+   "square",
+   "leading",
+   "trailing",
+   "loading",
+   "active"
+  ],
+  "synth": false
+ },
+ {
+  "key": "calendar",
+  "name": "Calendar",
+  "group": "forms",
+  "slots": 14,
+  "variants": [
+   "color",
+   "variant",
+   "size",
+   "view",
+   "weekNumbers"
+  ],
+  "synth": false
+ },
+ {
+  "key": "card",
+  "name": "Card",
+  "group": "core",
+  "slots": 6,
+  "variants": [
+   "variant"
+  ],
+  "synth": false
+ },
+ {
+  "key": "carousel",
+  "name": "Carousel",
+  "group": "data",
+  "slots": 10,
+  "variants": [
+   "orientation",
+   "active"
+  ],
+  "synth": false
+ },
+ {
+  "key": "changelog-version",
+  "name": "ChangelogVersion",
+  "group": "page",
+  "slots": 15,
+  "variants": [
+   "body",
+   "badge",
+   "to",
+   "hidden"
+  ],
+  "synth": false
+ },
+ {
+  "key": "changelog-versions",
+  "name": "ChangelogVersions",
+  "group": "page",
+  "slots": 4,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "chat-message",
+  "name": "ChatMessage",
+  "group": "chat",
+  "slots": 11,
+  "variants": [
+   "variant",
+   "color",
+   "side",
+   "leading",
+   "actions",
+   "compact"
+  ],
+  "synth": false
+ },
+ {
+  "key": "chat-messages",
+  "name": "ChatMessages",
+  "group": "chat",
+  "slots": 4,
+  "variants": [
+   "compact"
+  ],
+  "synth": false
+ },
+ {
+  "key": "chat-palette",
+  "name": "ChatPalette",
+  "group": "chat",
+  "slots": 4,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "chat-prompt-submit",
+  "name": "ChatPromptSubmit",
+  "group": "chat",
+  "slots": 1,
+  "variants": [],
+  "synth": true
+ },
+ {
+  "key": "chat-prompt",
+  "name": "ChatPrompt",
+  "group": "chat",
+  "slots": 5,
+  "variants": [
+   "color",
+   "variant"
+  ],
+  "synth": false
+ },
+ {
+  "key": "chat-reasoning",
+  "name": "ChatReasoning",
+  "group": "chat",
+  "slots": 9,
+  "variants": [
+   "chevron",
+   "alone"
+  ],
+  "synth": false
+ },
+ {
+  "key": "chat-shimmer",
+  "name": "ChatShimmer",
+  "group": "chat",
+  "slots": 0,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "chat-tool",
+  "name": "ChatTool",
+  "group": "chat",
+  "slots": 11,
+  "variants": [
+   "variant",
+   "chevron",
+   "loading",
+   "alone"
+  ],
+  "synth": false
+ },
+ {
+  "key": "checkbox-group",
+  "name": "CheckboxGroup",
+  "group": "forms",
+  "slots": 4,
+  "variants": [
+   "orientation",
+   "color",
+   "variant",
+   "size",
+   "required",
+   "highlight",
+   "disabled"
+  ],
+  "synth": false
+ },
+ {
+  "key": "checkbox",
+  "name": "Checkbox",
+  "group": "forms",
+  "slots": 8,
+  "variants": [
+   "color",
+   "variant",
+   "indicator",
+   "size",
+   "required",
+   "disabled",
+   "highlight",
+   "checked"
+  ],
+  "synth": false
+ },
+ {
+  "key": "chip",
+  "name": "Chip",
+  "group": "core",
+  "slots": 2,
+  "variants": [
+   "color",
+   "size",
+   "position",
+   "inset",
+   "standalone"
+  ],
+  "synth": false
+ },
+ {
+  "key": "collapsible",
+  "name": "Collapsible",
+  "group": "core",
+  "slots": 2,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "color-picker",
+  "name": "ColorPicker",
+  "group": "forms",
+  "slots": 7,
+  "variants": [
+   "size"
+  ],
+  "synth": false
+ },
+ {
+  "key": "command-palette",
+  "name": "CommandPalette",
+  "group": "navigation",
+  "slots": 27,
+  "variants": [
+   "virtualize",
+   "size",
+   "active",
+   "loading"
+  ],
+  "synth": false
+ },
+ {
+  "key": "container",
+  "name": "Container",
+  "group": "core",
+  "slots": 0,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "context-menu",
+  "name": "ContextMenu",
+  "group": "navigation",
+  "slots": 17,
+  "variants": [
+   "color",
+   "active",
+   "loading",
+   "size"
+  ],
+  "synth": true
+ },
+ {
+  "key": "dashboard-group",
+  "name": "DashboardGroup",
+  "group": "dashboard",
+  "slots": 0,
+  "variants": [],
+  "synth": true
+ },
+ {
+  "key": "dashboard-navbar",
+  "name": "DashboardNavbar",
+  "group": "dashboard",
+  "slots": 7,
+  "variants": [
+   "toggleSide"
+  ],
+  "synth": false
+ },
+ {
+  "key": "dashboard-panel",
+  "name": "DashboardPanel",
+  "group": "dashboard",
+  "slots": 3,
+  "variants": [
+   "size"
+  ],
+  "synth": false
+ },
+ {
+  "key": "dashboard-resize-handle",
+  "name": "DashboardResizeHandle",
+  "group": "dashboard",
+  "slots": 0,
+  "variants": [],
+  "synth": true
+ },
+ {
+  "key": "dashboard-search-button",
+  "name": "DashboardSearchButton",
+  "group": "dashboard",
+  "slots": 3,
+  "variants": [
+   "collapsed"
+  ],
+  "synth": false
+ },
+ {
+  "key": "dashboard-search",
+  "name": "DashboardSearch",
+  "group": "dashboard",
+  "slots": 2,
+  "variants": [
+   "fullscreen",
+   "size"
+  ],
+  "synth": false
+ },
+ {
+  "key": "dashboard-sidebar-collapse",
+  "name": "DashboardSidebarCollapse",
+  "group": "dashboard",
+  "slots": 0,
+  "variants": [
+   "side"
+  ],
+  "synth": true
+ },
+ {
+  "key": "dashboard-sidebar-toggle",
+  "name": "DashboardSidebarToggle",
+  "group": "dashboard",
+  "slots": 0,
+  "variants": [
+   "side"
+  ],
+  "synth": true
+ },
+ {
+  "key": "dashboard-sidebar",
+  "name": "DashboardSidebar",
+  "group": "dashboard",
+  "slots": 8,
+  "variants": [
+   "menu",
+   "side",
+   "toggleSide"
+  ],
+  "synth": false
+ },
+ {
+  "key": "dashboard-toolbar",
+  "name": "DashboardToolbar",
+  "group": "dashboard",
+  "slots": 3,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "drawer",
+  "name": "Drawer",
+  "group": "overlays",
+  "slots": 12,
+  "variants": [
+   "direction",
+   "inset",
+   "snapPoints"
+  ],
+  "synth": false
+ },
+ {
+  "key": "dropdown-menu",
+  "name": "DropdownMenu",
+  "group": "navigation",
+  "slots": 20,
+  "variants": [
+   "color",
+   "active",
+   "loading",
+   "size"
+  ],
+  "synth": false
+ },
+ {
+  "key": "editor-drag-handle",
+  "name": "EditorDragHandle",
+  "group": "forms",
+  "slots": 2,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "editor-emoji-menu",
+  "name": "EditorEmojiMenu",
+  "group": "forms",
+  "slots": 13,
+  "variants": [
+   "size",
+   "active"
+  ],
+  "synth": true
+ },
+ {
+  "key": "editor-mention-menu",
+  "name": "EditorMentionMenu",
+  "group": "forms",
+  "slots": 13,
+  "variants": [
+   "size",
+   "active"
+  ],
+  "synth": true
+ },
+ {
+  "key": "editor-suggestion-menu",
+  "name": "EditorSuggestionMenu",
+  "group": "forms",
+  "slots": 13,
+  "variants": [
+   "size",
+   "active"
+  ],
+  "synth": true
+ },
+ {
+  "key": "editor-toolbar",
+  "name": "EditorToolbar",
+  "group": "forms",
+  "slots": 4,
+  "variants": [
+   "layout"
+  ],
+  "synth": false
+ },
+ {
+  "key": "editor",
+  "name": "Editor",
+  "group": "forms",
+  "slots": 3,
+  "variants": [
+   "placeholderMode"
+  ],
+  "synth": false
+ },
+ {
+  "key": "empty",
+  "name": "Empty",
+  "group": "core",
+  "slots": 8,
+  "variants": [
+   "size",
+   "variant",
+   "loading"
+  ],
+  "synth": false
+ },
+ {
+  "key": "error",
+  "name": "Error",
+  "group": "core",
+  "slots": 7,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "field-group",
+  "name": "FieldGroup",
+  "group": "forms",
+  "slots": 0,
+  "variants": [
+   "size",
+   "orientation"
+  ],
+  "synth": true
+ },
+ {
+  "key": "file-upload",
+  "name": "FileUpload",
+  "group": "forms",
+  "slots": 15,
+  "variants": [
+   "color",
+   "variant",
+   "size",
+   "layout",
+   "position",
+   "dropzone",
+   "interactive",
+   "highlight",
+   "multiple",
+   "disabled"
+  ],
+  "synth": false
+ },
+ {
+  "key": "footer-columns",
+  "name": "FooterColumns",
+  "group": "navigation",
+  "slots": 11,
+  "variants": [
+   "active"
+  ],
+  "synth": false
+ },
+ {
+  "key": "footer",
+  "name": "Footer",
+  "group": "navigation",
+  "slots": 7,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "form-field",
+  "name": "FormField",
+  "group": "forms",
+  "slots": 9,
+  "variants": [
+   "size",
+   "required",
+   "orientation"
+  ],
+  "synth": false
+ },
+ {
+  "key": "form",
+  "name": "Form",
+  "group": "forms",
+  "slots": 0,
+  "variants": [],
+  "synth": true
+ },
+ {
+  "key": "header",
+  "name": "Header",
+  "group": "navigation",
+  "slots": 11,
+  "variants": [
+   "toggleSide"
+  ],
+  "synth": false
+ },
+ {
+  "key": "input-date",
+  "name": "InputDate",
+  "group": "forms",
+  "slots": 9,
+  "variants": [
+   "fieldGroup",
+   "size",
+   "variant",
+   "color",
+   "leading",
+   "trailing",
+   "loading",
+   "highlight",
+   "fixed",
+   "type"
+  ],
+  "synth": false
+ },
+ {
+  "key": "input-menu",
+  "name": "InputMenu",
+  "group": "forms",
+  "slots": 32,
+  "variants": [
+   "fieldGroup",
+   "size",
+   "variant",
+   "color",
+   "leading",
+   "trailing",
+   "loading",
+   "highlight",
+   "fixed",
+   "type",
+   "virtualize",
+   "multiple"
+  ],
+  "synth": false
+ },
+ {
+  "key": "input-number",
+  "name": "InputNumber",
+  "group": "forms",
+  "slots": 4,
+  "variants": [
+   "fieldGroup",
+   "color",
+   "size",
+   "variant",
+   "disabled",
+   "orientation",
+   "highlight",
+   "fixed",
+   "increment",
+   "decrement"
+  ],
+  "synth": false
+ },
+ {
+  "key": "input-rating",
+  "name": "InputRating",
+  "group": "forms",
+  "slots": 5,
+  "variants": [
+   "orientation",
+   "size",
+   "color",
+   "readonly",
+   "disabled"
+  ],
+  "synth": false
+ },
+ {
+  "key": "input-tags",
+  "name": "InputTags",
+  "group": "forms",
+  "slots": 13,
+  "variants": [
+   "fieldGroup",
+   "size",
+   "variant",
+   "color",
+   "leading",
+   "trailing",
+   "loading",
+   "highlight",
+   "fixed",
+   "type"
+  ],
+  "synth": false
+ },
+ {
+  "key": "input-time",
+  "name": "InputTime",
+  "group": "forms",
+  "slots": 9,
+  "variants": [
+   "fieldGroup",
+   "size",
+   "variant",
+   "color",
+   "leading",
+   "trailing",
+   "loading",
+   "highlight",
+   "fixed",
+   "type"
+  ],
+  "synth": false
+ },
+ {
+  "key": "input",
+  "name": "Input",
+  "group": "forms",
+  "slots": 8,
+  "variants": [
+   "fieldGroup",
+   "size",
+   "variant",
+   "color",
+   "leading",
+   "trailing",
+   "loading",
+   "highlight",
+   "fixed",
+   "type"
+  ],
+  "synth": false
+ },
+ {
+  "key": "kbd",
+  "name": "Kbd",
+  "group": "core",
+  "slots": 0,
+  "variants": [
+   "color",
+   "variant",
+   "size"
+  ],
+  "synth": true
+ },
+ {
+  "key": "link",
+  "name": "Link",
+  "group": "core",
+  "slots": 0,
+  "variants": [
+   "active",
+   "disabled"
+  ],
+  "synth": true
+ },
+ {
+  "key": "listbox",
+  "name": "Listbox",
+  "group": "navigation",
+  "slots": 20,
+  "variants": [
+   "size",
+   "color",
+   "virtualize",
+   "disabled",
+   "highlight"
+  ],
+  "synth": false
+ },
+ {
+  "key": "main",
+  "name": "Main",
+  "group": "navigation",
+  "slots": 0,
+  "variants": [],
+  "synth": true
+ },
+ {
+  "key": "marquee",
+  "name": "Marquee",
+  "group": "core",
+  "slots": 2,
+  "variants": [
+   "orientation",
+   "pauseOnHover",
+   "reverse",
+   "overlay"
+  ],
+  "synth": false
+ },
+ {
+  "key": "modal",
+  "name": "Modal",
+  "group": "overlays",
+  "slots": 9,
+  "variants": [
+   "transition",
+   "fullscreen",
+   "overlay",
+   "scrollable"
+  ],
+  "synth": false
+ },
+ {
+  "key": "navigation-menu",
+  "name": "NavigationMenu",
+  "group": "navigation",
+  "slots": 30,
+  "variants": [
+   "color",
+   "highlightColor",
+   "variant",
+   "orientation",
+   "contentOrientation",
+   "active",
+   "disabled",
+   "highlight",
+   "level",
+   "collapsed"
+  ],
+  "synth": false
+ },
+ {
+  "key": "page-anchors",
+  "name": "PageAnchors",
+  "group": "page",
+  "slots": 8,
+  "variants": [
+   "active"
+  ],
+  "synth": false
+ },
+ {
+  "key": "page-aside",
+  "name": "PageAside",
+  "group": "page",
+  "slots": 6,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "page-body",
+  "name": "PageBody",
+  "group": "page",
+  "slots": 0,
+  "variants": [],
+  "synth": true
+ },
+ {
+  "key": "page-card",
+  "name": "PageCard",
+  "group": "page",
+  "slots": 11,
+  "variants": [
+   "orientation",
+   "reverse",
+   "variant",
+   "to",
+   "title",
+   "highlight",
+   "highlightColor",
+   "spotlight",
+   "spotlightColor"
+  ],
+  "synth": false
+ },
+ {
+  "key": "page-columns",
+  "name": "PageColumns",
+  "group": "page",
+  "slots": 0,
+  "variants": [],
+  "synth": true
+ },
+ {
+  "key": "page-cta",
+  "name": "PageCTA",
+  "group": "page",
+  "slots": 9,
+  "variants": [
+   "orientation",
+   "reverse",
+   "variant",
+   "title"
+  ],
+  "synth": false
+ },
+ {
+  "key": "page-feature",
+  "name": "PageFeature",
+  "group": "page",
+  "slots": 6,
+  "variants": [
+   "orientation",
+   "to",
+   "title"
+  ],
+  "synth": false
+ },
+ {
+  "key": "page-grid",
+  "name": "PageGrid",
+  "group": "page",
+  "slots": 0,
+  "variants": [],
+  "synth": true
+ },
+ {
+  "key": "page-header",
+  "name": "PageHeader",
+  "group": "page",
+  "slots": 7,
+  "variants": [
+   "title"
+  ],
+  "synth": false
+ },
+ {
+  "key": "page-hero",
+  "name": "PageHero",
+  "group": "page",
+  "slots": 10,
+  "variants": [
+   "orientation",
+   "reverse",
+   "headline",
+   "title"
+  ],
+  "synth": false
+ },
+ {
+  "key": "page-links",
+  "name": "PageLinks",
+  "group": "page",
+  "slots": 8,
+  "variants": [
+   "active"
+  ],
+  "synth": false
+ },
+ {
+  "key": "page-list",
+  "name": "PageList",
+  "group": "page",
+  "slots": 0,
+  "variants": [
+   "divide"
+  ],
+  "synth": true
+ },
+ {
+  "key": "page-logos",
+  "name": "PageLogos",
+  "group": "page",
+  "slots": 4,
+  "variants": [
+   "marquee"
+  ],
+  "synth": false
+ },
+ {
+  "key": "page-section",
+  "name": "PageSection",
+  "group": "page",
+  "slots": 13,
+  "variants": [
+   "orientation",
+   "reverse",
+   "headline",
+   "title",
+   "description",
+   "body"
+  ],
+  "synth": false
+ },
+ {
+  "key": "page",
+  "name": "Page",
+  "group": "page",
+  "slots": 4,
+  "variants": [
+   "left",
+   "right"
+  ],
+  "synth": false
+ },
+ {
+  "key": "pagination",
+  "name": "Pagination",
+  "group": "navigation",
+  "slots": 9,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "pin-input",
+  "name": "PinInput",
+  "group": "forms",
+  "slots": 3,
+  "variants": [
+   "size",
+   "variant",
+   "color",
+   "highlight",
+   "fixed"
+  ],
+  "synth": false
+ },
+ {
+  "key": "popover",
+  "name": "Popover",
+  "group": "overlays",
+  "slots": 2,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "pricing-plan",
+  "name": "PricingPlan",
+  "group": "page",
+  "slots": 21,
+  "variants": [
+   "orientation",
+   "variant",
+   "highlight",
+   "scale"
+  ],
+  "synth": false
+ },
+ {
+  "key": "pricing-plans",
+  "name": "PricingPlans",
+  "group": "page",
+  "slots": 0,
+  "variants": [
+   "orientation",
+   "compact",
+   "scale"
+  ],
+  "synth": true
+ },
+ {
+  "key": "pricing-table",
+  "name": "PricingTable",
+  "group": "page",
+  "slots": 29,
+  "variants": [
+   "section",
+   "active",
+   "highlight"
+  ],
+  "synth": false
+ },
+ {
+  "key": "progress-group",
+  "name": "ProgressGroup",
+  "group": "core",
+  "slots": 11,
+  "variants": [
+   "color",
+   "size",
+   "orientation"
+  ],
+  "synth": false
+ },
+ {
+  "key": "progress",
+  "name": "Progress",
+  "group": "core",
+  "slots": 6,
+  "variants": [
+   "animation",
+   "color",
+   "size",
+   "step",
+   "orientation",
+   "inverted"
+  ],
+  "synth": false
+ },
+ {
+  "key": "radio-group",
+  "name": "RadioGroup",
+  "group": "forms",
+  "slots": 11,
+  "variants": [
+   "color",
+   "variant",
+   "orientation",
+   "indicator",
+   "size",
+   "highlight",
+   "disabled",
+   "required"
+  ],
+  "synth": false
+ },
+ {
+  "key": "scroll-area",
+  "name": "ScrollArea",
+  "group": "data",
+  "slots": 3,
+  "variants": [
+   "orientation",
+   "externalScroll"
+  ],
+  "synth": false
+ },
+ {
+  "key": "select-menu",
+  "name": "SelectMenu",
+  "group": "forms",
+  "slots": 30,
+  "variants": [
+   "fieldGroup",
+   "size",
+   "variant",
+   "color",
+   "leading",
+   "trailing",
+   "loading",
+   "highlight",
+   "fixed",
+   "type",
+   "position",
+   "multiple",
+   "virtualize"
+  ],
+  "synth": false
+ },
+ {
+  "key": "select",
+  "name": "Select",
+  "group": "forms",
+  "slots": 27,
+  "variants": [
+   "fieldGroup",
+   "size",
+   "variant",
+   "color",
+   "leading",
+   "trailing",
+   "loading",
+   "highlight",
+   "fixed",
+   "type",
+   "position",
+   "multiple"
+  ],
+  "synth": false
+ },
+ {
+  "key": "separator",
+  "name": "Separator",
+  "group": "core",
+  "slots": 7,
+  "variants": [
+   "color",
+   "orientation",
+   "size",
+   "position",
+   "type"
+  ],
+  "synth": false
+ },
+ {
+  "key": "sidebar",
+  "name": "Sidebar",
+  "group": "navigation",
+  "slots": 13,
+  "variants": [
+   "transition",
+   "side",
+   "collapsible",
+   "variant"
+  ],
+  "synth": false
+ },
+ {
+  "key": "skeleton",
+  "name": "Skeleton",
+  "group": "core",
+  "slots": 0,
+  "variants": [],
+  "synth": true
+ },
+ {
+  "key": "slideover",
+  "name": "Slideover",
+  "group": "overlays",
+  "slots": 9,
+  "variants": [
+   "side",
+   "inset",
+   "transition"
+  ],
+  "synth": false
+ },
+ {
+  "key": "slider",
+  "name": "Slider",
+  "group": "forms",
+  "slots": 4,
+  "variants": [
+   "color",
+   "size",
+   "orientation",
+   "disabled"
+  ],
+  "synth": false
+ },
+ {
+  "key": "splitter",
+  "name": "Splitter",
+  "group": "data",
+  "slots": 3,
+  "variants": [
+   "orientation"
+  ],
+  "synth": false
+ },
+ {
+  "key": "stepper",
+  "name": "Stepper",
+  "group": "navigation",
+  "slots": 12,
+  "variants": [
+   "orientation",
+   "size",
+   "color"
+  ],
+  "synth": false
+ },
+ {
+  "key": "switch",
+  "name": "Switch",
+  "group": "forms",
+  "slots": 8,
+  "variants": [
+   "color",
+   "size",
+   "checked",
+   "unchecked",
+   "loading",
+   "highlight",
+   "required",
+   "disabled"
+  ],
+  "synth": false
+ },
+ {
+  "key": "table",
+  "name": "Table",
+  "group": "data",
+  "slots": 12,
+  "variants": [
+   "pinned",
+   "sticky",
+   "loading",
+   "externalScroll",
+   "loadingAnimation",
+   "loadingColor"
+  ],
+  "synth": false
+ },
+ {
+  "key": "tabs",
+  "name": "Tabs",
+  "group": "navigation",
+  "slots": 11,
+  "variants": [
+   "color",
+   "variant",
+   "orientation",
+   "size"
+  ],
+  "synth": false
+ },
+ {
+  "key": "textarea",
+  "name": "Textarea",
+  "group": "forms",
+  "slots": 8,
+  "variants": [
+   "fieldGroup",
+   "size",
+   "variant",
+   "color",
+   "leading",
+   "trailing",
+   "loading",
+   "highlight",
+   "fixed",
+   "type",
+   "autoresize"
+  ],
+  "synth": false
+ },
+ {
+  "key": "timeline",
+  "name": "Timeline",
+  "group": "navigation",
+  "slots": 9,
+  "variants": [
+   "orientation",
+   "color",
+   "size",
+   "reverse"
+  ],
+  "synth": false
+ },
+ {
+  "key": "toast",
+  "name": "Toast",
+  "group": "overlays",
+  "slots": 10,
+  "variants": [
+   "color",
+   "orientation",
+   "title"
+  ],
+  "synth": false
+ },
+ {
+  "key": "toaster",
+  "name": "Toaster",
+  "group": "overlays",
+  "slots": 2,
+  "variants": [
+   "position",
+   "swipeDirection"
+  ],
+  "synth": false
+ },
+ {
+  "key": "tooltip",
+  "name": "Tooltip",
+  "group": "core",
+  "slots": 5,
+  "variants": [],
+  "synth": false
+ },
+ {
+  "key": "tree",
+  "name": "Tree",
+  "group": "navigation",
+  "slots": 9,
+  "variants": [
+   "virtualize",
+   "color",
+   "size",
+   "selected",
+   "disabled"
+  ],
+  "synth": false
+ },
+ {
+  "key": "user",
+  "name": "User",
+  "group": "core",
+  "slots": 5,
+  "variants": [
+   "orientation",
+   "to",
+   "size"
+  ],
+  "synth": false
+ }
+]

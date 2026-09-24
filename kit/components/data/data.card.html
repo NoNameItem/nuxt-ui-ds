@@ -1,0 +1,28 @@
+<!-- @dsCard group="Components" viewport="700x1230" name="Data" subtitle="table.ts / accordion.ts / scroll-area.ts slot classes" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Table, Accordion, Collapsible, Button, ScrollArea, Splitter, Carousel } = window.NuxtUIDesignSystem_69ebe5;
+const L = ({ children, t }) => (<div className="flex flex-col gap-2"><span className="text-[10px] uppercase tracking-wide text-dimmed">{t}</span><div className="flex items-start gap-2 flex-wrap">{children}</div></div>);
+const Panel = ({ dark }) => (
+  <div className={(dark ? 'dark text-default ' : '') + 'flex-1 min-w-0 bg-default p-4 flex flex-col gap-4'}>
+    <L t="table — columns with a footer">{<div className="w-full"><Table data={[{ id: '1', name: 'Nuxt UI', status: 'Stable' }, { id: '2', name: 'Nuxt UI Pro', status: 'Stable' }]} columns={[{ accessorKey: 'id', header: '#', footer: '2' }, { accessorKey: 'name', header: 'Package', footer: 'total' }, { accessorKey: 'status', header: 'Status', footer: '' }]} /></div>}</L>
+    <L t="table — empty">{<div className="w-full"><Table data={[]} empty="No packages" /></div>}</L>
+    <L t="accordion">{<div className="w-full"><Accordion items={[{ label: 'What is Nuxt UI?', icon: 'i-lucide-circle-help', content: 'A Vue component library.' }, { label: 'Is it themeable?', content: 'Yes — every slot.' }]} /></div>}</L>
+    <L t="collapsible — the trigger is drawn closed too">{<div className="w-full grid grid-cols-2 gap-3"><Collapsible content="Hidden until opened."><Button color="neutral" variant="ghost" label="Closed" trailingIcon="i-lucide-chevron-down" /></Collapsible><Collapsible open content="Body of the open one."><Button color="neutral" variant="ghost" label="Open" trailingIcon="i-lucide-chevron-down" /></Collapsible></div>}</L>
+    <L t="splitter — panels and the handle between them">{<div className="w-full flex flex-col gap-3"><div className="h-24 ring ring-default rounded-md overflow-hidden"><Splitter items={[{ panel: <p className="p-2 text-xs text-muted">Left</p> }, { panel: <p className="p-2 text-xs text-muted">Right</p> }]} /></div><div className="h-24 ring ring-default rounded-md overflow-hidden"><Splitter orientation="vertical" items={[{ panel: <p className="p-2 text-xs text-muted">Top</p> }, { panel: <p className="p-2 text-xs text-muted">Bottom</p> }]} /></div></div>}</L>
+    <L t="scroll-area">{<div className="w-full h-20 ring ring-default rounded-md"><ScrollArea class="h-20"><p className="p-2 text-xs text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p></ScrollArea></div>}</L>
+    <L t="carousel — slide images">{<Carousel class="w-full" items={["data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%3E%3Crect%20width%3D%22320%22%20height%3D%22200%22%20fill%3D%22%23e5e7eb%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22108%22%20font-family%3D%22sans-serif%22%20font-size%3D%2220%22%20fill%3D%22%236b7280%22%20text-anchor%3D%22middle%22%3Eslide%201%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%3E%3Crect%20width%3D%22320%22%20height%3D%22200%22%20fill%3D%22%23e5e7eb%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22108%22%20font-family%3D%22sans-serif%22%20font-size%3D%2220%22%20fill%3D%22%236b7280%22%20text-anchor%3D%22middle%22%3Eslide%202%3C%2Ftext%3E%3C%2Fsvg%3E", "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22320%22%20height%3D%22200%22%3E%3Crect%20width%3D%22320%22%20height%3D%22200%22%20fill%3D%22%23e5e7eb%22%2F%3E%3Ctext%20x%3D%22160%22%20y%3D%22108%22%20font-family%3D%22sans-serif%22%20font-size%3D%2220%22%20fill%3D%22%236b7280%22%20text-anchor%3D%22middle%22%3Eslide%203%3C%2Ftext%3E%3C%2Fsvg%3E"]} />}</L>
+  </div>
+);
+ReactDOM.createRoot(document.getElementById('root')).render(<div className="flex items-stretch min-h-full"><Panel /><Panel dark /></div>);
+</script>
+</body></html>

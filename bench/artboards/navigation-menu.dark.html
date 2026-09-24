@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en" class="dark"><head><meta charset="utf-8"><title>parity · navigation-menu</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { NavigationMenu } = window.NuxtUIDesignSystem_69ebe5;
+const base3 = [{ label: 'Home', icon: 'i-lucide-home', active: true }, { label: 'Profile', icon: 'i-lucide-user' }, { label: 'Settings', icon: 'i-lucide-settings' }];
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="primary" variant="pill" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="secondary" variant="pill" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="success" variant="pill" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="info" variant="pill" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="warning" variant="pill" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="error" variant="pill" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="neutral" variant="pill" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="primary" variant="link" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="secondary" variant="link" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="success" variant="link" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="info" variant="link" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="warning" variant="link" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="error" variant="link" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} color="neutral" variant="link" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} highlight highlightColor="primary" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} highlight highlightColor="secondary" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} highlight highlightColor="success" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} highlight highlightColor="info" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} highlight highlightColor="warning" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} highlight highlightColor="error" /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu items={base3} highlight highlightColor="neutral" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64">
+          <NavigationMenu orientation="vertical" items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user', badge: '42' }, { label: 'Settings', icon: 'i-lucide-settings', defaultOpen: true, children: [{ label: 'Label', description: 'Description text for the parity testbed.' }, { label: 'Label', description: 'Description text for the parity testbed.' }, { label: 'Label', description: 'Description text for the parity testbed.' }] }, { label: 'Favorites', icon: 'i-lucide-star' }, { label: 'Mail', icon: 'i-lucide-mail' }]} />
+        </div>
+        <div className="w-full max-w-3xl">
+          <NavigationMenu orientation="horizontal" contentOrientation="horizontal" modelValue="item-2" items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user', badge: '42' }, { label: 'Settings', icon: 'i-lucide-settings', children: [{ label: 'Label', description: 'Description text for the parity testbed.' }, { label: 'Label', description: 'Description text for the parity testbed.' }, { label: 'Label', description: 'Description text for the parity testbed.' }] }, { label: 'Favorites', icon: 'i-lucide-star' }, { label: 'Mail', icon: 'i-lucide-mail' }]} />
+        </div>
+        <div className="w-full max-w-3xl">
+          <NavigationMenu orientation="horizontal" contentOrientation="vertical" modelValue="item-2" items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user', badge: '42' }, { label: 'Settings', icon: 'i-lucide-settings', children: [{ label: 'Label', description: 'Description text for the parity testbed.' }, { label: 'Label', description: 'Description text for the parity testbed.' }, { label: 'Label', description: 'Description text for the parity testbed.' }] }, { label: 'Favorites', icon: 'i-lucide-star' }, { label: 'Mail', icon: 'i-lucide-mail' }]} />
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-full max-w-3xl"><NavigationMenu highlight items={base3} /></div>
+        <div className="w-64"><NavigationMenu orientation="vertical" highlight items={[{ label: 'Settings', icon: 'i-lucide-settings', defaultOpen: true, children: [{ label: 'Label', description: 'Description text for the parity testbed.', active: true }, { label: 'Label', description: 'Description text for the parity testbed.' }] }]} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-full max-w-3xl"><NavigationMenu orientation="horizontal" variant="pill" highlight modelValue="item-1" items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user', children: [{ label: 'Label', description: 'Description text for the parity testbed.' }] }, { label: 'Settings', icon: 'i-lucide-settings' }]} /></div>
+        <div className="w-full max-w-3xl"><NavigationMenu orientation="horizontal" variant="link" modelValue="item-1" items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user', children: [{ label: 'Label', description: 'Description text for the parity testbed.' }] }, { label: 'Settings', icon: 'i-lucide-settings' }]} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-full max-w-3xl"><NavigationMenu items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user', badge: '42' }, { label: 'Settings', icon: 'i-lucide-settings' }, { label: 'Favorites', icon: 'i-lucide-star' }, { label: 'Mail', icon: 'i-lucide-mail' }]} /></div>
+        <div className="w-full max-w-3xl">
+          <NavigationMenu modelValue="item-2" items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user', badge: '42' }, { label: 'Settings', icon: 'i-lucide-settings', children: [{ label: 'Label', description: 'Description text for the parity testbed.' }, { label: 'Label', description: 'Description text for the parity testbed.' }, { label: 'Label', description: 'Description text for the parity testbed.' }] }, { label: 'Favorites', icon: 'i-lucide-star' }, { label: 'Mail', icon: 'i-lucide-mail' }]} />
+        </div>
+        <div className="w-64">
+          <NavigationMenu orientation="vertical" collapsed items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user', badge: '42' }, { label: 'Settings', icon: 'i-lucide-settings', children: [{ label: 'Label', description: 'Description text for the parity testbed.' }] }, { label: 'Favorites', icon: 'i-lucide-star' }, { label: 'Mail', icon: 'i-lucide-mail' }]} />
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

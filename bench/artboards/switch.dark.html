@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en" class="dark"><head><meta charset="utf-8"><title>parity · switch</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Switch } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <Switch label="Label" highlight color="primary" />
+        <Switch label="Label" highlight color="secondary" />
+        <Switch label="Label" highlight color="success" />
+        <Switch label="Label" highlight color="info" />
+        <Switch label="Label" highlight color="warning" />
+        <Switch label="Label" highlight color="error" />
+        <Switch label="Label" highlight color="neutral" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Switch label="Label" checked color="primary" />
+        <Switch label="Label" checked color="secondary" />
+        <Switch label="Label" checked color="success" />
+        <Switch label="Label" checked color="info" />
+        <Switch label="Label" checked color="warning" />
+        <Switch label="Label" checked color="error" />
+        <Switch label="Label" checked color="neutral" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Switch label="Label" size="xs" />
+        <Switch label="Label" size="sm" />
+        <Switch label="Label" size="md" />
+        <Switch label="Label" size="lg" />
+        <Switch label="Label" size="xl" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Switch label="Label" disabled />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Switch label="Label" />
+        <Switch label="Label" checked />
+        <Switch label="Label" checkedIcon="i-lucide-check" uncheckedIcon="i-lucide-x" />
+        <Switch label="Label" loading />
+        <Switch label="Label" description="Description text for the parity testbed." />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Switch label="Label" required />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

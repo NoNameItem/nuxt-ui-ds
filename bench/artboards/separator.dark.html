@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en" class="dark"><head><meta charset="utf-8"><title>parity · separator</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Separator } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Separator orientation="horizontal" position="start" label="Label" /></div>
+        <div className="w-64"><Separator orientation="horizontal" position="center" label="Label" /></div>
+        <div className="w-64"><Separator orientation="horizontal" position="end" label="Label" /></div>
+        <div className="h-32"><Separator orientation="vertical" position="start" label="Label" /></div>
+        <div className="h-32"><Separator orientation="vertical" position="center" label="Label" /></div>
+        <div className="h-32"><Separator orientation="vertical" position="end" label="Label" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Separator orientation="horizontal" size="xs" /></div>
+        <div className="w-64"><Separator orientation="horizontal" size="sm" /></div>
+        <div className="w-64"><Separator orientation="horizontal" size="md" /></div>
+        <div className="w-64"><Separator orientation="horizontal" size="lg" /></div>
+        <div className="w-64"><Separator orientation="horizontal" size="xl" /></div>
+        <div className="h-32"><Separator orientation="vertical" size="xs" /></div>
+        <div className="h-32"><Separator orientation="vertical" size="sm" /></div>
+        <div className="h-32"><Separator orientation="vertical" size="md" /></div>
+        <div className="h-32"><Separator orientation="vertical" size="lg" /></div>
+        <div className="h-32"><Separator orientation="vertical" size="xl" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Separator orientation="horizontal" color="primary" /></div>
+        <div className="w-64"><Separator orientation="horizontal" color="secondary" /></div>
+        <div className="w-64"><Separator orientation="horizontal" color="success" /></div>
+        <div className="w-64"><Separator orientation="horizontal" color="info" /></div>
+        <div className="w-64"><Separator orientation="horizontal" color="warning" /></div>
+        <div className="w-64"><Separator orientation="horizontal" color="error" /></div>
+        <div className="w-64"><Separator orientation="horizontal" color="neutral" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Separator orientation="horizontal" type="solid" /></div>
+        <div className="w-64"><Separator orientation="horizontal" type="dashed" /></div>
+        <div className="w-64"><Separator orientation="horizontal" type="dotted" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Separator orientation="horizontal" label="Label" /></div>
+        <div className="w-64"><Separator orientation="horizontal" icon="i-lucide-rocket" /></div>
+        <div className="w-64"><Separator orientation="horizontal" avatar={{ src: 'assets/demo.png' }} /></div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

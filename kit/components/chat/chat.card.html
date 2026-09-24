@@ -1,0 +1,23 @@
+<!-- @dsCard group="Components" viewport="700x380" name="Chat (Pro)" subtitle="chat-message.ts sides & variants, chat-prompt.ts composer" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { ChatMessage, ChatMessages, ChatPrompt, ChatTool, ChatShimmer } = window.NuxtUIDesignSystem_69ebe5;
+const L = ({ children, t }) => (<div className="flex flex-col gap-2"><span className="text-[10px] uppercase tracking-wide text-dimmed">{t}</span><div className="flex items-start gap-2 flex-wrap">{children}</div></div>);
+const Panel = ({ dark }) => (
+  <div className={(dark ? 'dark text-default ' : '') + 'flex-1 min-w-0 bg-default p-4 flex flex-col gap-4'}>
+    <L t="chat-message">{<div className="w-full flex flex-col gap-3"><ChatMessage side="right" variant="solid" content="How do I theme a button?" /><ChatMessage side="left" variant="naked" content="Pass a variant and color — the classes come from button.ts." /></div>}</L>
+    <L t="chat-prompt">{<div className="w-full"><ChatPrompt placeholder="Ask anything…" /></div>}</L>
+  </div>
+);
+ReactDOM.createRoot(document.getElementById('root')).render(<div className="flex items-stretch min-h-full"><Panel /><Panel dark /></div>);
+</script>
+</body></html>

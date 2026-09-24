@@ -1,0 +1,32 @@
+<!-- @dsCard group="Components" viewport="700x1950" name="Overlays" subtitle="modal.ts / popover.ts / toast.ts — open state is a prop, no behaviour" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Modal, Popover, Tooltip, Toast, Toaster, Slideover, Drawer, DashboardSearch } = window.NuxtUIDesignSystem_69ebe5;
+const stack = [{ title: 'Saved', description: 'Your changes are live.', icon: 'i-lucide-check', color: 'success' }, { title: 'Rate limited' }, { title: 'Deploy failed', description: 'Build step 3 exited with code 1 after two retries.', color: 'error' }, { title: 'Synced' }];
+/* every overlay gets its own artboard: the kit pins fixed-positioned overlays to
+   the nearest positioned ancestor, so this frame is the "screen" */
+const Screen = ({ children, h = 'h-56', style }) => (<div style={style} className={'relative w-full ' + h + ' overflow-hidden ring ring-default rounded-md'}>{children}</div>);
+const Frame = ({ children }) => (<div style={{ position: 'relative', height: 320, overflow: 'hidden' }} className="w-full ring ring-default rounded-md"><div style={{ position: 'absolute', top: 0, left: 0, width: 430, height: 430, transform: 'scale(0.74)', transformOrigin: 'top left' }}>{children}</div></div>);
+const L = ({ children, t }) => (<div className="flex flex-col gap-2"><span className="text-[10px] uppercase tracking-wide text-dimmed">{t}</span><div className="flex items-start gap-2 flex-wrap">{children}</div></div>);
+const Panel = ({ dark }) => (
+  <div className={(dark ? 'dark text-default ' : '') + 'flex-1 min-w-0 bg-default p-4 flex flex-col gap-4'}>
+    <L t="modal (open) — close button by default">{<Screen><Modal open title="Delete project" description="This cannot be undone." body="Everything in this project will be removed." /></Screen>}</L>
+    <L t="slideover / drawer (open)">{<div className="w-full flex gap-3"><Screen h="h-40"><Slideover open title="Filters" body="Facets go here." /></Screen><Screen h="h-40"><Drawer open title="Share" body="Link and permissions." /></Screen></div>}</L>
+    <L t="toast">{<div className="w-full flex flex-col gap-2"><Toast title="Saved" description="Your changes are live." icon="i-lucide-check" color="success" /><Toast title="Rate limited" color="error" icon="i-lucide-triangle-alert" /></div>}</L>
+    <L t="toaster — stack offsets measured from the rendered toasts">{<div className="w-full flex flex-col gap-3"><Frame><Toaster position="top-right" toasts={stack} /></Frame><Frame><Toaster position="bottom-right" toasts={stack} /></Frame></div>}</L>
+    <L t="dashboard-search (open) — the focus ring sits on the palette input, not on the dialog close">{<Frame><DashboardSearch open groups={[{ id: 'go', label: 'Go to', items: [{ label: 'Dashboard', icon: 'i-lucide-layout-dashboard' }, { label: 'Settings', icon: 'i-lucide-settings' }] }]} /></Frame>}</L>
+    <L t="popover / tooltip">{<div className="w-full flex gap-3"><Screen h="h-40"><Popover open content="popover.ts content slot" /></Screen><Screen h="h-40"><Tooltip open text="tooltip.ts" /></Screen></div>}</L>
+  </div>
+);
+ReactDOM.createRoot(document.getElementById('root')).render(<div className="flex items-stretch min-h-full"><Panel /><Panel dark /></div>);
+</script>
+</body></html>

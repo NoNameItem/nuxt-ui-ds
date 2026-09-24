@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>parity · listbox</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Listbox } = window.NuxtUIDesignSystem_69ebe5;
+const items = [{ label: 'Home', value: 'home', icon: 'i-lucide-home' }, { label: 'Profile', value: 'profile', icon: 'i-lucide-user' }, { label: 'Settings', value: 'settings', icon: 'i-lucide-settings' }, { label: 'Favorites', value: 'favorites', icon: 'i-lucide-star' }, { label: 'Mail', value: 'mail', icon: 'i-lucide-mail' }];
+const mixedItems = [{ label: 'Home', value: 'home', icon: 'i-lucide-home' }, { label: 'Profile', value: 'profile', avatar: { src: 'assets/demo.png' } }, { label: 'Settings', value: 'settings', chip: { color: 'primary' } }];
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Listbox items={items} highlight color="primary" /></div>
+        <div className="w-64"><Listbox items={items} highlight color="secondary" /></div>
+        <div className="w-64"><Listbox items={items} highlight color="success" /></div>
+        <div className="w-64"><Listbox items={items} highlight color="info" /></div>
+        <div className="w-64"><Listbox items={items} highlight color="warning" /></div>
+        <div className="w-64"><Listbox items={items} highlight color="error" /></div>
+        <div className="w-64"><Listbox items={items} highlight color="neutral" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Listbox items={items} modelValue="home" color="primary" /></div>
+        <div className="w-64"><Listbox items={items} modelValue="home" color="secondary" /></div>
+        <div className="w-64"><Listbox items={items} modelValue="home" color="success" /></div>
+        <div className="w-64"><Listbox items={items} modelValue="home" color="info" /></div>
+        <div className="w-64"><Listbox items={items} modelValue="home" color="warning" /></div>
+        <div className="w-64"><Listbox items={items} modelValue="home" color="error" /></div>
+        <div className="w-64"><Listbox items={items} modelValue="home" color="neutral" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Listbox items={items} size="xs" /></div>
+        <div className="w-64"><Listbox items={items} size="sm" /></div>
+        <div className="w-64"><Listbox items={items} size="md" /></div>
+        <div className="w-64"><Listbox items={items} size="lg" /></div>
+        <div className="w-64"><Listbox items={items} size="xl" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Listbox items={items} disabled /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Listbox items={mixedItems} /></div>
+        <div className="w-64"><Listbox items={[]} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Listbox items={items} virtualize /></div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

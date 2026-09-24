@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>parity · context-menu</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { ContextMenu, Button } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64 h-80">
+          <ContextMenu items={[{ label: 'Label', color: 'primary' }, { label: 'Label', color: 'primary', active: true }, { label: 'Label', color: 'secondary' }, { label: 'Label', color: 'secondary', active: true }, { label: 'Label', color: 'success' }, { label: 'Label', color: 'success', active: true }, { label: 'Label', color: 'info' }, { label: 'Label', color: 'info', active: true }, { label: 'Label', color: 'warning' }, { label: 'Label', color: 'warning', active: true }, { label: 'Label', color: 'error' }, { label: 'Label', color: 'error', active: true }]} portal={false}>
+            <Button label="Label" variant="outline" />
+          </ContextMenu>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64 h-80">
+          <ContextMenu items={[{ label: 'Label', color: 'error' }]} portal={false}>
+            <Button label="Label" variant="outline" />
+          </ContextMenu>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64 h-80">
+          <ContextMenu items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user' }, { label: 'Settings', icon: 'i-lucide-settings' }, { label: 'Favorites', icon: 'i-lucide-star' }, { label: 'Mail', icon: 'i-lucide-mail' }]} size="xs" portal={false}>
+            <Button label="Label" variant="outline" />
+          </ContextMenu>
+        </div>
+        <div className="w-64 h-80">
+          <ContextMenu items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user' }, { label: 'Settings', icon: 'i-lucide-settings' }, { label: 'Favorites', icon: 'i-lucide-star' }, { label: 'Mail', icon: 'i-lucide-mail' }]} size="sm" portal={false}>
+            <Button label="Label" variant="outline" />
+          </ContextMenu>
+        </div>
+        <div className="w-64 h-80">
+          <ContextMenu items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user' }, { label: 'Settings', icon: 'i-lucide-settings' }, { label: 'Favorites', icon: 'i-lucide-star' }, { label: 'Mail', icon: 'i-lucide-mail' }]} size="md" portal={false}>
+            <Button label="Label" variant="outline" />
+          </ContextMenu>
+        </div>
+        <div className="w-64 h-80">
+          <ContextMenu items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user' }, { label: 'Settings', icon: 'i-lucide-settings' }, { label: 'Favorites', icon: 'i-lucide-star' }, { label: 'Mail', icon: 'i-lucide-mail' }]} size="lg" portal={false}>
+            <Button label="Label" variant="outline" />
+          </ContextMenu>
+        </div>
+        <div className="w-64 h-80">
+          <ContextMenu items={[{ label: 'Home', icon: 'i-lucide-home' }, { label: 'Profile', icon: 'i-lucide-user' }, { label: 'Settings', icon: 'i-lucide-settings' }, { label: 'Favorites', icon: 'i-lucide-star' }, { label: 'Mail', icon: 'i-lucide-mail' }]} size="xl" portal={false}>
+            <Button label="Label" variant="outline" />
+          </ContextMenu>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64 h-80">
+          <ContextMenu items={[{ label: 'Label', loading: true }]} portal={false}>
+            <Button label="Label" variant="outline" />
+          </ContextMenu>
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64 h-80">
+          <ContextMenu items={[
+            [
+              { label: 'Home', icon: 'i-lucide-home', kbds: ['meta', 'K'] },
+              { label: 'Profile', icon: 'i-lucide-user' },
+              { type: 'label', label: 'Label' },
+              { type: 'separator' },
+              { label: 'Settings', icon: 'i-lucide-settings', disabled: true }
+            ],
+            [
+              { label: 'Favorites', icon: 'i-lucide-star' },
+              { label: 'Mail', icon: 'i-lucide-mail' }
+            ]
+          ]} portal={false}>
+            <Button label="Label" variant="outline" />
+          </ContextMenu>
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

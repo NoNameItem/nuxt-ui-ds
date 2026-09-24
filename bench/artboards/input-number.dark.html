@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en" class="dark"><head><meta charset="utf-8"><title>parity · input-number</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { InputNumber } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputNumber variant="outline" modelValue={42} /></div>
+        <div className="w-64"><InputNumber variant="soft" modelValue={42} /></div>
+        <div className="w-64"><InputNumber variant="subtle" modelValue={42} /></div>
+        <div className="w-64"><InputNumber variant="ghost" modelValue={42} /></div>
+        <div className="w-64"><InputNumber variant="none" modelValue={42} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputNumber highlight color="primary" modelValue={42} /></div>
+        <div className="w-64"><InputNumber highlight color="secondary" modelValue={42} /></div>
+        <div className="w-64"><InputNumber highlight color="success" modelValue={42} /></div>
+        <div className="w-64"><InputNumber highlight color="info" modelValue={42} /></div>
+        <div className="w-64"><InputNumber highlight color="warning" modelValue={42} /></div>
+        <div className="w-64"><InputNumber highlight color="error" modelValue={42} /></div>
+        <div className="w-64"><InputNumber highlight color="neutral" modelValue={42} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputNumber size="xs" modelValue={42} /></div>
+        <div className="w-64"><InputNumber size="sm" modelValue={42} /></div>
+        <div className="w-64"><InputNumber size="md" modelValue={42} /></div>
+        <div className="w-64"><InputNumber size="lg" modelValue={42} /></div>
+        <div className="w-64"><InputNumber size="xl" modelValue={42} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputNumber orientation="horizontal" modelValue={42} /></div>
+        <div className="w-64"><InputNumber orientation="vertical" modelValue={42} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputNumber disabled modelValue={42} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputNumber fixed modelValue={42} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputNumber increment={false} modelValue={42} /></div>
+        <div className="w-64"><InputNumber decrement={false} modelValue={42} /></div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

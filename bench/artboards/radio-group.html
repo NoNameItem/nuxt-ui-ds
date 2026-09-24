@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>parity · radio-group</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { RadioGroup } = window.NuxtUIDesignSystem_69ebe5;
+const items = [{ label: 'Home', value: 'home' }, { label: 'Profile', value: 'profile' }, { label: 'Settings', value: 'settings' }];
+const itemsWithDescription = [{ label: 'Home', value: 'home', description: 'Description text for the parity testbed.' }, { label: 'Profile', value: 'profile', description: 'Description text for the parity testbed.' }, { label: 'Settings', value: 'settings', description: 'Description text for the parity testbed.' }];
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><RadioGroup items={items} variant="card" indicator="start" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" indicator="end" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" indicator="hidden" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" size="xs" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" size="sm" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" size="md" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" size="lg" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" size="xl" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><RadioGroup items={items} variant="card" size="xs" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" size="sm" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" size="md" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" size="lg" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" size="xl" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" size="xs" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" size="sm" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" size="md" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" size="lg" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" size="xl" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><RadioGroup items={items} variant="table" orientation="horizontal" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" orientation="vertical" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><RadioGroup items={items} variant="card" color="primary" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="secondary" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="success" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="info" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="warning" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="error" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="neutral" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="primary" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="secondary" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="success" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="info" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="warning" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="error" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="neutral" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="primary" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="secondary" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="success" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="info" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="warning" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="error" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="card" color="neutral" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="primary" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="secondary" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="success" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="info" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="warning" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="error" modelValue="home" /></div>
+        <div className="w-64"><RadioGroup items={items} variant="table" color="neutral" modelValue="home" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><RadioGroup items={items} indicator="start" color="primary" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="end" color="primary" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="start" color="secondary" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="end" color="secondary" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="start" color="success" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="end" color="success" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="start" color="info" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="end" color="info" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="start" color="warning" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="end" color="warning" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="start" color="error" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="end" color="error" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="start" color="neutral" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="end" color="neutral" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" color="primary" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" color="secondary" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" color="success" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" color="info" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" color="warning" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" color="error" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" color="neutral" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" highlight color="primary" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" highlight color="secondary" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" highlight color="success" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" highlight color="info" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" highlight color="warning" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" highlight color="error" /></div>
+        <div className="w-64"><RadioGroup items={items} indicator="hidden" highlight color="neutral" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><RadioGroup items={items} highlight color="primary" /></div>
+        <div className="w-64"><RadioGroup items={items} highlight color="secondary" /></div>
+        <div className="w-64"><RadioGroup items={items} highlight color="success" /></div>
+        <div className="w-64"><RadioGroup items={items} highlight color="info" /></div>
+        <div className="w-64"><RadioGroup items={items} highlight color="warning" /></div>
+        <div className="w-64"><RadioGroup items={items} highlight color="error" /></div>
+        <div className="w-64"><RadioGroup items={items} highlight color="neutral" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><RadioGroup items={items} disabled /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><RadioGroup items={itemsWithDescription} /></div>
+        <div className="w-64"><RadioGroup items={items} modelValue="home" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><RadioGroup legend="Legend" items={items} required /></div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

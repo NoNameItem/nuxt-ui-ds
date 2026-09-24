@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en" class="dark"><head><meta charset="utf-8"><title>parity · blog-post</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { BlogPost } = window.NuxtUIDesignSystem_69ebe5;
+const LOREM = "Description text for the parity testbed.";
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-80"><BlogPost variant="outline" title="Title" description={LOREM} image="assets/demo.png" /></div>
+        <div className="w-80"><BlogPost variant="soft" title="Title" description={LOREM} image="assets/demo.png" /></div>
+        <div className="w-80"><BlogPost variant="subtle" title="Title" description={LOREM} image="assets/demo.png" /></div>
+        <div className="w-80"><BlogPost variant="ghost" title="Title" description={LOREM} image="assets/demo.png" /></div>
+        <div className="w-80"><BlogPost variant="naked" title="Title" description={LOREM} image="assets/demo.png" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-80"><BlogPost variant="naked" orientation="vertical" title="Title" description={LOREM} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-80"><BlogPost variant="ghost" to="#" orientation="vertical" title="Title" description={LOREM} image="assets/demo.png" /></div>
+        <div className="w-80"><BlogPost variant="ghost" to="#" orientation="horizontal" title="Title" description={LOREM} image="assets/demo.png" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-80"><BlogPost orientation="horizontal" title="Title" description={LOREM} image="assets/demo.png" /></div>
+        <div className="w-80"><BlogPost orientation="vertical" title="Title" description={LOREM} image="assets/demo.png" /></div>
+        <div className="w-80"><BlogPost badge="Label" date="2026-01-15" authors={[{ name: "Ada Lovelace", description: "Engineer", avatar: { src: "assets/demo.png" } }]} title="Title" description={LOREM} image="assets/demo.png" /></div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

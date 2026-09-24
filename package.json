@@ -1,0 +1,32 @@
+{
+  "name": "nuxt-ui-ds",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare": "nuxt prepare",
+    "build:ds": "node pipeline/build-ds-bundle.mjs",
+    "verify:ds": "node pipeline/verify-kit.mjs",
+    "kit:pull": "node pipeline/kit-export.mjs pull",
+    "kit:release": "node pipeline/kit-export.mjs release",
+    "kit:check-import": "node pipeline/kit-export.mjs check-import",
+    "upgrade:ui": "pnpm up --latest @nuxt/ui nuxt && nuxt prepare",
+    "test": "node --test 'pipeline/tests/*.test.mjs' 'bench/tests/*.test.mjs'",
+    "build:docs": "node pipeline/build-docs.mjs",
+    "audit:kit": "node pipeline/audit-kit.mjs",
+    "build:parity": "nuxt generate",
+    "shoot:parity": "node bench/scripts/shoot.mjs",
+    "pairs:parity": "node bench/scripts/pairs.mjs",
+    "diff:parity": "node bench/scripts/diff.mjs",
+    "parity:ledger": "node bench/scripts/ledger.mjs"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^4.11.1",
+    "nuxt": "^4.5.2",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "1.2.132",
+    "playwright": "1.63.0",
+    "yaml": "^2.9.1"
+  }
+}

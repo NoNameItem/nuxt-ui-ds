@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en" class="dark"><head><meta charset="utf-8"><title>parity · badge</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Badge } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <Badge label="Label" color="primary" variant="solid" />
+        <Badge label="Label" color="primary" variant="outline" />
+        <Badge label="Label" color="primary" variant="soft" />
+        <Badge label="Label" color="primary" variant="subtle" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Badge label="Label" color="secondary" variant="solid" />
+        <Badge label="Label" color="secondary" variant="outline" />
+        <Badge label="Label" color="secondary" variant="soft" />
+        <Badge label="Label" color="secondary" variant="subtle" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Badge label="Label" color="success" variant="solid" />
+        <Badge label="Label" color="success" variant="outline" />
+        <Badge label="Label" color="success" variant="soft" />
+        <Badge label="Label" color="success" variant="subtle" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Badge label="Label" color="info" variant="solid" />
+        <Badge label="Label" color="info" variant="outline" />
+        <Badge label="Label" color="info" variant="soft" />
+        <Badge label="Label" color="info" variant="subtle" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Badge label="Label" color="warning" variant="solid" />
+        <Badge label="Label" color="warning" variant="outline" />
+        <Badge label="Label" color="warning" variant="soft" />
+        <Badge label="Label" color="warning" variant="subtle" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Badge label="Label" color="error" variant="solid" />
+        <Badge label="Label" color="error" variant="outline" />
+        <Badge label="Label" color="error" variant="soft" />
+        <Badge label="Label" color="error" variant="subtle" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Badge label="Label" color="neutral" variant="solid" />
+        <Badge label="Label" color="neutral" variant="outline" />
+        <Badge label="Label" color="neutral" variant="soft" />
+        <Badge label="Label" color="neutral" variant="subtle" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Badge leadingIcon="i-lucide-plus" square size="xs" />
+        <Badge leadingIcon="i-lucide-plus" square size="sm" />
+        <Badge leadingIcon="i-lucide-plus" square size="md" />
+        <Badge leadingIcon="i-lucide-plus" square size="lg" />
+        <Badge leadingIcon="i-lucide-plus" square size="xl" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Badge label="Label" leadingIcon="i-lucide-rocket" />
+        <Badge label="Label" trailingIcon="i-lucide-arrow-right" />
+        <Badge label="Label" leadingAvatar={{ src: 'assets/demo.png' }} />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

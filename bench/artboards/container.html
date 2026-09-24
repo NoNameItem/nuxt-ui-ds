@@ -1,0 +1,34 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>parity · container</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Container } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  /* Ширина обёртки набирается распоркой из готовых утилит, а не произвольным значением:
+     w-[1600px] есть в нашем CSS и нет в CSS кита (дамп утилит собран по его исходникам),
+     и обёртка вышла бы 1280 только на ките — поддельное расхождение вместо свойства.
+     Зачем ширина: --ui-container = 80rem = 1280px, кадр съёмки тоже 1280, поэтому
+     max-w-(--ui-container) и mx-auto нулём дифа не проверяются (nuxt-ui-ds-w9w). */
+  return (
+    <div className="w-max">
+      <div className="flex">
+        {[1, 2, 3, 4, 5].map((i) => <div key={i} className="w-96 h-1 shrink-0" />)}
+      </div>
+      <Container>
+        <div className="bg-elevated p-4">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+        </div>
+      </Container>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

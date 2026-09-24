@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en" class="dark"><head><meta charset="utf-8"><title>parity · slider</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Slider } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Slider modelValue={40} size="xs" /></div>
+        <div className="w-64"><Slider modelValue={40} size="sm" /></div>
+        <div className="w-64"><Slider modelValue={40} size="md" /></div>
+        <div className="w-64"><Slider modelValue={40} size="lg" /></div>
+        <div className="w-64"><Slider modelValue={40} size="xl" /></div>
+        <div className="h-32"><Slider modelValue={40} orientation="vertical" size="xs" /></div>
+        <div className="h-32"><Slider modelValue={40} orientation="vertical" size="sm" /></div>
+        <div className="h-32"><Slider modelValue={40} orientation="vertical" size="md" /></div>
+        <div className="h-32"><Slider modelValue={40} orientation="vertical" size="lg" /></div>
+        <div className="h-32"><Slider modelValue={40} orientation="vertical" size="xl" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Slider modelValue={40} color="primary" /></div>
+        <div className="w-64"><Slider modelValue={40} color="secondary" /></div>
+        <div className="w-64"><Slider modelValue={40} color="success" /></div>
+        <div className="w-64"><Slider modelValue={40} color="info" /></div>
+        <div className="w-64"><Slider modelValue={40} color="warning" /></div>
+        <div className="w-64"><Slider modelValue={40} color="error" /></div>
+        <div className="w-64"><Slider modelValue={40} color="neutral" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Slider modelValue={40} disabled /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><Slider modelValue={[20, 60]} /></div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

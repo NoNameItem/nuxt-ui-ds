@@ -1,0 +1,30 @@
+<!-- @dsCard group="Components" viewport="700x1300" name="Forms — Input & friends" subtitle="input.ts variants/sizes/colours, textarea.ts, select.ts, pin-input.ts" -->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Input, Textarea, Select, SelectMenu, InputMenu, InputNumber, InputTags, PinInput, InputDate, FormField, FileUpload } = window.NuxtUIDesignSystem_69ebe5;
+const L = ({ children, t }) => (<div className="flex flex-col gap-2"><span className="text-[10px] uppercase tracking-wide text-dimmed">{t}</span><div className="flex items-start gap-2 flex-wrap">{children}</div></div>);
+const Panel = ({ dark }) => (
+  <div className={(dark ? 'dark text-default ' : '') + 'flex-1 min-w-0 bg-default p-4 flex flex-col gap-4'}>
+    <L t="input variant">{<div className="w-full grid grid-cols-2 gap-2">{['outline','soft','subtle','ghost','none'].map(v => <Input key={v} variant={v} placeholder={v} icon="i-lucide-search" />)}</div>}</L>
+    <L t="input size">{<div className="w-full grid grid-cols-2 gap-2">{['xs','sm','md','lg','xl'].map(s => <Input key={s} size={s} placeholder={'size ' + s} />)}</div>}</L>
+    <L t="highlight / disabled">{<div className="w-full grid grid-cols-2 gap-2"><Input highlight color="error" placeholder="error" /><Input disabled placeholder="disabled" /></div>}</L>
+    <L t="textarea / select">{<div className="w-full grid grid-cols-2 gap-2"><Textarea placeholder="textarea.ts" /><Select placeholder="Select…" /></div>}</L>
+    <L t="number / tags">{<div className="w-full grid grid-cols-2 gap-2"><InputNumber defaultValue={5} /><InputTags defaultValue={['vue', 'nuxt']} /></div>}</L>
+    <L t="field">{<div className="w-full"><FormField label="Email" description="We never share it." required><Input placeholder="you@example.com" /></FormField></div>}</L>
+    <L t="select-menu (open) — search field + flat list">{<div className="w-full flex items-start gap-3" style={{ minHeight: 150 }}><SelectMenu open placeholder="Pick a package" items={[{ label: 'Nuxt UI' }, { label: 'Nuxt UI Pro' }]} class="w-36" /><SelectMenu open searchInput={false} placeholder="No search" items={[{ label: 'Alpha' }, { label: 'Beta' }]} class="w-36" /></div>}</L>
+    <L t="input-menu (open)">{<div className="w-full" style={{ minHeight: 150 }}><InputMenu open placeholder="Search" items={[{ label: 'Alpha' }, { label: 'Beta' }]} class="w-36" /></div>}</L>
+    <L t="file-upload — plain, and inside-preview with a file">{<div className="w-full flex items-start gap-3"><FileUpload class="w-40" /><FileUpload class="w-40 h-24" position="inside" preview modelValue={{ name: 'report.pdf', size: 12345 }} /></div>}</L>
+  </div>
+);
+ReactDOM.createRoot(document.getElementById('root')).render(<div className="flex items-stretch min-h-full"><Panel /><Panel dark /></div>);
+</script>
+</body></html>

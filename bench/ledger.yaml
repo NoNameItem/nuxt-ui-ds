@@ -1,0 +1,1866 @@
+kit:
+  bundle_size: 1041625
+  statics_copied: 2026-09-24T13:24:53.331Z
+
+classes:
+  - id: kit-repeat
+    title: рендерер кита теряет повторяемое содержимое
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: ["<Component>.jsx"]
+    components: [pin-input, input-tags, input-date, input-time, listbox, checkbox-group, file-upload, dropdown-menu, carousel, tree, timeline, splitter, footer-columns, header, page-logos, page-section, chat-messages]
+  - id: kit-isroot
+    title: "гейт с !isRoot мёртв у корня подрева, а корнем становятся двумя путями"
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: [factory.jsx]
+    components: [select, select-menu, dashboard-group, dashboard-navbar, dashboard-panel--default, dashboard-resize-handle, dashboard-sidebar-collapse, context-menu]
+  - id: kit-alert-orientation-actions
+    title: Alert без data-orientation на корне, обе ветки actions слиты в одну
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/core/Alert.jsx]
+    components: [alert]
+  - id: kit-actions-props
+    title: кит теряет пропсы места вызова у actions
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: ["<Component>.jsx"]
+    components: [alert, banner, empty, toast--color, toast--content, toast--orientation, navigation-menu, user, page-header, chat-tool]
+  - id: kit-child-slot-theme
+    title: вложенному компоненту подмешивается не тот слот темы
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: [lib/child-themes.js]
+    components: [button, chat-prompt]
+  - id: kit-shadow-ring
+    title: ".shadow-* и .ring в CSS кита дерутся за box-shadow"
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: [tokens/utilities.css]
+    components: [modal--default, modal--no-overlay, slideover--bottom-inset, toast--color, toast--content]
+  - id: kit-if-gate-no-prop
+    title: "гейт node.if не спрашивает условие узла и отпадает всегда, когда renderIf молчит"
+    side: kit
+    status: fixed
+    report: 2026-09-18#три-регрессии-которых-раунд-стоил
+    files: [factory.jsx]
+    components: [dropdown-menu, context-menu, slideover--bottom, slideover--bottom-inset, slideover--left, slideover--left-inset, slideover--right, slideover--right-inset, slideover--top, slideover--top-inset, drawer--bottom, drawer--bottom-inset, drawer--bottom-snap, drawer--left, drawer--left-inset, drawer--right, drawer--right-inset, drawer--right-snap, drawer--top, drawer--top-inset]
+  - id: kit-paint-slots-too-wide
+    title: PAINT_SLOTS сливает root и base там, где библиотека этого не делает
+    side: kit
+    status: fixed
+    report: 2026-09-18#три-регрессии-которых-раунд-стоил
+    files: [lib/child-themes.js]
+    components: [checkbox-group]
+  - id: kit-textarea-rows
+    title: кит не переносит атрибут rows на textarea
+    side: kit
+    status: fixed
+    report: 2026-09-18#что-починилось
+    files: ["<Component>.jsx"]
+    components: [chat-prompt]
+  - id: kit-child-call-props
+    title: схлопнутый дочерний компонент красится дефолтными вариантами вместо пропов места вызова
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-2
+    files: [factory.jsx]
+    components: [chat-prompt, command-palette, toast--color, toast--content, toast--orientation]
+  - id: kit-child-nested-base
+    title: у вложенного компонента base глубже одного уровня, и схлопнутый узел остаётся без визуальной темы
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-2
+    files: [lib/child-themes.js]
+    components: [checkbox-group]
+  - id: stand-menu-open-not-static
+    title: "сторона приложения не показывает статически панель dropdown-menu и context-menu"
+    side: ours
+    status: fixed
+    report: 2026-09-18#раунд-2
+    files: []
+    components: [dropdown-menu, context-menu]
+  - id: stand-dashboard-search-not-open
+    title: артборд dashboard-search не передавал ни open, ни groups — модалку никто не открывал
+    side: ours
+    status: fixed
+    report: 2026-09-18#артборды
+    files: []
+    components: [dashboard-search, dashboard-search--fullscreen, dashboard-search--size]
+  - id: kit-child-slot-lost-in-define
+    title: childSlot считается по roots, откуда collectDefines уже вынул тела Define-шаблонов
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-24
+    files: [lib/factory.jsx]
+    components: [sidebar--full, sidebar--collapsed, sidebar--left-icon, sidebar--left-none, sidebar--left-offcanvas, sidebar--left-floating, sidebar--right-icon, sidebar--right-none, sidebar--right-offcanvas, sidebar--right-floating, sidebar--none-floating, sidebar--none-inset, sidebar--icon-floating, sidebar--variant-sidebar]
+  - id: kit-dashboard-search-empty-content
+    title: дерево DashboardSearch потеряло всё содержимое <template
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-24
+    files: [components/dashboard/DashboardSearch.jsx]
+    components: [dashboard-search, dashboard-search--fullscreen, dashboard-search--size]
+  - id: stand-command-palette-items-instead-of-groups
+    title: артборд command-palette передаёт items плоским списком там, где страница передаёт groups
+    side: ours
+    status: fixed
+    report: 2026-09-18#раунд-25
+    files: []
+    components: [command-palette]
+  - id: kit-command-palette-item-chrome
+    title: у палитры нет ведущей иконки поиска и kbds, зато лишний trailing-значок на каждом элементе и пустой empty
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-25
+    files: [components/navigation/CommandPalette.jsx]
+    components: [command-palette]
+  - id: kit-command-palette-list-lost
+    title: CommandPalette на своей странице потеряла весь список — остался один input
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-24
+    files: [components/navigation/CommandPalette.jsx]
+    components: [command-palette, chat-palette]
+  - id: kit-orphan-define-doubled
+    title: сиротский Define-шаблон рисуется вторым разом поверх уже вставленного или при закрытом попапе
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-3
+    files: [factory.jsx]
+    components: [navigation-menu, header, sidebar--full, sidebar--collapsed, sidebar--left-icon, sidebar--left-offcanvas, sidebar--left-none, sidebar--right-icon, sidebar--right-offcanvas, sidebar--right-none, sidebar--variant-sidebar, sidebar--icon-floating, sidebar--left-floating, sidebar--none-floating, sidebar--none-inset, sidebar--right-floating, listbox, select-menu, input-menu, command-palette]
+  - id: kit-mounted-child-loses-children
+    title: смонтированный вложенный компонент теряет детей места вызова и своё имя слота
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-3
+    files: [factory.jsx]
+    components: [banner, footer, header, page-cta, page-hero, page-section, dashboard-search, dashboard-search--fullscreen, dashboard-search--size]
+  - id: kit-hover-not-reproduced
+    title: состояние hover кит не воспроизводит — принято нормой
+    side: kit
+    status: accepted
+    decided: 2026-09-18
+    reason: "Состояние наведения кит не воспроизводит, и это принято нормой решением человека 2026-09-18: «в целом мы можем принять то, что в ките не работает hover как норму и не зацикливаться». Конкретно: два правила tokens/utilities.css — group-hover:ring-primary и group-hover/blog-post:shadow-none — пишут box-shadow напрямую вместо своей переменной и вытесняют соседа; остальные правила того же дефекта исправлены (класс kit-shadow-ring). Пункт трижды отправлялся платформе, и в последний раз она отчиталась о выполнении, а файл остался байт в байт прежним. Пиксельного следа нет по построению: стенд снимает статические страницы, наведение в кадр не попадает ни на одной стороне, поэтому пар у класса нет — принимается механизм, а не число. Цена: расхождение проявится в первом сценарии, где hover попадёт в снимок."
+    report: 2026-09-18#раунд-4
+    files: [tokens/utilities.css]
+    components: []
+  - id: kit-mounted-avatar-doubled
+    title: смонтированный дочерний компонент добавляет свой root поверх узла слота хозяина
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-5
+    files: [factory.jsx]
+    components: [alert, empty, file-upload, toast--color, toast--content, toast--orientation, user, chat-message, blog-post, blog-posts, changelog-version, changelog-versions, pricing-plan]
+  - id: kit-css-var-not-set
+    title: "переменная класса не выставлена, и значение становится невалидным"
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-14
+    files: [factory.jsx]
+    components: [pricing-plans]
+  - id: kit-changelog-out-of-scope
+    title: ChangelogVersion и ChangelogVersions выводятся из кита — выравнивать не будем
+    side: kit
+    status: accepted
+    decided: 2026-09-19
+    reason: "ChangelogVersion и ChangelogVersions выведены из кита решением человека 2026-09-19: «по changelog-version/changelog-versions аналогично pricing-tables: нет смысла держать в ките, проще посмотреть, как это будет выглядеть в доке». Механизм расхождения с датой (сиблинг контейнера вместо двух точек ReuseDateTemplate) был найден и исправлен, но остаток после него — 134 111 пикселей на четырёх парах — механизмом не разобран, и разбирать его не стали. Компоненты удалены из кита, их страницы и артборды сняты со стенда, а пакет пропускает их через SKIP_COMPONENTS в pipeline/skip-dirs.mjs; запись класса остаётся как запись решения. Цена: для макетов журнала изменений компонента в ките нет, вид берут из документации Nuxt UI."
+    report: решение человека 2026-09-19
+    files: [ChangelogVersion.jsx, ChangelogVersions.jsx]
+    components: [changelog-version, changelog-versions]
+  - id: kit-pricing-out-of-scope
+    title: всё семейство Pricing выводится из кита — выравнивать не будем
+    side: kit
+    status: accepted
+    decided: 2026-09-19
+    reason: "Всё семейство Pricing (PricingTable, PricingPlan, PricingPlans) выведено из кита решением человека. 2026-09-18 про PricingTable: «pricing-table весьма специфичный составной компонент, который вроде не сильно кастомизуется в nuxt ui (насколько помню, там кастомизируются только грейды цен). В целом мало смысла держать его в ките и точно не стоит тратить на него ресурсы по выравниванию»; 2026-09-19 решение расширено: «и в целом можно так же выкинуть всё семейство pricing». Повод: пара PricingTable за пять попыток правки выросла со 178 902 до 1 594 521 пикселя, счётчики узлов внутри колебались в обе стороны, и дальнейшие попытки были бы монеткой. Компоненты удалены из кита, их страницы и артборды сняты со стенда, пакет пропускает их через SKIP_COMPONENTS в pipeline/skip-dirs.mjs. Два найденных механизма (кнопка плана без block и size lg, цена в body при вертикальной ориентации) остаются в регистре закрытыми: это настоящие дефекты кита, которые больше не разрабатываются. Цена: для макетов с тарифами компонента в ките нет, вид берут из документации Nuxt UI."
+    report: 2026-09-18#решение-по-pricing-table
+    files: [PricingTable.jsx, PricingPlan.jsx, PricingPlans.jsx]
+    components: [pricing-table, pricing-plan, pricing-plans]
+  - id: kit-no-runtime
+    title: у кита нет рантайма, и всё, что библиотека доделывает после монтирования, остаётся недоделанным
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: []
+    components: [drawer--bottom-snap, drawer--right-snap, navigation-menu]
+  - id: kit-child-slot-order
+    title: дети уходят в чужой слот из CHILD_SLOT_ORDER
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: [factory.jsx]
+    components: [tooltip, popover, page-cta, page-hero, context-menu]
+  - id: kit-slot-nodes
+    title: кит не связывает слотовые узлы дерева ни с пропами, ни с детьми
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: [factory.jsx]
+    components: [page, page-aside, scroll-area, changelog-versions, chat-palette]
+  - id: kit-variant-spread
+    title: кит не отфильтровывает variant-пропы и спредит их на DOM
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: ["<Component>.jsx"]
+    components: [checkbox, switch, table]
+  - id: kit-modal-double-overlay
+    title: задвоенный DialogOverlay у Modal
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: [Modal.jsx]
+    components: [modal--default]
+  - id: kit-group-context
+    title: кит не передаёт контекст группы детям
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: ["<Component>.jsx"]
+    components: [avatar-group, chip, field-group]
+  - id: kit-slot-no-data-slot
+    title: слот без data-slot в дереве кита теряется
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: []
+    components: [form, form-field, input-tags]
+  - id: kit-localize-fixed
+    title: localizeFixed ломает вьюпортные единицы
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: [localizeFixed]
+    components: [error]
+  - id: kit-icon-glyph-size
+    title: глиф иконки у кита меряется font-size, а не своей коробкой
+    side: kit
+    status: fixed
+    report: 2026-09-17#окружение
+    files: [lib/iconify.jsx]
+    components: []
+  - id: kit-modal-close-variant
+    title: кнопка закрытия у Modal и Slideover нарисована вариантом link вместо ghost
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/overlays/Modal.jsx, components/overlays/Slideover.jsx]
+    components: [modal, slideover]
+  - id: kit-static-final-position
+    title: "конечное статическое положение выводимо — запрос возможности, не починка дефекта"
+    side: kit
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: []
+    components: []
+  - id: kit-sidebar-both-root-branches
+    title: Sidebar рисует обе ветки v-if сразу — лишний корень на всех страницах, у collapsible="none" ещё и чужая ветка
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-24
+    files: [components/navigation/Sidebar.jsx]
+    components: [sidebar--full, sidebar--collapsed, sidebar--left-icon, sidebar--left-none, sidebar--left-offcanvas, sidebar--left-floating, sidebar--right-icon, sidebar--right-none, sidebar--right-offcanvas, sidebar--right-floating, sidebar--none-floating, sidebar--none-inset, sidebar--icon-floating, sidebar--variant-sidebar]
+  - id: stand-active-compensated-default-value
+    title: артборды tabs и timeline подменяли defaultValue полем item.active — компенсация дефекта кита
+    side: ours
+    status: fixed
+    report: 2026-09-18#артборды
+    files: []
+    components: [tabs, timeline]
+  - id: kit-listbox-trailing-icon-always
+    title: Listbox рисует itemTrailingIcon каждому элементу, хотя это индикатор выбора
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-28
+    files: [components/navigation/Listbox.jsx]
+    components: [listbox]
+  - id: stand-changelog-indicator-string
+    title: артборд changelog-version передавал indicator строкой "false" вместо булева false
+    side: ours
+    status: fixed
+    report: 2026-09-18#раунд-29
+    files: []
+    components: [changelog-version]
+  - id: kit-changelog-date-outside-reuse
+    title: ChangelogVersion выдаёт date сиблингом container вместо двух точек ReuseDateTemplate
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-28
+    files: [components/page/ChangelogVersion.jsx]
+    components: [changelog-version, changelog-versions]
+  - id: kit-blog-post-extra-image-and-authors
+    title: BlogPost рисует лишнюю картинку и блок авторов, которого страница не просила
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-28
+    files: [components/page/BlogPost.jsx]
+    components: [blog-post, blog-posts]
+  - id: kit-navigation-menu-no-viewport-wrapper
+    title: NavigationMenu не рисует viewportWrapper при горизонтальной ориентации
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-30
+    files: [components/navigation/NavigationMenu.jsx]
+    components: [navigation-menu]
+  - id: kit-file-upload-size-not-passed-to-avatar
+    title: FileUpload не передаёт свой size во вложенные Avatar и Icon — вся лесенка размеров плоская
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/forms/FileUpload.jsx]
+    components: [file-upload]
+  - id: kit-file-upload-double-icon
+    title: FileUpload рисует две иконки там, где библиотека выбирает одну из двух
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-29
+    files: [components/forms/FileUpload.jsx]
+    components: [file-upload]
+  - id: kit-modal-no-close-button
+    title: Modal и Slideover не рисуют кнопку закрытия, которая у библиотеки по умолчанию есть
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-34
+    files: [components/overlays/Modal.jsx, components/overlays/Slideover.jsx]
+    components: [modal--default, modal--fullscreen, modal--no-overlay, modal--scrollable, slideover--top, slideover--right, slideover--bottom, slideover--left, slideover--top-inset, slideover--right-inset, slideover--bottom-inset, slideover--left-inset]
+  - id: kit-color-picker-no-scoped-style
+    title: ColorPicker теряет scoped-стиль SFC — нет градиентов поля и полосы
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/forms/ColorPicker.jsx]
+    components: [color-picker]
+  - id: kit-color-picker-no-inline-style
+    title: ColorPicker не вычисляет инлайновый style из default-value — ни краски, ни положения ползунков
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/forms/ColorPicker.jsx]
+    components: [color-picker]
+  - id: kit-page-card-default-slot-into-body
+    title: PageCard кладёт содержимое безымянного слота внутрь body вместо container
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/page/PageCard.jsx]
+    components: [page-card]
+  - id: kit-repeated-slot-not-fillable
+    title: повторяемый слот нельзя наполнить из артборда, и кит выдумывает содержимое сам
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/data/Carousel.jsx, lib/factory.jsx]
+    components: [carousel]
+  - id: kit-modal-scrollable-content-outside-overlay
+    title: у Modal со scrollable содержимое лежало снаружи overlay и не центровалось
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/overlays/Modal.jsx]
+    components: [modal--scrollable]
+  - id: kit-page-section-default-slot-wrapped
+    title: PageSection оборачивал содержимое безымянного слота в лишние wrapper и body
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/page/PageSection.jsx]
+    components: [page-section]
+  - id: stand-toast-artboards-not-toaster
+    title: артборды toast--* рисовали список тостов вместо стопки тостера
+    side: ours
+    status: fixed
+    report: замер 2026-09-19
+    files: [artboards/toast--color.html, artboards/toast--content.html, artboards/toast--orientation.html]
+    components: [toast--color, toast--content, toast--orientation]
+  - id: kit-as-child-renders-wrapper
+    title: as-child у примитива рисует обёртку вместо того, чтобы слиться с единственным ребёнком
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [lib/factory.jsx]
+    components: [toast--color, toast--content, toast--orientation, chat-palette, chat-tool, chat-reasoning]
+  - id: kit-toast-close-button-size
+    title: СНЯТ — кнопка закрытия у Toast совпадает, расходилась обёртка as-child
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/overlays/Toast.jsx]
+    components: [toast--color, toast--content, toast--orientation]
+  - id: stand-drawer-text-not-origin
+    title: субпиксельная разница текста у drawer — не от источника страницы
+    side: ours
+    status: fixed
+    report: замер 2026-09-19
+    files: []
+    components: [drawer--right]
+  - id: kit-line-height-expression-not-literal
+    title: высота строки в токенах кита была выражением, а не числом настоящей сборки Tailwind
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [tokens/utilities.css]
+    components: [table, timeline, separator, auth-form, dashboard-navbar, modal--default, modal--no-overlay]
+  - id: kit-use-site-ui-overrides-lost
+    title: переопределения ui, заданные в месте применения, до вложенного компонента не доходят
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [lib/use-site.js, components/navigation/Timeline.jsx]
+    components: [timeline]
+  - id: kit-command-palette-kbd-slot-name
+    title: кит ставит Kbd имя слота base, которого в библиотеке нет — на пиксели не влияет
+    side: kit
+    status: accepted
+    decided: 2026-09-24
+    reason: "Кит ставит узлу Kbd имя слота base, а у Kbd.vue в библиотеке data-slot нет вовсе. Отсюда двадцать лишних узлов base в счёте слотов страницы command-palette, но на пиксели это не влияет: клавиши совпадают по размеру (17×16 и 16×16), классам и фону, отличается только атрибут data-slot, который ничего не красит, и пары command-palette в нуле. Принято решением человека 2026-09-24: «давай все примем и закончим уже». Вывод для метода: расхождение счёта слотов не равно расхождению картинки, и прежде чем нести такой счёт в промпт, надо смотреть, красит ли лишний узел. Цена: поиск по data-slot=base в ките найдёт у клавиш узел, которого у библиотеки нет."
+    report: замер 2026-09-19
+    files: [components/core/Kbd.jsx]
+    components: [command-palette]
+  - id: kit-define-content-multiplied
+    title: содержимое define-шаблона размножалось вчетверо — регресс раундов 48-50
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [lib/factory.jsx]
+    components: [pricing-plan, pricing-plans]
+  - id: kit-select-menu-items-doubled
+    title: SelectMenu рисует каждый пункт дважды — регресс раунда 49
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/forms/SelectMenu.jsx]
+    components: [select-menu, input-menu]
+  - id: kit-empty-text-no-nbsp
+    title: пустой текст не падает в неразрывный пробел, и узел схлопывается
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/forms/Select.jsx, components/forms/SelectMenu.jsx]
+    components: [select, select-menu]
+  - id: kit-toast-orientation-actions
+    title: Toast рисует обе ветки actions — та же конструкция, что была у Alert
+    side: kit
+    status: fixed
+    report: замер 2026-09-19
+    files: [components/overlays/Toast.jsx]
+    components: [toast--color, toast--content, toast--orientation]
+  - id: kit-toast-root-instead-of-viewport
+    title: тостер выровнен — viewport, вложенность и смещение стопки закрыты раундами 45-52
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-34
+    files: [components/overlays/Toast.jsx, components/overlays/Toaster.jsx]
+    components: [toast--color, toast--content, toast--orientation, toaster--top-left, toaster--top-center, toaster--top-right, toaster--bottom-left, toaster--bottom-center, toaster--bottom-right]
+  - id: kit-select-value-and-item-branches
+    title: Select рисует value вместо placeholder и выдаёт метку с разделителем на каждый пункт
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-36
+    files: [components/forms/Select.jsx]
+    components: [select]
+  - id: kit-progress-group-no-dot
+    title: у пунктов списка ProgressGroup нет точки, задающей цвет ряда
+    side: kit
+    status: fixed
+    report: 2026-09-19#раунд-37
+    files: [components/core/ProgressGroup.jsx]
+    components: [progress-group]
+  - id: kit-page-section-gate-single-prop
+    title: PageSection не рисует секции, у которых задан только icon
+    side: kit
+    status: fixed
+    report: 2026-09-19#раунд-39
+    files: [components/page/PageSection.jsx]
+    components: [page-section]
+  - id: kit-dropdown-menu-root-and-off-by-one
+    title: у панелей dropdown-menu лишний root и не хватает по одному пункту
+    side: kit
+    status: fixed
+    report: 2026-09-19#раунд-38
+    files: [components/navigation/DropdownMenu.jsx]
+    components: [dropdown-menu]
+  - id: kit-dropdown-menu-content-lost
+    title: DropdownMenu не рисует панель, хотя open передан обеими сторонами
+    side: kit
+    status: fixed
+    report: 2026-09-19#раунд-38
+    files: [components/navigation/DropdownMenu.jsx]
+    components: [dropdown-menu]
+  - id: kit-avatar-group-root-instead-of-base
+    title: каждый аватар в группе помечен root вместо base
+    side: kit
+    status: fixed
+    report: 2026-09-19#раунд-38
+    files: [components/core/AvatarGroup.jsx]
+    components: [avatar-group]
+  - id: kit-checkbox-no-indicator
+    title: Checkbox не рисует индикатор и значок внутри него
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-36
+    files: [components/forms/Checkbox.jsx]
+    components: [checkbox, checkbox-group]
+  - id: kit-input-tags-no-delete-icon
+    title: у тегов InputTags нет крестика удаления
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-36
+    files: [components/forms/InputTags.jsx]
+    components: [input-tags]
+  - id: kit-select-menu-item-chrome-and-clear
+    title: у пунктов SelectMenu нет обвязки, зато кнопка очистки у всех и value вместо placeholder
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-34
+    files: [components/forms/SelectMenu.jsx]
+    components: [select-menu]
+  - id: kit-pricing-plan-price-in-body
+    title: блок цены всегда в body, а библиотека переносит его в footer при горизонтальной ориентации
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-33
+    files: [components/page/PricingPlan.jsx]
+    components: [pricing-plan]
+  - id: kit-navigation-menu-children-lost
+    title: NavigationMenu задваивает content и childList, а детей пунктов не рисует вовсе
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-33
+    files: [components/navigation/NavigationMenu.jsx]
+    components: [navigation-menu]
+  - id: kit-command-palette-empty-group
+    title: пустая палитра рисует группу, которой нет у библиотеки
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-33
+    files: [components/navigation/CommandPalette.jsx]
+    components: [command-palette]
+  - id: kit-tree-tags-and-selected
+    title: Tree рисует корень div вместо ul, ссылку a вместо button и красит один пункт выбранным
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-32
+    files: [components/navigation/Tree.jsx]
+    components: [tree]
+  - id: kit-pricing-plan-button-defaults
+    title: кнопка плана без block и без size lg
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-32
+    files: [components/page/PricingPlan.jsx]
+    components: [pricing-plan, pricing-plans]
+  - id: kit-table-extra-rows-missing-head
+    title: Table рисует лишние строки и ячейки и не дорисовывает шапку с разделителями
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-32
+    files: [components/data/Table.jsx]
+    components: [table]
+  - id: kit-tabs-content-single
+    title: Tabs рисует одну панель содержимого на всю страницу вместо одной на каждый компонент
+    side: kit
+    status: fixed
+    report: 2026-09-18#раунд-26
+    files: [components/navigation/Tabs.jsx]
+    components: [tabs]
+  - id: kit-default-value-ignored
+    title: кит не выбирает активный элемент по defaultValue — ни data-state=active, ни indicator
+    side: kit
+    status: fixed
+    report: 2026-09-18#артборды
+    files: [components/navigation/Tabs.jsx, components/navigation/Timeline.jsx]
+    components: [tabs, timeline]
+  - id: kit-main-height
+    title: "слепой ноль main: измеренные 736 против 56px, дифу не видны"
+    side: kit
+    status: fixed
+    report: 2026-09-17#сводка
+    files: [localizeFixed]
+    components: [main, sidebar--none-floating, sidebar--none-inset, sidebar--left-none, sidebar--right-none]
+  - id: stand-uninformative-zero
+    title: "слепые нули container/page-body: состав страницы не делает свойство наблюдаемым"
+    side: ours
+    status: fixed
+    report: 2026-09-17#сводка
+    files: []
+    components: [container, page-body]
+  - id: glyph-source
+    title: глифы у сторон из разных источников, кит-сторона невоспроизводима по построению
+    side: construction
+    status: accepted
+    decided: 2026-09-24
+    reason: "Глифы иконок стороны берут из разных источников: приложение — из @iconify-json/lucide в node_modules, кит — через iconify-icon@3 с CDN в рантайме, строя из рисунка маску (lib/iconify.jsx). Сейчас источники синхронны: все пары с иконками в нуле. Это риск на будущее, а не текущая находка, и принят он решением человека 2026-09-24: «давай все примем и закончим уже». Цена: если набор Lucide на CDN уйдёт вперёд относительно установленного пакета, пары с иконками разойдутся без всякой правки кита, и причину надо будет искать здесь."
+    report: 2026-09-17#окружение
+    files: []
+    components: []
+  - id: demo-png-noise
+    title: шум декодирования demo.png
+    side: construction
+    status: fixed
+    report: 2026-09-17#окружение
+    files: []
+    components: [avatar]
+  - id: floating-ui-measure
+    title: позиционирование floating-ui по реальному измерению триггера — не выводимо статически
+    side: construction
+    status: fixed
+    report: 2026-09-17#девять-системных-классов-кита
+    files: []
+    components: []
+  - id: context-menu-incomparable
+    title: сторона приложения не может статически показать открытую панель context-menu
+    side: ours
+    status: accepted
+    decided: 2026-09-24
+    reason: "Сторона приложения не может статически показать открытую панель context-menu: это ограничение UContextMenu (reka-ui), а не дефект кита, и чинить на стороне кита нечего. Обе пары context-menu закрыты статусом incomparable (3 465 и 3 357 пикселей вне сверки); класс в их classes не перечислен, так задаёт схема. Принято как ограничение стенда решением человека 2026-09-24: «давай все примем и закончим уже». Цена: открытая панель контекстного меню в ките стендом не проверена."
+    report: 2026-09-17#сводка
+    files: []
+    components: [context-menu]
+  - id: kit-file-upload-inside-preview-wrapper
+    title: обёртка FileUpload рисовалась и там, где гейт тернарный и должен её убрать
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 перед раундом 56
+    files: [components/forms/FileUpload.jsx]
+    components: [file-upload]
+  - id: stand-drawer-snap-points-boolean
+    title: артборды drawer--*-snap передавали snapPoints булевым вместо массива
+    side: ours
+    status: fixed
+    report: замер 2026-09-19
+    files: [artboards/drawer--bottom-snap.html, artboards/drawer--right-snap.html]
+    components: [drawer--bottom-snap, drawer--right-snap]
+  - id: kit-drawer-snap-overlay
+    title: при снап-точках библиотека не красит подложку, кит красит
+    side: kit
+    status: accepted
+    decided: 2026-09-19
+    reason: "При снап-точках библиотека (vaul) гасит подложку, пока ящик не дошёл до последней точки, и высоту панели берёт из точки; кит рисует подложку безусловно, а высоту по содержимому (замер: над панелью у приложения цвет фона страницы, у кита фон с подложкой; высота 370 против 230). Решение человека 2026-09-19: обе страницы со снап-точками сняты со стенда целиком, а не приняты числом. Довод: snapPoints — проп поведения, перетаскивание между точками, и его статический вид выводится только из семантики vaul, а не из разметки. Покрытие не страдает: оставшиеся восемь пар drawer проверяют все четыре направления и inset, тогда как снап-страницы держали 31,7 % дифа всего прогона. Запись оставлена как измеренное знание: если снап-точки вернутся, механизм уже назван. Цена: ящик со снап-точками в макете будет с подложкой и высотой по содержимому."
+    report: замер 2026-09-19 после раунда 56
+    files: [components/overlays/Drawer.jsx]
+    components: [drawer--bottom-snap, drawer--right-snap]
+  - id: kit-page-default-slot-left-center
+    title: "РЕГРЕСС раунда 56: содержимое безымянного слота Page ушло из center"
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 56
+    files: [lib/factory.jsx]
+    components: [page]
+  - id: kit-page-aside-top-gate-on-slot
+    title: PageAside рисует блок top, хотя гейт стоит на слоте, которого нет
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 56
+    files: [components/page/PageAside.jsx]
+    components: [page]
+  - id: stand-tree-artboard-not-page
+    title: артборд tree расходился со страницей в трёх местах разом
+    side: ours
+    status: fixed
+    report: замер 2026-09-19 после раунда 56
+    files: [artboards/tree.html, artboards/tree.dark.html]
+    components: [tree]
+  - id: stand-navigation-menu-level-not-on-page
+    title: артборд navigation-menu передавал level, которого на странице нет
+    side: ours
+    status: fixed
+    report: замер 2026-09-19 после раунда 56
+    files: [artboards/navigation-menu.html, artboards/navigation-menu.dark.html]
+    components: [navigation-menu]
+  - id: kit-links-button-size-from-wrong-component
+    title: размер кнопки ссылок берётся не от своего компонента — xl у PageCTA, умолчание у PageSection
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 56
+    files: [components/page/PageCTA.jsx, components/page/PageSection.jsx]
+    components: [page-cta, page-section]
+  - id: kit-progress-group-item-trailing-empty
+    title: у ProgressGroup пустой itemTrailing — проценты не считаются
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 56
+    files: [components/core/ProgressGroup.jsx]
+    components: [progress-group]
+  - id: kit-timeline-completed-state-not-set
+    title: у Timeline не ставится data-state="completed" — пройденные шаги не красятся
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 56
+    files: [components/navigation/Timeline.jsx]
+    components: [timeline]
+  - id: kit-command-palette-group-label-tag
+    title: ярлык группы нарисован тегом label вместо div и сжимается по тексту
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 58
+    files: [components/navigation/CommandPalette.jsx]
+    components: [command-palette]
+  - id: kit-progress-group-vertical-segment-size
+    title: у вертикального ProgressGroup сегменты нулевые — inline-стиль ставит width вместо height
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 59
+    files: [components/core/ProgressGroup.jsx]
+    components: [progress-group]
+  - id: kit-tree-selected-not-derived-from-default-value
+    title: Tree не красит выбранную строку, хотя defaultValue приходит пропом
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 60
+    files: [components/navigation/Tree.jsx]
+    components: [tree]
+  - id: kit-page-card-spotlight-painted-without-pointer
+    title: PageCard красит подсветку, которой без курсора не бывает
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 61
+    files: [components/page/PageCard.jsx]
+    components: [page-card]
+  - id: kit-listbox-check-icon-without-selection
+    title: Listbox выбирает пункт по полю value без valueKey — у библиотеки valueKey без умолчания
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 62
+    files: [components/navigation/Listbox.jsx]
+    components: [listbox]
+  - id: kit-navigation-menu-badge-use-site-props
+    title: бейдж у NavigationMenu рисуется своими умолчаниями и получает лишнюю иконку
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 63
+    files: [components/navigation/NavigationMenu.jsx, lib/use-site.js]
+    components: [navigation-menu]
+  - id: kit-toaster-offset-not-computed
+    title: у тостера не вычисляется --offset, стопка не разъезжается
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 63
+    files: [components/overlays/Toaster.jsx]
+    components: [toast--content, toast--color, toast--orientation]
+  - id: stand-file-upload-items-not-file-shape
+    title: артборд file-upload описывал файл своими ключами вместо формы File
+    side: ours
+    status: fixed
+    report: замер 2026-09-19 после раунда 64
+    files: [artboards/file-upload.html, artboards/file-upload.dark.html]
+    components: [file-upload]
+  - id: kit-file-upload-name-and-size-empty
+    title: "ОТОЗВАН: имя и размер файла были пусты по НАШЕЙ вине, не по вине кита"
+    side: ours
+    status: fixed
+    report: замер 2026-09-19 после раунда 64
+    files: [components/forms/FileUpload.jsx]
+    components: [file-upload]
+  - id: kit-file-upload-file-size-space
+    title: размер файла печатается с пробелом — «0 B» вместо «0B»
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 67
+    files: [components/forms/FileUpload.jsx]
+    components: [file-upload]
+  - id: kit-command-palette-placeholder-lost
+    title: у поля CommandPalette нет атрибута placeholder — ни из пропа, ни из умолчания
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 67
+    files: [components/navigation/CommandPalette.jsx]
+    components: [command-palette, dashboard-search, dashboard-search--size, dashboard-search--fullscreen]
+  - id: kit-icon-glyph-antialiasing
+    title: значки кита рисует веб-компонент, а библиотеку — CSS-маска; растеризация расходится
+    side: kit
+    status: fixed
+    report: контрольный опыт 2026-09-19 после раунда 74
+    files: [lib/iconify.jsx]
+    components: [alert, page-card, banner, page-cta, page-feature, page-grid, page-header, page-section]
+  - id: kit-overlay-close-button-not-focused
+    title: у открытой модалки кнопка закрытия в фокусе — кольцо рисует только приложение
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 68
+    files: [components/overlays/Modal.jsx, components/overlays/Slideover.jsx]
+    components: [modal--default, modal--fullscreen, modal--no-overlay, modal--scrollable, slideover--top, slideover--right, slideover--bottom, slideover--left, slideover--top-inset, slideover--right-inset, slideover--bottom-inset, slideover--left-inset]
+  - id: kit-overlay-focus-first-focusable
+    title: кольцо фокуса должно быть на ПЕРВОМ фокусируемом, а не всегда на кнопке закрытия
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 70
+    files: [components/overlays/Modal.jsx, components/dashboard/DashboardSearch.jsx]
+    components: [dashboard-search, dashboard-search--size, dashboard-search--fullscreen]
+  - id: kit-dashboard-sidebar-width-var-missing
+    title: у боковой панели не задана переменная --width, ширина падает на содержимое
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 72
+    files: [components/dashboard/DashboardSidebar.jsx]
+    components: [dashboard-sidebar--left, dashboard-sidebar--right, dashboard-sidebar--full, dashboard-sidebar--collapsed, dashboard-sidebar--toggle-left, dashboard-sidebar--toggle-right]
+  - id: kit-chat-messages-list-lost-chrome-added
+    title: ChatMessages не рисует сообщения, зато рисует индикатор, viewport и автопрокрутку
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 85
+    files: [components/chat/ChatMessages.jsx]
+    components: [chat-messages, chat-palette]
+  - id: kit-chat-palette-compact-not-passed
+    title: ChatPalette не передаёт compact вложенным сообщениям
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 87
+    files: [components/chat/ChatPalette.jsx]
+    components: [chat-palette]
+  - id: kit-chat-reasoning-trigger-empty
+    title: у ChatReasoning пустой триггер — нет ни подписи, ни шеврона
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 92
+    files: [components/chat/ChatReasoning.jsx]
+    components: [chat-reasoning]
+  - id: kit-chat-reasoning-collapsed-is-open
+    title: свёрнутый ChatReasoning раскрыт, и всё ниже уезжает на 27.98
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 93
+    files: [components/chat/ChatReasoning.jsx]
+    components: [chat-reasoning]
+  - id: stand-splitter-panels-empty
+    title: артборд splitter не наполнял панели, а страница их наполняет
+    side: ours
+    status: fixed
+    report: замер 2026-09-20 после раунда 99
+    files: []
+    components: [splitter]
+  - id: kit-splitter-no-layout-no-handle
+    title: Splitter не раскладывает панели, корень нулевой высоты и нет ручки
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 99
+    files: [components/data/Splitter.jsx]
+    components: [splitter]
+  - id: kit-form-field-size-not-on-root
+    title: вариант size не доходит до корня FormField, шрифт всегда md
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 98
+    files: [components/forms/FormField.jsx]
+    components: [form-field]
+  - id: kit-chat-tool-leading-icon-alone-false
+    title: у ведущего значка ChatTool применён вариант alone false, и он гаснет при раскрытии
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 97
+    files: [components/chat/ChatTool.jsx]
+    components: [chat-tool]
+  - id: kit-chat-tool-leading-icon-only-when-loading
+    title: у ChatTool ведущий значок рисуется только при loading
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 96
+    files: [components/chat/ChatTool.jsx]
+    components: [chat-tool]
+  - id: kit-chat-tool-chevron-state-and-open
+    title: у ChatTool нет шеврона, свёрнутые раскрыты и нет data-state
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 95
+    files: [components/chat/ChatTool.jsx]
+    components: [chat-tool]
+  - id: kit-chat-reasoning-trigger-no-data-state
+    title: на триггере ChatReasoning нет data-state, и шеврон не поворачивается
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 94
+    files: [components/chat/ChatReasoning.jsx]
+    components: [chat-reasoning]
+  - id: kit-chat-prompt-no-autofocus
+    title: ChatPrompt не наводит фокус на своё поле, и не появляется контур в 3 пикселя
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 89
+    files: [components/chat/ChatPrompt.jsx]
+    components: [chat-prompt, chat-palette]
+  - id: kit-chat-prompt-textarea-extra-md-text-sm
+    title: у textarea внутри ChatPrompt лишний md:text-sm и не доходит px-0 из темы
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 88
+    files: [components/chat/ChatPrompt.jsx]
+    components: [chat-prompt, chat-palette]
+  - id: kit-error-links-block-missing
+    title: Error не рисует блок links с кнопкой, и центрированное содержимое уезжает вверх
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 84
+    files: [components/core/Error.jsx]
+    components: [error]
+  - id: kit-overlay-content-no-side-offset
+    title: панель не отступает от триггера на 8 и не отодвигается от края окна
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 83
+    files: [components/forms/Select.jsx, components/forms/SelectMenu.jsx, components/navigation/DropdownMenu.jsx, components/overlays/Popover.jsx]
+    components: [select, select-menu, dropdown-menu, popover]
+  - id: kit-auth-form-password-toggle-missing
+    title: у поля пароля в AuthForm нет кнопки показа, и значок не тот
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 82
+    files: [components/auth/AuthForm.jsx]
+    components: [auth-form]
+  - id: kit-form-field-container-no-theme-classes
+    title: слот container у FormField не получает классов темы, поле поднимается на 4 пикселя
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 81
+    files: [components/forms/FormField.jsx]
+    components: [form, form-field]
+  - id: kit-collapsible-trigger-hidden-when-closed
+    title: закрытый Collapsible не рисует триггер, корень схлопнут в нулевую высоту
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 80
+    files: [components/core/Collapsible.jsx]
+    components: [collapsible]
+  - id: kit-separator-avatar-branch-missing
+    title: Separator не рисует ветку avatar, линии встают не по центру и длиннее
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 79
+    files: [components/core/Separator.jsx]
+    components: [separator]
+  - id: kit-sidebar-state-not-on-gap-and-container
+    title: у Sidebar состояние не попадает на слоты gap и container, свёрнутая панель не уезжает
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 78
+    files: [components/navigation/Sidebar.jsx]
+    components: [sidebar--collapsed]
+  - id: stand-dashboard-panel-size-boolean
+    title: артборд dashboard-panel--size передавал булев size там, где страница задаёт default-size 30
+    side: ours
+    status: fixed
+    report: замер 2026-09-20 после раунда 77
+    files: []
+    components: [dashboard-panel--size]
+  - id: kit-dashboard-panel-default-size-missing
+    title: у DashboardPanel нет числового defaultSize, ширина панели падает на содержимое
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 77
+    files: [components/dashboard/DashboardPanel.jsx]
+    components: [dashboard-panel--size]
+  - id: kit-drawer-handle-no-opacity-radius
+    title: у ручки drawer нет прозрачности и скругления из таблицы vaul
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 76
+    files: [components/overlays/Drawer.jsx]
+    components: [drawer--top, drawer--top-inset, drawer--bottom, drawer--bottom-inset, drawer--left, drawer--left-inset, drawer--right, drawer--right-inset]
+  - id: kit-icon-mask-subpixel-shift
+    title: после перехода на маску значок встал с горизонтальным сдвигом на auth-form и badge
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 75
+    files: [lib/iconify.jsx]
+    components: [auth-form, badge]
+  - id: kit-command-palette-item-active-flag-missing
+    title: у строки палитры не проставлен active, и вариант темы active=true не применяется
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 73
+    files: [components/dashboard/DashboardSearch.jsx]
+    components: [dashboard-search, dashboard-search--size, dashboard-search--fullscreen]
+  - id: kit-navigation-menu-collapsed-compound-not-applied
+    title: составной вариант темы «vertical + collapsed» у navigation-menu не применяется
+    side: kit
+    status: fixed
+    report: замер 2026-09-19 после раунда 73
+    files: [components/navigation/NavigationMenu.jsx]
+    components: [dashboard-sidebar--collapsed]
+  - id: kit-input-date-time-segments-missing
+    title: InputDate и InputTime не рисуют сегменты, поле схлопнуто в пустую коробку
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 100
+    files: [components/forms/InputDate.jsx, components/forms/InputTime.jsx]
+    components: [input-date, input-time]
+  - id: kit-accordion-text-beside-body
+    title: текст пункта Accordion лёг рядом с body, а не внутрь него
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 101
+    files: [components/data/Accordion.jsx]
+    components: [accordion]
+  - id: kit-progress-steps-not-rendered
+    title: Progress не рисует шаги, когда max — массив
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 101
+    files: [components/core/Progress.jsx]
+    components: [progress]
+  - id: kit-pagination-edges-controls-and-item-size
+    title: Pagination путает showEdges с showControls и не даёт пунктам квадрат
+    side: kit
+    status: fixed
+    report: замер 2026-09-20 после раунда 101
+    files: [components/navigation/Pagination.jsx]
+    components: [pagination]
+  - id: pricing-table-format-slot-name
+    title: "formatSlotName у PricingTable роняет страницу в 500 (баг библиотеки, не кита)"
+    side: library
+    status: accepted
+    decided: 2026-09-24
+    reason: "Баг библиотеки, а не кита: formatSlotName в PricingTable.vue:54 ронял страницу стенда в 500. Стенд обходил его симметрично — id: 'untitled' на обеих сторонах, — и в счёт расхождений кита он не входил. После вывода семейства Pricing из кита (класс kit-pricing-out-of-scope) пары pricing-table на стенде нет. Принято решением человека 2026-09-24: «давай все примем и закончим уже». Сам баг библиотеки не перепроверялся. Цена: если PricingTable вернётся на стенд, обход понадобится снова."
+    report: 2026-09-17#сводка
+    files: ["PricingTable.vue:54"]
+    components: [pricing-table]
+  - id: kit-progress-indicator-inverted-and-array-max
+    title: заливка Progress не учитывает inverted и делит на 100 при max-массиве
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 103
+    files: [components/core/Progress.jsx]
+    components: [progress]
+  - id: kit-progress-status-text-empty
+    title: status у Progress и ProgressGroup пустой — вычисляемый текст {{ percent }}% не печатается
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 103
+    files: [components/core/Progress.jsx, components/core/ProgressGroup.jsx]
+    components: [progress, progress-group]
+  - id: kit-pin-input-cells-from-length
+    title: PinInput не рисует ни одной ячейки — повторяет по items вместо length
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 104
+    files: [components/forms/PinInput.jsx]
+    components: [pin-input]
+  - id: kit-page-logos-reuse-missing
+    title: PageLogos не рисует лого — определение списка есть, точки переиспользования нет
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 104
+    files: [components/page/PageLogos.jsx]
+    components: [page-logos]
+  - id: kit-footer-columns-two-levels
+    title: FooterColumns сливает колонки в одну — проп items вместо columns и один уровень
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 104
+    files: [components/navigation/FooterColumns.jsx, components/navigation/FooterColumns.d.ts]
+    components: [footer-columns]
+  - id: kit-header-children-in-closed-menu-body
+    title: Header кладёт детей в body закрытого мобильного меню вместо center
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 104
+    files: [components/navigation/Header.jsx]
+    components: [header]
+  - id: kit-pin-input-cell-value-whole-array
+    title: PinInput кладёт в каждую ячейку весь modelValue вместо элемента по индексу
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 106
+    files: [components/forms/PinInput.jsx]
+    components: [pin-input]
+  - id: kit-header-left-right-outside-container
+    title: Header рисует left, right и toggle после container, а не внутри; title — пустая кнопка
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 106
+    files: [components/navigation/Header.jsx]
+    components: [header]
+  - id: kit-listbox-command-palette-empty-text
+    title: пустое состояние Listbox и CommandPalette без текста «No data»; у Listbox нет и узла
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 105
+    files: [components/navigation/Listbox.jsx, components/navigation/CommandPalette.jsx]
+    components: [listbox, command-palette]
+  - id: kit-listbox-command-palette-virtualize-flat
+    title: virtualize у Listbox и CommandPalette рисует group (и label) вместо плоского списка
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 105
+    files: [components/navigation/Listbox.jsx, components/navigation/CommandPalette.jsx]
+    components: [listbox, command-palette]
+  - id: kit-listbox-leading-chain
+    title: Listbox — itemLeadingChip срабатывает на пункте с avatar, а на пункте с chip нет
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 105
+    files: [components/navigation/Listbox.jsx]
+    components: [listbox]
+  - id: kit-tree-li-theme-class
+    title: Tree не ставит на li класс темы item / itemWithChildren — вложенные пункты без отступа
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 105
+    files: [components/navigation/Tree.jsx]
+    components: [tree]
+  - id: kit-file-upload-files-inside-base
+    title: FileUpload ставит files после base, когда position (явный или выведенный) — inside
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 105
+    files: [components/forms/FileUpload.jsx]
+    components: [file-upload]
+  - id: kit-listbox-highlight-first-item
+    title: Listbox не подсвечивает при монтировании выбранный или первый пункт (data-highlighted)
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 107
+    files: [components/navigation/Listbox.jsx]
+    components: [listbox]
+  - id: kit-command-palette-label-outside-base
+    title: CommandPalette печатает текст пункта в itemLabel, а itemLabelBase оставляет пустым
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 107
+    files: [components/navigation/CommandPalette.jsx]
+    components: [command-palette]
+  - id: kit-tree-link-expanded-disabled
+    title: Tree — у ссылки нет data-expanded (шеврон не повёрнут) и не применён вариант disabled
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 107
+    files: [components/navigation/Tree.jsx]
+    components: [tree]
+  - id: kit-chip-avatar-size-context
+    title: Chip не передаёт вложенному Avatar свой размер (provide через useAvatarGroup)
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 107
+    files: [components/core/Chip.jsx]
+    components: [chip]
+  - id: kit-avatar-group-color-context
+    title: AvatarGroup передаёт детям размер, но не цвет
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 107
+    files: [components/core/AvatarGroup.jsx]
+    components: [avatar-group]
+  - id: kit-input-tags-input-value-array
+    title: InputTags кладёт массив modelValue в value текстового поля
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 107
+    files: [components/forms/InputTags.jsx]
+    components: [input-tags]
+  - id: kit-command-palette-kbd-size-from-theme
+    title: CommandPalette рисует kbd пунктов всегда sm, а размер берётся из темы по размеру палитры
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/navigation/CommandPalette.jsx]
+    components: [command-palette]
+  - id: kit-listbox-disabled-items
+    title: disabled Listbox — пункты без data-disabled и первый подсвечен
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/navigation/Listbox.jsx]
+    components: [listbox]
+  - id: kit-chip-text-not-rendered
+    title: Chip с text не печатает текст в base
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/core/Chip.jsx]
+    components: [chip]
+  - id: kit-dashboard-search-close-in-input
+    title: DashboardSearch рисует крестик в лишнем header вместо trailing поля ввода палитры
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/dashboard/DashboardSearch.jsx, components/navigation/CommandPalette.jsx]
+    components: [dashboard-search, dashboard-search--size, dashboard-search--fullscreen]
+  - id: kit-overlay-trigger-inside-content
+    title: Popover и Tooltip рисуют триггер (детей) внутри content, а не перед ним
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 107
+    files: [components/overlays/Popover.jsx, components/core/Tooltip.jsx]
+    components: [popover, tooltip]
+  - id: kit-tooltip-kbds-size
+    title: Tooltip рисует kbds размера md вместо kbdsSize sm из темы
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 107
+    files: [components/core/Tooltip.jsx]
+    components: [tooltip]
+  - id: kit-header-title-link-without-props
+    title: "title у Header — пустой button компонента Link, ни to, ни текст до него не доходят"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 109
+    files: [components/navigation/Header.jsx]
+    components: [header]
+  - id: kit-popper-arrow-missing
+    title: у Popover и Tooltip с arrow нет стрелки и нет отступа под неё
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 109
+    files: [components/overlays/Popover.jsx, components/core/Tooltip.jsx]
+    components: [popover, tooltip]
+  - id: kit-popper-position-not-rounded
+    title: кит не округляет позицию плавающей панели до пикселя устройства
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 109
+    files: [components/overlays/Popover.jsx, components/core/Tooltip.jsx]
+    components: [tooltip, popover]
+  - id: kit-command-palette-loading-icon
+    title: CommandPalette с loading рисует в поле лупу, а не loader-circle с animate-spin
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 109
+    files: [components/navigation/CommandPalette.jsx]
+    components: [command-palette]
+  - id: kit-command-palette-virtualize-no-highlight
+    title: CommandPalette с virtualize не подсвечивает первый пункт при монтировании
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 109
+    files: [components/navigation/CommandPalette.jsx]
+    components: [command-palette]
+  - id: kit-link-renders-div
+    title: Link рисуется блочным div[base] > span, а не строчной a
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/core/Link.jsx]
+    components: [page-aside, page]
+  - id: kit-page-aside-top-outside-body
+    title: PageAside кладёт содержимое слота top в сам top, а не в topBody
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/page/PageAside.jsx]
+    components: [page-aside]
+  - id: kit-input-menu-multiple-tags
+    title: "InputMenu multiple — теги по items, а не по modelValue; пустой текст; корень не base"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/forms/InputMenu.jsx]
+    components: [input-menu]
+  - id: kit-slider-thumb-in-bounds-offset
+    title: Slider ставит бегунок ровно на процент без поправки reka внутрь дорожки
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/forms/Slider.jsx]
+    components: [slider]
+  - id: kit-footer-children-outside-center
+    title: Footer рисует детей после container, center пустой
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/navigation/Footer.jsx]
+    components: [footer]
+  - id: kit-field-group-context
+    title: FieldGroup не передаёт детям ориентацию — нет классов скругления на стыках
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/forms/FieldGroup.jsx]
+    components: [field-group]
+  - id: kit-breadcrumb-separator-icon-prop
+    title: Breadcrumb не берёт separatorIcon из пропа — всегда шеврон
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/navigation/Breadcrumb.jsx]
+    components: [breadcrumb]
+  - id: kit-dashboard-search-button-trailing-outside
+    title: DashboardSearchButton рисует kbds снаружи кнопки и размера sm
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 108
+    files: [components/dashboard/DashboardSearchButton.jsx]
+    components: [dashboard-search-button]
+  - id: kit-page-aside-children-into-top-slot
+    title: PageAside с top отдаёт детей узлу слота top в topBody, а текст top дублирует в сам top
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [components/page/PageAside.jsx]
+    components: [page-aside]
+  - id: stand-navigation-menu-open-not-model-value
+    title: "артборд navigation-menu открывал пункты пропом open, которого у NavigationMenu нет"
+    side: ours
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [artboards/navigation-menu.html, artboards/navigation-menu.dark.html]
+    components: [navigation-menu]
+  - id: kit-navigation-menu-open-state
+    title: "NavigationMenu не открывает пункт по modelValue/defaultOpen и не ставит data-state"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [components/navigation/NavigationMenu.jsx]
+    components: [navigation-menu]
+  - id: kit-navigation-menu-trailing-icon-on-badge
+    title: "NavigationMenu рисует шеврон у пункта с бейджем без детей"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [components/navigation/NavigationMenu.jsx]
+    components: [navigation-menu]
+  - id: kit-navigation-menu-horizontal-level
+    title: "у горизонтального NavigationMenu ссылки верхнего уровня без level: true — нет подчёркивания highlight"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [components/navigation/NavigationMenu.jsx]
+    components: [navigation-menu]
+  - id: kit-select-display-value-and-panel-width
+    title: "Select печатает значение вместо label, панель шире триггера, первый пункт не подсвечен"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [components/forms/Select.jsx]
+    components: [select]
+  - id: kit-tabs-badge-defaults
+    title: "бейдж пункта Tabs нарисован умолчаниями Badge вместо neutral outline sm"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [components/navigation/Tabs.jsx]
+    components: [tabs]
+  - id: kit-button-loading-not-disabled
+    title: "Button с loading не ставит disabled — нет opacity-75"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [components/core/Button.jsx]
+    components: [button]
+  - id: kit-drawer-vaul-layer
+    title: "Drawer без CSS и атрибутов vaul — текст растеризуется вне композитного слоя"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [components/overlays/Drawer.jsx]
+    components: [drawer--bottom, drawer--bottom-inset, drawer--left, drawer--left-inset, drawer--right, drawer--right-inset]
+  - id: kit-toast-progress-color
+    title: полоса прогресса тоста всегда primary, а не цвета тоста
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [components/overlays/Toast.jsx]
+    components: [toast--color]
+  - id: kit-toaster-stack-in-flow
+    title: стопка тостера в потоке с gap, а не absolute с transform — значок второго тоста растеризуется иначе
+    side: kit
+    status: accepted
+    decided: 2026-09-23
+    reason: "Стопка тостов у кита лежит в потоке (flex column-reverse с gap 16), у библиотеки каждый тост стоит absolute со своим transform. Координаты совпадают до сотых, но сдвинутые тосты растеризуются иначе: около 13 точек значка у верхних тостов и строка текста около 10 точек у нижних, на каждой паре тостера. Опыт показал, что раскладка библиотеки в ките убирает и значок, и строку, но править не стали. Принято решением человека 2026-09-23: «по тостам можем принять и сказать, что все ок, я визуально не вижу важной разницы, тосты в ките достаточно репрезентативны для использования в макетах». Цена: единичные точки сглаживания у сдвинутых тостов."
+    report: замер 2026-09-23 после раунда 110
+    files: [components/overlays/Toaster.jsx]
+    components: [toaster--bottom-center, toaster--bottom-left, toaster--bottom-right, toaster--top-center, toaster--top-left, toaster--top-right, toast--content, toast--orientation]
+  - id: stand-toast-progress-time
+    title: длина полосы прогресса у приложения зависит от момента снимка
+    side: ours
+    status: accepted
+    decided: 2026-09-23
+    reason: "Длина полосы прогресса тоста у приложения зависит от момента снимка: UProgress показывает долю оставшегося времени, к снимку проходит около 1,5 с из duration 60000, и конец полосы на 11 px короче; у кита времени нет, и полоса полная. Около 10 точек на каждую полосу, на всех парах тостов и тостера. Принято тем же решением человека 2026-09-23, что и стопка тостов: «по тостам можем принять и сказать, что все ок, я визуально не вижу важной разницы, тосты в ките достаточно репрезентативны для использования в макетах». duration стенда не меняли, хотя увеличение на порядки свело бы сдвиг к долям пикселя. Цена: пиксели вне сверки у этих пар плавают от прогона к прогону."
+    report: замер 2026-09-23 после раунда 110
+    files: [app/pages/parity/toast--color.vue]
+    components: [toast--color, toast--content, toast--orientation, toaster--bottom-center, toaster--bottom-left, toaster--bottom-right, toaster--top-center, toaster--top-left, toaster--top-right]
+  - id: kit-select-menu-value-search-panel
+    title: "SelectMenu — значение multiple по разу на пункт, без плейсхолдера поиска, панель не шириной триггера"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [components/forms/SelectMenu.jsx]
+    components: [select-menu]
+  - id: kit-scroll-area-children-outside-viewport
+    title: дети ScrollArea рисуются после viewport, а не внутри — горизонтальная ячейка в столбик
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 110
+    files: [components/data/ScrollArea.jsx]
+    components: [scroll-area]
+  - id: kit-navigation-menu-viewport-size
+    title: "NavigationMenu — viewport и content открытого пункта высотой 0: нет переменных --reka-navigation-menu-viewport-*"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 111
+    files: [components/navigation/NavigationMenu.jsx]
+    components: [navigation-menu]
+  - id: kit-dropdown-menu-item-color
+    title: "DropdownMenu — пункт не получает свой color: у всех нейтральный текст и подсветка"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 111
+    files: [components/navigation/DropdownMenu.jsx]
+    components: [dropdown-menu]
+  - id: kit-select-content-carries-base-classes
+    title: "Select — на content склеены классы триггера base: паддинг 6/36/6/10 и items-center сдвигают пункты"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 111
+    files: [components/forms/Select.jsx]
+    components: [select]
+  - id: kit-tabs-indicator-offset-rounding
+    title: "Tabs — индикатор меряется getBoundingClientRect, а reka берёт целые offsetWidth/offsetLeft"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 111
+    files: [components/navigation/Tabs.jsx]
+    components: [tabs]
+  - id: kit-navigation-menu-vertical-child-level
+    title: "NavigationMenu — дочерние ссылки вертикального меню без level: нет полоски highlight у активного"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 112
+    files: [components/navigation/NavigationMenu.jsx]
+    components: [navigation-menu]
+  - id: kit-select-menu-virtualize-group
+    title: "SelectMenu с virtualize — пункты в лишней group с p-1: двойной паддинг"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 112
+    files: [components/forms/SelectMenu.jsx]
+    components: [select-menu]
+  - id: kit-drawer-right-button-corner-aa
+    title: "drawer--right.light — 3 точки сглаживания скругления кнопки footer, принято шумом"
+    side: kit
+    status: accepted
+    decided: 2026-09-23
+    reason: "3 точки сглаживания на правом скруглении кнопок footer у drawer--right в светлой теме, в тёмной 0. DOM, коробки до тысячных, will-change: transform и анимация slideFromRight у сторон совпадают, прежние классы этой пары закрыты. Принято шумом решением человека 2026-09-23: на вопрос «Глазом разницу не увидеть, как у тостов. Принять как шум и закрыть пару?» ответ «да, давай». Цена: если остаток на паре вырастет, новое расхождение будет прятаться за этим классом, пока его не сверят с числом 3."
+    report: замер 2026-09-23 после раунда 112
+    files: [components/overlays/Drawer.jsx]
+    components: [drawer--right]
+  - id: kit-input-menu-multiple-and-panels
+    title: "InputMenu — при multiple значение в поле тегов и нет trailing; панели absolute, без подсветки и переворота"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 112
+    files: [components/forms/InputMenu.jsx]
+    components: [input-menu]
+  - id: kit-input-number-buttons-color
+    title: "InputNumber — кнопки increment/decrement всегда neutral, а не цвета поля"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 112
+    files: [components/forms/InputNumber.jsx]
+    components: [input-number]
+  - id: stand-dashboard-sidebar-collapsed-menu-prop
+    title: артборд свёрнутой панели не передавал NavigationMenu проп collapsed, который страница берёт из слота
+    side: ours
+    status: fixed
+    report: замер 2026-09-23 после раунда 112
+    files: [artboards/dashboard-sidebar--collapsed.html, artboards/dashboard-sidebar--collapsed.dark.html]
+    components: [dashboard-sidebar--collapsed]
+  - id: kit-switch-loading-not-disabled
+    title: "Switch с loading не выключается — нет opacity-75 и disabled"
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 112
+    files: [components/forms/Switch.jsx]
+    components: [switch]
+  - id: kit-blog-post-date-not-formatted
+    title: BlogPost выводит дату строкой как есть, без Intl-форматирования
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 113
+    files: [components/page/BlogPost.jsx]
+    components: [blog-post]
+  - id: kit-carousel-arrows-and-dots
+    title: Carousel рисует стрелки вариантом link без disabled, а в точки кладёт содержимое слота
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 113
+    files: [components/data/Carousel.jsx]
+    components: [carousel]
+  - id: kit-checkbox-group-required-to-items
+    title: CheckboxGroup передаёт required каждому пункту — звёздочка после каждой подписи
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 113
+    files: [components/forms/CheckboxGroup.jsx]
+    components: [checkbox-group]
+  - id: kit-slideover-content-absolute
+    title: Slideover переписывает fixed у content в absolute — глиф крестика растеризуется иначе
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 113
+    files: [components/overlays/Slideover.jsx]
+    components: [slideover]
+  - id: stand-empty-icon-as-avatar
+    title: Артборд empty передавал иконку через avatar.icon, а страница — пропом icon
+    side: ours
+    status: fixed
+    report: замер 2026-09-23 после раунда 112
+    files: [artboards/empty.html, artboards/empty.dark.html]
+    components: [empty]
+  - id: kit-empty-loading-icon
+    title: Empty с loading рисует icon вместо loadingIcon
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 113
+    files: [components/core/Empty.jsx]
+    components: [empty]
+  - id: construction-rounded-corner-aa
+    title: сглаживание скруглённого угла залитой плашки расходится при совпавшей до тысячных геометрии — принято шумом
+    side: construction
+    status: accepted
+    decided: 2026-09-23
+    reason: "Сглаживание скруглённого угла залитой плашки расходится одиночными пикселями при совпавшей до тысячных геометрии: у badge коробки, radius 6px, фон и box-shadow одинаковы, а край скругления даёт по 11 точек в каждой теме; у dashboard-navbar.light 2 точки, у dashboard-toolbar.light 1 (угол зелёной кнопки). Остаток нестабилен: badge.dark бывал и 0, и 11 без правки кита. Принято шумом решением человека 2026-09-23 на вопрос «принимаем эти четыре пары как шум?»: «да, принимаем». Цена: одиночные точки на краях плашек не отличить от настоящего расхождения по одной сумме — смотреть надо регион."
+    report: замер 2026-09-23 после раунда 113; решение человека 2026-09-23
+    files: []
+    components: [badge, dashboard-navbar, dashboard-toolbar]
+  - id: kit-input-number-vertical-icons
+    title: InputNumber с orientation vertical рисует плюс и минус вместо шевронов
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 114
+    files: [components/forms/InputNumber.jsx]
+    components: [input-number]
+  - id: kit-modal-content-absolute
+    title: Modal переписывает fixed у content в absolute — глиф крестика dashboard-search растеризуется иначе
+    side: kit
+    status: fixed
+    report: замер 2026-09-23 после раунда 114
+    files: [components/overlays/Modal.jsx]
+    components: [dashboard-search]
+  - id: kit-popper-align-ignored
+    title: портированное меню кита всегда центрировано по триггеру — content.align не читается
+    side: kit
+    status: fixed
+    report: сверка сценариев doc-страниц 2026-09-24 (задача nuxt-ui-ds-5el)
+    files: [DropdownMenu.jsx, Tooltip.jsx, Popover.jsx, lib/popper.js]
+    components: [dropdown-menu--portal, dropdown-menu--align, tooltip--align, popover--align]
+  - id: kit-command-palette-suffix-selected-highlight
+    title: CommandPalette не рисует suffix и значок выбора, подсвеченный пункт красит как активный
+    side: kit
+    status: fixed
+    report: сверка сценариев doc-страниц 2026-09-24 (задача nuxt-ui-ds-5el)
+    files: [components/navigation/CommandPalette.jsx]
+    components: [command-palette--selected]
+  - id: kit-page-card-spotlight-off-at-rest
+    title: PageCard выключает подсветку без курсора, а библиотека включает её при монтировании
+    side: kit
+    status: fixed
+    report: сверка сценариев doc-страниц 2026-09-24 (задача nuxt-ui-ds-5el)
+    files: [components/page/PageCard.jsx]
+    components: [page-card--spotlight]
+  - id: kit-chat-reasoning-leading-icon-alone
+    title: ChatReasoning не передаёт alone в leadingIcon — у раскрытого блока иконка пропадает
+    side: kit
+    status: fixed
+    report: сверка сценариев doc-страниц 2026-09-24 (задача nuxt-ui-ds-5el)
+    files: [components/chat/ChatReasoning.jsx]
+    components: [chat-reasoning--icon]
+  - id: kit-editor-no-tiptap
+    title: у Editor кита нет Tiptap — классы элемента ProseMirror лежат на корне, узла content нет
+    side: kit
+    status: accepted
+    decided: 2026-09-24
+    reason: "У Editor кита нет Tiptap: у библиотеки дерево div[root] > EditorContent[content] > ProseMirror[base], у кита один узел с data-slot=root. Замер на шести примерах doc-страницы: классы корня кита — ровно root ∪ base темы editor, ничего лишнего и ничего не недостаёт; modelValue не рисуется. Принято как отклонение решением человека 2026-09-24: «эдитор принимаем как отклонение». Пар стенда нет — editor исключён из стенда, и отклонение видно только в приёмке тем, где оно записано как ACCEPTED_PAINT в pipeline/audit/props.mjs: ожидание корня — склейка root и base, и любое другое отклонение Editor остаётся расхождением. Цена: в макете редактор — статичный блок без содержимого и без узла content."
+    report: приёмка тем audit:kit 2026-09-24, бандлы 117-120 (задача nuxt-ui-ds-baw)
+    files: [components/forms/Editor.jsx]
+    components: []
+pairs:
+  - {pair: avatar-group.light, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
+  - {pair: avatar-group.dark, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
+  - {pair: button.light, classes: [kit-child-slot-theme, kit-icon-glyph-size, kit-button-loading-not-disabled], residual: "?"}
+  - {pair: button.dark, classes: [kit-child-slot-theme, kit-icon-glyph-size, kit-button-loading-not-disabled], residual: "?"}
+  - {pair: chip.light, classes: [kit-group-context, kit-chip-avatar-size-context, kit-chip-text-not-rendered], residual: "?"}
+  - {pair: chip.dark, classes: [kit-group-context, kit-chip-avatar-size-context, kit-chip-text-not-rendered], residual: "?"}
+  - {pair: progress.light, classes: [kit-progress-steps-not-rendered, kit-progress-indicator-inverted-and-array-max, kit-progress-status-text-empty], residual: "?"}
+  - {pair: progress.dark, classes: [kit-progress-steps-not-rendered, kit-progress-indicator-inverted-and-array-max, kit-progress-status-text-empty], residual: "?"}
+  - {pair: progress-group.light, classes: [kit-progress-group-vertical-segment-size, kit-progress-group-item-trailing-empty, kit-progress-group-no-dot, kit-progress-status-text-empty], residual: "?"}
+  - {pair: progress-group.dark, classes: [kit-progress-group-vertical-segment-size, kit-progress-group-item-trailing-empty, kit-progress-group-no-dot, kit-progress-status-text-empty], residual: "?"}
+  - {pair: separator.light, classes: [], residual: "?"}
+  - {pair: separator.dark, classes: [], residual: "?"}
+  - {pair: color-picker.light, classes: [], residual: "?"}
+  - {pair: color-picker.dark, classes: [], residual: "?"}
+  - {pair: field-group.light, classes: [kit-group-context, kit-field-group-context], residual: "?"}
+  - {pair: field-group.dark, classes: [kit-group-context, kit-field-group-context], residual: "?"}
+  - {pair: form.light, classes: [kit-slot-no-data-slot], residual: "?"}
+  - {pair: form.dark, classes: [kit-slot-no-data-slot], residual: "?"}
+  - {pair: form-field.light, classes: [kit-slot-no-data-slot], residual: "?"}
+  - {pair: form-field.dark, classes: [kit-slot-no-data-slot], residual: "?"}
+  - {pair: input.light, classes: [kit-icon-glyph-size], residual: "?"}
+  - {pair: input.dark, classes: [kit-icon-glyph-size], residual: "?"}
+  - {pair: input-date.light, classes: [kit-repeat], residual: "?"}
+  - {pair: input-date.dark, classes: [kit-repeat], residual: "?"}
+  - {pair: input-number.light, classes: [kit-icon-glyph-size, kit-input-number-buttons-color, kit-input-number-vertical-icons], residual: "?"}
+  - {pair: input-number.dark, classes: [kit-icon-glyph-size, kit-input-number-buttons-color, kit-input-number-vertical-icons], residual: "?"}
+  - {pair: input-rating.light, classes: [kit-icon-glyph-size], residual: "?"}
+  - {pair: input-rating.dark, classes: [kit-icon-glyph-size], residual: "?"}
+  - {pair: input-tags.light, classes: [kit-repeat, kit-slot-no-data-slot, kit-input-tags-no-delete-icon, kit-input-tags-input-value-array], residual: "?"}
+  - {pair: input-tags.dark, classes: [kit-repeat, kit-slot-no-data-slot, kit-input-tags-no-delete-icon, kit-input-tags-input-value-array], residual: "?"}
+  - {pair: input-time.light, classes: [kit-repeat], residual: "?"}
+  - {pair: input-time.dark, classes: [kit-repeat], residual: "?"}
+  - {pair: pin-input.light, classes: [kit-repeat, kit-pin-input-cells-from-length, kit-pin-input-cell-value-whole-array], residual: "?"}
+  - {pair: pin-input.dark, classes: [kit-repeat, kit-pin-input-cells-from-length, kit-pin-input-cell-value-whole-array], residual: "?"}
+  - {pair: textarea.light, classes: [], residual: "?"}
+  - {pair: textarea.dark, classes: [], residual: "?"}
+  - {pair: checkbox.light, classes: [kit-variant-spread, kit-checkbox-no-indicator], residual: "?"}
+  - {pair: checkbox.dark, classes: [kit-variant-spread, kit-checkbox-no-indicator], residual: "?"}
+  - {pair: checkbox-group.light, classes: [kit-repeat, kit-checkbox-no-indicator, kit-checkbox-group-required-to-items], residual: "?"}
+  - {pair: checkbox-group.dark, classes: [kit-repeat, kit-checkbox-no-indicator, kit-checkbox-group-required-to-items], residual: "?"}
+  - {pair: file-upload.light, classes: [kit-file-upload-file-size-space, kit-file-upload-name-and-size-empty, stand-file-upload-items-not-file-shape, kit-file-upload-inside-preview-wrapper, kit-repeat, kit-file-upload-double-icon, kit-file-upload-size-not-passed-to-avatar, kit-file-upload-files-inside-base], residual: "?"}
+  - {pair: file-upload.dark, classes: [kit-file-upload-file-size-space, kit-file-upload-name-and-size-empty, stand-file-upload-items-not-file-shape, kit-file-upload-inside-preview-wrapper, kit-repeat, kit-file-upload-double-icon, kit-file-upload-size-not-passed-to-avatar, kit-file-upload-files-inside-base], residual: "?"}
+  - {pair: input-menu.light, classes: [kit-select-menu-items-doubled, kit-input-menu-multiple-tags, kit-input-menu-multiple-and-panels], residual: "?"}
+  - {pair: input-menu.dark, classes: [kit-select-menu-items-doubled, kit-input-menu-multiple-tags, kit-input-menu-multiple-and-panels], residual: "?"}
+  - {pair: listbox.light, classes: [kit-listbox-check-icon-without-selection, kit-repeat, kit-listbox-trailing-icon-always, kit-listbox-command-palette-empty-text, kit-listbox-command-palette-virtualize-flat, kit-listbox-leading-chain, kit-listbox-highlight-first-item, kit-listbox-disabled-items], residual: "?"}
+  - {pair: listbox.dark, classes: [kit-listbox-check-icon-without-selection, kit-repeat, kit-listbox-trailing-icon-always, kit-listbox-command-palette-empty-text, kit-listbox-command-palette-virtualize-flat, kit-listbox-leading-chain, kit-listbox-highlight-first-item, kit-listbox-disabled-items], residual: "?"}
+  - {pair: select.light, classes: [kit-isroot, kit-select-value-and-item-branches, kit-empty-text-no-nbsp, kit-select-display-value-and-panel-width, kit-select-content-carries-base-classes], residual: "?"}
+  - {pair: select.dark, classes: [kit-isroot, kit-select-value-and-item-branches, kit-empty-text-no-nbsp, kit-select-display-value-and-panel-width, kit-select-content-carries-base-classes], residual: "?"}
+  - {pair: select-menu.light, classes: [kit-isroot, kit-select-menu-item-chrome-and-clear, kit-empty-text-no-nbsp, kit-select-menu-items-doubled, kit-select-menu-value-search-panel, kit-select-menu-virtualize-group], residual: "?"}
+  - {pair: select-menu.dark, classes: [kit-isroot, kit-select-menu-item-chrome-and-clear, kit-empty-text-no-nbsp, kit-select-menu-items-doubled, kit-select-menu-value-search-panel, kit-select-menu-virtualize-group], residual: "?"}
+  - {pair: slider.light, classes: [kit-slider-thumb-in-bounds-offset], residual: "?"}
+  - {pair: slider.dark, classes: [kit-slider-thumb-in-bounds-offset], residual: "?"}
+  - {pair: switch.light, classes: [kit-variant-spread, kit-switch-loading-not-disabled], residual: "?"}
+  - {pair: switch.dark, classes: [kit-variant-spread, kit-switch-loading-not-disabled], residual: "?"}
+  - {pair: radio-group.light, classes: [], residual: "?"}
+  - {pair: radio-group.dark, classes: [], residual: "?"}
+  - {pair: alert.light, classes: [kit-icon-glyph-antialiasing, kit-alert-orientation-actions, kit-actions-props, kit-icon-glyph-size], residual: "замер 2026-09-19 после раунда 67: все 25 областей дифа лежат в колонке x 42-43 по 1-3 пикселя — сглаживание глифа, kit-icon-glyph-antialiasing; ждёт решения человека о принятии"}
+  - {pair: alert.dark, classes: [kit-icon-glyph-antialiasing, kit-alert-orientation-actions, kit-actions-props, kit-icon-glyph-size], residual: "замер 2026-09-19 после раунда 67: все 25 областей дифа лежат в колонке x 42-43 по 1-3 пикселя — сглаживание глифа, kit-icon-glyph-antialiasing; ждёт решения человека о принятии"}
+  - {pair: banner.light, classes: [kit-actions-props, kit-icon-glyph-size], residual: "?"}
+  - {pair: banner.dark, classes: [kit-actions-props, kit-icon-glyph-size], residual: "?"}
+  - {pair: empty.light, classes: [kit-actions-props, stand-empty-icon-as-avatar, kit-empty-loading-icon], residual: "?"}
+  - {pair: empty.dark, classes: [kit-actions-props, stand-empty-icon-as-avatar, kit-empty-loading-icon], residual: "?"}
+  - {pair: error.light, classes: [kit-localize-fixed], residual: "?"}
+  - {pair: error.dark, classes: [kit-localize-fixed], residual: "?"}
+  - {pair: modal--default.light, classes: [kit-overlay-close-button-not-focused, kit-modal-double-overlay, kit-shadow-ring, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: modal--default.dark, classes: [kit-overlay-close-button-not-focused, kit-modal-double-overlay, kit-shadow-ring, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: modal--fullscreen.light, classes: [kit-overlay-close-button-not-focused, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: modal--fullscreen.dark, classes: [kit-overlay-close-button-not-focused, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: modal--no-overlay.light, classes: [kit-overlay-close-button-not-focused, kit-shadow-ring, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: modal--no-overlay.dark, classes: [kit-overlay-close-button-not-focused, kit-shadow-ring, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: modal--scrollable.light, classes: [kit-overlay-close-button-not-focused, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size, kit-modal-scrollable-content-outside-overlay], residual: "?"}
+  - {pair: modal--scrollable.dark, classes: [kit-overlay-close-button-not-focused, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size, kit-modal-scrollable-content-outside-overlay], residual: "?"}
+  - {pair: popover.light, classes: [kit-child-slot-order, kit-overlay-trigger-inside-content, kit-popper-arrow-missing, kit-popper-position-not-rounded], residual: "?"}
+  - {pair: popover.dark, classes: [kit-child-slot-order, kit-overlay-trigger-inside-content, kit-popper-arrow-missing, kit-popper-position-not-rounded], residual: "?"}
+  - {pair: tooltip.light, classes: [kit-child-slot-order, kit-overlay-trigger-inside-content, kit-tooltip-kbds-size, kit-popper-arrow-missing, kit-popper-position-not-rounded], residual: "?"}
+  - {pair: tooltip.dark, classes: [kit-child-slot-order, kit-overlay-trigger-inside-content, kit-tooltip-kbds-size, kit-popper-arrow-missing, kit-popper-position-not-rounded], residual: "?"}
+  - {pair: badge.light, classes: [construction-rounded-corner-aa], residual: none}
+  - {pair: badge.dark, classes: [construction-rounded-corner-aa], residual: none}
+  - {pair: drawer--bottom.light, classes: [kit-if-gate-no-prop, kit-drawer-vaul-layer], residual: "?"}
+  - {pair: drawer--bottom.dark, classes: [kit-if-gate-no-prop, kit-drawer-vaul-layer], residual: "?"}
+  - {pair: drawer--bottom-inset.light, classes: [kit-if-gate-no-prop, kit-drawer-vaul-layer], residual: "?"}
+  - {pair: drawer--bottom-inset.dark, classes: [kit-if-gate-no-prop, kit-drawer-vaul-layer], residual: "?"}
+  - {pair: drawer--left.light, classes: [kit-if-gate-no-prop, kit-drawer-vaul-layer], residual: "?"}
+  - {pair: drawer--left.dark, classes: [kit-if-gate-no-prop, kit-drawer-vaul-layer], residual: "?"}
+  - {pair: drawer--left-inset.light, classes: [kit-if-gate-no-prop, kit-drawer-vaul-layer], residual: "?"}
+  - {pair: drawer--left-inset.dark, classes: [kit-if-gate-no-prop, kit-drawer-vaul-layer], residual: "?"}
+  - {pair: drawer--right.light, classes: [kit-drawer-right-button-corner-aa], residual: none}
+  - {pair: drawer--right.dark, classes: [kit-if-gate-no-prop, kit-drawer-vaul-layer], residual: "?"}
+  - {pair: drawer--right-inset.light, classes: [kit-if-gate-no-prop, kit-drawer-vaul-layer], residual: "?"}
+  - {pair: drawer--right-inset.dark, classes: [kit-if-gate-no-prop, kit-drawer-vaul-layer], residual: "?"}
+  - {pair: drawer--top.light, classes: [kit-if-gate-no-prop], residual: "?"}
+  - {pair: drawer--top.dark, classes: [kit-if-gate-no-prop], residual: "?"}
+  - {pair: drawer--top-inset.light, classes: [kit-if-gate-no-prop], residual: "?"}
+  - {pair: drawer--top-inset.dark, classes: [kit-if-gate-no-prop], residual: "?"}
+  - {pair: slideover--bottom.light, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size, kit-slideover-content-absolute], residual: "?"}
+  - {pair: slideover--bottom.dark, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size, kit-slideover-content-absolute], residual: "?"}
+  - {pair: slideover--bottom-inset.light, classes: [kit-overlay-close-button-not-focused, kit-shadow-ring, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size, kit-slideover-content-absolute], residual: "?"}
+  - {pair: slideover--bottom-inset.dark, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: slideover--left.light, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: slideover--left.dark, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: slideover--left-inset.light, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size, kit-slideover-content-absolute], residual: "?"}
+  - {pair: slideover--left-inset.dark, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: slideover--right.light, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: slideover--right.dark, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: slideover--right-inset.light, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size, kit-slideover-content-absolute], residual: "?"}
+  - {pair: slideover--right-inset.dark, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: slideover--top.light, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size, kit-slideover-content-absolute], residual: "?"}
+  - {pair: slideover--top.dark, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size, kit-slideover-content-absolute], residual: "?"}
+  - {pair: slideover--top-inset.light, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: slideover--top-inset.dark, classes: [kit-overlay-close-button-not-focused, kit-if-gate-no-prop, kit-modal-no-close-button, kit-modal-close-variant, kit-icon-glyph-size], residual: "?"}
+  - {pair: toast--color.light, classes: [stand-toast-progress-time], residual: none}
+  - {pair: toast--color.dark, classes: [stand-toast-progress-time], residual: none}
+  - {pair: toast--content.light, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toast--content.dark, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toast--orientation.light, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toast--orientation.dark, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--bottom-center.light, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--bottom-center.dark, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--bottom-left.light, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--bottom-left.dark, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--bottom-right.light, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--bottom-right.dark, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--top-center.light, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--top-center.dark, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--top-left.light, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--top-left.dark, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--top-right.light, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: toaster--top-right.dark, classes: [kit-toaster-stack-in-flow, stand-toast-progress-time], residual: none}
+  - {pair: accordion.light, classes: [kit-accordion-text-beside-body], residual: "?"}
+  - {pair: accordion.dark, classes: [kit-accordion-text-beside-body], residual: "?"}
+  - {pair: breadcrumb.light, classes: [kit-breadcrumb-separator-icon-prop], residual: "?"}
+  - {pair: breadcrumb.dark, classes: [kit-breadcrumb-separator-icon-prop], residual: "?"}
+  - {pair: collapsible.light, classes: [], residual: "?"}
+  - {pair: collapsible.dark, classes: [], residual: "?"}
+  - {pair: command-palette.light, classes: [kit-command-palette-placeholder-lost, kit-command-palette-group-label-tag, kit-command-palette-list-lost, kit-command-palette-item-chrome, kit-command-palette-empty-group, kit-listbox-command-palette-empty-text, kit-listbox-command-palette-virtualize-flat, kit-command-palette-label-outside-base, kit-command-palette-kbd-size-from-theme, kit-command-palette-loading-icon, kit-command-palette-virtualize-no-highlight], residual: "?"}
+  - {pair: command-palette.dark, classes: [kit-command-palette-placeholder-lost, kit-command-palette-group-label-tag, kit-command-palette-list-lost, kit-command-palette-item-chrome, kit-command-palette-empty-group, kit-listbox-command-palette-empty-text, kit-listbox-command-palette-virtualize-flat, kit-command-palette-label-outside-base, kit-command-palette-kbd-size-from-theme, kit-command-palette-loading-icon, kit-command-palette-virtualize-no-highlight], residual: "?"}
+  - {pair: context-menu.light, side: ours, status: incomparable, classes: [], residual: none}
+  - {pair: context-menu.dark, side: ours, status: incomparable, classes: [], residual: none}
+  - {pair: dropdown-menu.light, classes: [kit-repeat, stand-menu-open-not-static, kit-dropdown-menu-content-lost, kit-dropdown-menu-root-and-off-by-one, kit-dropdown-menu-item-color], residual: "?"}
+  - {pair: dropdown-menu.dark, classes: [kit-repeat, stand-menu-open-not-static, kit-dropdown-menu-content-lost, kit-dropdown-menu-root-and-off-by-one, kit-dropdown-menu-item-color], residual: "?"}
+  - {pair: navigation-menu.light, classes: [kit-navigation-menu-badge-use-site-props, stand-navigation-menu-level-not-on-page, kit-no-runtime, kit-actions-props, kit-navigation-menu-no-viewport-wrapper, kit-navigation-menu-children-lost, stand-navigation-menu-open-not-model-value, kit-navigation-menu-open-state, kit-navigation-menu-trailing-icon-on-badge, kit-navigation-menu-horizontal-level, kit-navigation-menu-viewport-size, kit-navigation-menu-vertical-child-level], residual: "?"}
+  - {pair: navigation-menu.dark, classes: [kit-navigation-menu-badge-use-site-props, stand-navigation-menu-level-not-on-page, kit-no-runtime, kit-actions-props, kit-navigation-menu-no-viewport-wrapper, kit-navigation-menu-children-lost, stand-navigation-menu-open-not-model-value, kit-navigation-menu-open-state, kit-navigation-menu-trailing-icon-on-badge, kit-navigation-menu-horizontal-level, kit-navigation-menu-viewport-size, kit-navigation-menu-vertical-child-level], residual: "?"}
+  - {pair: pagination.light, classes: [kit-pagination-edges-controls-and-item-size], residual: "?"}
+  - {pair: pagination.dark, classes: [kit-pagination-edges-controls-and-item-size], residual: "?"}
+  - {pair: stepper.light, classes: [], residual: "?"}
+  - {pair: stepper.dark, classes: [], residual: "?"}
+  - {pair: tabs.light, classes: [kit-default-value-ignored, kit-tabs-content-single, kit-tabs-badge-defaults, kit-tabs-indicator-offset-rounding], residual: "?"}
+  - {pair: tabs.dark, classes: [kit-default-value-ignored, kit-tabs-content-single, kit-tabs-badge-defaults, kit-tabs-indicator-offset-rounding], residual: "?"}
+  - {pair: timeline.light, classes: [kit-timeline-completed-state-not-set, kit-repeat, kit-default-value-ignored, kit-use-site-ui-overrides-lost, kit-line-height-expression-not-literal], residual: "?"}
+  - {pair: timeline.dark, classes: [kit-timeline-completed-state-not-set, kit-repeat, kit-default-value-ignored, kit-use-site-ui-overrides-lost, kit-line-height-expression-not-literal], residual: "?"}
+  - {pair: tree.light, classes: [kit-tree-selected-not-derived-from-default-value, stand-tree-artboard-not-page, kit-repeat, kit-tree-tags-and-selected, kit-tree-li-theme-class, kit-tree-link-expanded-disabled], residual: "?"}
+  - {pair: tree.dark, classes: [kit-tree-selected-not-derived-from-default-value, stand-tree-artboard-not-page, kit-repeat, kit-tree-tags-and-selected, kit-tree-li-theme-class, kit-tree-link-expanded-disabled], residual: "?"}
+  - {pair: carousel.light, classes: [kit-repeated-slot-not-fillable, kit-carousel-arrows-and-dots], residual: "?"}
+  - {pair: carousel.dark, classes: [kit-repeated-slot-not-fillable, kit-carousel-arrows-and-dots], residual: "?"}
+  - {pair: main.light, classes: [kit-main-height], blind: true, residual: none}
+  - {pair: main.dark, classes: [kit-main-height], blind: true, residual: none}
+  - {pair: container.light, classes: [stand-uninformative-zero], residual: none}
+  - {pair: container.dark, classes: [stand-uninformative-zero], residual: none}
+  - {pair: page.light, classes: [kit-page-default-slot-left-center, kit-page-aside-top-gate-on-slot, kit-slot-nodes, kit-link-renders-div], residual: "?"}
+  - {pair: page.dark, classes: [kit-page-default-slot-left-center, kit-page-aside-top-gate-on-slot, kit-slot-nodes, kit-link-renders-div], residual: "?"}
+  - {pair: page-aside.light, classes: [kit-slot-nodes, kit-link-renders-div, kit-page-aside-top-outside-body, kit-page-aside-children-into-top-slot], residual: "?"}
+  - {pair: page-aside.dark, classes: [kit-slot-nodes, kit-link-renders-div, kit-page-aside-top-outside-body, kit-page-aside-children-into-top-slot], residual: "?"}
+  - {pair: page-body.light, classes: [stand-uninformative-zero], residual: none}
+  - {pair: page-body.dark, classes: [stand-uninformative-zero], residual: none}
+  - {pair: page-grid.light, classes: [kit-icon-glyph-size], residual: "?"}
+  - {pair: page-grid.dark, classes: [kit-icon-glyph-size], residual: "?"}
+  - {pair: scroll-area.light, classes: [kit-slot-nodes, kit-scroll-area-children-outside-viewport], residual: "?"}
+  - {pair: scroll-area.dark, classes: [kit-slot-nodes, kit-scroll-area-children-outside-viewport], residual: "?"}
+  - {pair: splitter.light, classes: [kit-repeat], residual: "?"}
+  - {pair: splitter.dark, classes: [kit-repeat], residual: "?"}
+  - {pair: table.light, classes: [kit-table-extra-rows-missing-head, kit-line-height-expression-not-literal], residual: "замер 2026-09-19 после снятия virtualize со стенда: 455 250 -> 115 426. Ячейка virtualize/externalScroll убрана с обеих сторон решением человека, задача nuxt-ui-ds-aax. Остаток 115 426 — прежние расхождения по составу строк, механизм в классе"}
+  - {pair: table.dark, classes: [kit-table-extra-rows-missing-head, kit-line-height-expression-not-literal], residual: "то же, что у light: 455 184 -> 115 365 после снятия virtualize со стенда"}
+  - {pair: user.light, classes: [kit-actions-props], residual: "?"}
+  - {pair: user.dark, classes: [kit-actions-props], residual: "?"}
+  - {pair: footer.light, classes: [kit-footer-children-outside-center], residual: "?"}
+  - {pair: footer.dark, classes: [kit-footer-children-outside-center], residual: "?"}
+  - {pair: footer-columns.light, classes: [kit-repeat, kit-footer-columns-two-levels], residual: "?"}
+  - {pair: footer-columns.dark, classes: [kit-repeat, kit-footer-columns-two-levels], residual: "?"}
+  - {pair: header.light, classes: [kit-repeat, kit-header-children-in-closed-menu-body, kit-header-left-right-outside-container, kit-header-title-link-without-props], residual: "?"}
+  - {pair: header.dark, classes: [kit-repeat, kit-header-children-in-closed-menu-body, kit-header-left-right-outside-container, kit-header-title-link-without-props], residual: "?"}
+  - {pair: page-anchors.light, classes: [kit-icon-glyph-size], residual: "?"}
+  - {pair: page-anchors.dark, classes: [kit-icon-glyph-size], residual: "?"}
+  - {pair: page-card.light, classes: [kit-page-card-spotlight-painted-without-pointer], residual: "замер 2026-09-19 после раунда 63: осталось 45 пикселей, механизм не назван"}
+  - {pair: page-card.dark, classes: [kit-page-card-spotlight-painted-without-pointer], residual: "замер 2026-09-19 после раунда 63: осталось 15 пикселей, механизм не назван"}
+  - {pair: page-cta.light, classes: [kit-links-button-size-from-wrong-component, kit-child-slot-order], residual: "замер 2026-09-19 после раунда 58: осталось 18 пикселей, механизм не назван"}
+  - {pair: page-cta.dark, classes: [kit-links-button-size-from-wrong-component, kit-child-slot-order], residual: "замер 2026-09-19 после раунда 58: осталось 12 пикселей, механизм не назван"}
+  - {pair: page-feature.light, classes: [], residual: "?"}
+  - {pair: page-feature.dark, classes: [], residual: "?"}
+  - {pair: page-header.light, classes: [kit-actions-props], residual: "?"}
+  - {pair: page-header.dark, classes: [kit-actions-props], residual: "?"}
+  - {pair: page-hero.light, classes: [kit-child-slot-order], residual: "?"}
+  - {pair: page-hero.dark, classes: [kit-child-slot-order], residual: "?"}
+  - {pair: page-links.light, classes: [kit-icon-glyph-size], residual: "?"}
+  - {pair: page-links.dark, classes: [kit-icon-glyph-size], residual: "?"}
+  - {pair: page-logos.light, classes: [kit-repeat, kit-page-logos-reuse-missing], residual: "?"}
+  - {pair: page-logos.dark, classes: [kit-repeat, kit-page-logos-reuse-missing], residual: "?"}
+  - {pair: page-section.light, classes: [kit-links-button-size-from-wrong-component, kit-repeat, kit-page-section-gate-single-prop, kit-page-section-default-slot-wrapped], residual: "замер 2026-09-19 после раунда 58: осталось 3 пикселя, механизм не назван"}
+  - {pair: page-section.dark, classes: [kit-links-button-size-from-wrong-component, kit-repeat, kit-page-section-gate-single-prop, kit-page-section-default-slot-wrapped], residual: "замер 2026-09-19 после раунда 58: осталось 2 пикселя, механизм не назван"}
+  - {pair: auth-form.light, classes: [], residual: "?"}
+  - {pair: auth-form.dark, classes: [], residual: "?"}
+  - {pair: blog-post.light, classes: [kit-blog-post-extra-image-and-authors, kit-blog-post-date-not-formatted], residual: "?"}
+  - {pair: blog-post.dark, classes: [kit-blog-post-extra-image-and-authors, kit-blog-post-date-not-formatted], residual: "?"}
+  - {pair: blog-posts.light, classes: [kit-blog-post-extra-image-and-authors], residual: "?"}
+  - {pair: blog-posts.dark, classes: [kit-blog-post-extra-image-and-authors], residual: "?"}
+  - {pair: chat-messages.light, classes: [kit-repeat], residual: "?"}
+  - {pair: chat-messages.dark, classes: [kit-repeat], residual: "?"}
+  - {pair: chat-palette.light, classes: [kit-slot-nodes, kit-command-palette-list-lost], residual: "?"}
+  - {pair: chat-palette.dark, classes: [kit-slot-nodes, kit-command-palette-list-lost], residual: "?"}
+  - {pair: chat-prompt.light, classes: [kit-child-slot-theme, kit-textarea-rows], residual: "регресс раунда 24: rows=3 и 72px против :rows=\"1\" и 32px; корень 88 против 48, документ 2480 против 1560"}
+  - {pair: chat-prompt.dark, classes: [kit-child-slot-theme, kit-textarea-rows], residual: "то же, что у light: rows=3 вместо 1 после раунда 24"}
+  - {pair: chat-prompt-submit.light, classes: [], residual: "?"}
+  - {pair: chat-prompt-submit.dark, classes: [], residual: "?"}
+  - {pair: chat-reasoning.light, classes: [], residual: "?"}
+  - {pair: chat-reasoning.dark, classes: [], residual: "?"}
+  - {pair: chat-tool.light, classes: [kit-actions-props], residual: "?"}
+  - {pair: chat-tool.dark, classes: [kit-actions-props], residual: "?"}
+  - {pair: dashboard-group.light, classes: [kit-isroot, kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-group.dark, classes: [kit-isroot, kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-navbar.light, classes: [construction-rounded-corner-aa], residual: none}
+  - {pair: dashboard-navbar.dark, classes: [kit-isroot], residual: "?"}
+  - {pair: dashboard-panel--default.light, classes: [kit-isroot], residual: none}
+  - {pair: dashboard-panel--default.dark, classes: [kit-isroot], residual: none}
+  - {pair: dashboard-panel--size.light, classes: [], residual: "?"}
+  - {pair: dashboard-panel--size.dark, classes: [], residual: "?"}
+  - {pair: dashboard-resize-handle.light, classes: [kit-isroot], residual: none}
+  - {pair: dashboard-resize-handle.dark, classes: [kit-isroot], residual: none}
+  - {pair: dashboard-search.light, classes: [kit-overlay-focus-first-focusable, kit-command-palette-placeholder-lost, kit-dashboard-search-empty-content, kit-command-palette-item-active-flag-missing, kit-dashboard-search-close-in-input, kit-modal-content-absolute], residual: "?"}
+  - {pair: dashboard-search.dark, classes: [kit-overlay-focus-first-focusable, kit-command-palette-placeholder-lost, kit-dashboard-search-empty-content, kit-command-palette-item-active-flag-missing, kit-dashboard-search-close-in-input, kit-modal-content-absolute], residual: "?"}
+  - {pair: dashboard-search--fullscreen.light, classes: [kit-overlay-focus-first-focusable, kit-command-palette-placeholder-lost, kit-dashboard-search-empty-content, kit-command-palette-item-active-flag-missing, kit-dashboard-search-close-in-input], residual: "?"}
+  - {pair: dashboard-search--fullscreen.dark, classes: [kit-overlay-focus-first-focusable, kit-command-palette-placeholder-lost, kit-dashboard-search-empty-content, kit-command-palette-item-active-flag-missing, kit-dashboard-search-close-in-input], residual: "?"}
+  - {pair: dashboard-search--size.light, classes: [kit-overlay-focus-first-focusable, kit-command-palette-placeholder-lost, kit-dashboard-search-empty-content, kit-command-palette-item-active-flag-missing, kit-dashboard-search-close-in-input], residual: "?"}
+  - {pair: dashboard-search--size.dark, classes: [kit-overlay-focus-first-focusable, kit-command-palette-placeholder-lost, kit-dashboard-search-empty-content, kit-command-palette-item-active-flag-missing, kit-dashboard-search-close-in-input], residual: "?"}
+  - {pair: dashboard-search-button.light, classes: [kit-dashboard-search-button-trailing-outside], residual: "?"}
+  - {pair: dashboard-search-button.dark, classes: [kit-dashboard-search-button-trailing-outside], residual: "?"}
+  - {pair: dashboard-sidebar--collapsed.light, classes: [kit-dashboard-sidebar-width-var-missing, kit-navigation-menu-collapsed-compound-not-applied, stand-dashboard-sidebar-collapsed-menu-prop], residual: "замер 2026-09-19 после раунда 73: ширина панели сошлась (64), остались 1124 пикселей в пяти областях — иконки свёрнутого меню сдвинуты вправо на 4 пикселя из-за px-2.5 вместо px-1.5"}
+  - {pair: dashboard-sidebar--collapsed.dark, classes: [kit-dashboard-sidebar-width-var-missing, kit-navigation-menu-collapsed-compound-not-applied, stand-dashboard-sidebar-collapsed-menu-prop], residual: "замер 2026-09-19 после раунда 73: ширина панели сошлась (64), остались 1123 пикселей в пяти областях — иконки свёрнутого меню сдвинуты вправо на 4 пикселя из-за px-2.5 вместо px-1.5"}
+  - {pair: dashboard-sidebar--full.light, classes: [kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-sidebar--full.dark, classes: [kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-sidebar--left.light, classes: [kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-sidebar--left.dark, classes: [kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-sidebar--right.light, classes: [kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-sidebar--right.dark, classes: [kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-sidebar--toggle-left.light, classes: [kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-sidebar--toggle-left.dark, classes: [kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-sidebar--toggle-right.light, classes: [kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-sidebar--toggle-right.dark, classes: [kit-dashboard-sidebar-width-var-missing], residual: none}
+  - {pair: dashboard-sidebar-collapse.light, classes: [kit-isroot], residual: "?"}
+  - {pair: dashboard-sidebar-collapse.dark, classes: [kit-isroot], residual: "?"}
+  - {pair: dashboard-sidebar-toggle.light, classes: [], residual: "?"}
+  - {pair: dashboard-sidebar-toggle.dark, classes: [], residual: "?"}
+  - {pair: dashboard-toolbar.light, classes: [construction-rounded-corner-aa], residual: none}
+  - {pair: dashboard-toolbar.dark, classes: [], residual: "?"}
+  - {pair: sidebar--left-offcanvas.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--left-offcanvas.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--left-icon.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--left-icon.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--right-offcanvas.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--right-offcanvas.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--right-icon.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--right-icon.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--variant-sidebar.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--variant-sidebar.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--full.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--full.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--icon-floating.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--icon-floating.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--left-floating.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--left-floating.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--right-floating.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--right-floating.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--left-none.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-main-height, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--left-none.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-main-height, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--right-none.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-main-height, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--right-none.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-main-height, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--none-floating.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-main-height, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--none-floating.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-main-height, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--none-inset.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-main-height, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--none-inset.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches, kit-main-height, kit-icon-glyph-size], residual: "?"}
+  - {pair: sidebar--collapsed.light, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches], residual: "?"}
+  - {pair: sidebar--collapsed.dark, classes: [kit-child-slot-lost-in-define, kit-sidebar-both-root-branches], residual: "?"}
+  - {pair: dropdown-menu--portal.light, classes: [kit-popper-align-ignored], residual: none}
+  - {pair: dropdown-menu--portal.dark, classes: [kit-popper-align-ignored], residual: none}
+  - {pair: dropdown-menu--align.light, classes: [kit-popper-align-ignored], residual: none}
+  - {pair: dropdown-menu--align.dark, classes: [kit-popper-align-ignored], residual: none}
+  - {pair: tooltip--align.light, classes: [kit-popper-align-ignored], residual: none}
+  - {pair: tooltip--align.dark, classes: [kit-popper-align-ignored], residual: none}
+  - {pair: popover--align.light, classes: [kit-popper-align-ignored], residual: none}
+  - {pair: popover--align.dark, classes: [kit-popper-align-ignored], residual: none}
+  - {pair: command-palette--selected.light, classes: [kit-command-palette-suffix-selected-highlight], residual: none}
+  - {pair: command-palette--selected.dark, classes: [kit-command-palette-suffix-selected-highlight], residual: none}
+  - {pair: page-card--spotlight.light, classes: [kit-page-card-spotlight-off-at-rest], residual: none}
+  - {pair: page-card--spotlight.dark, classes: [kit-page-card-spotlight-off-at-rest], residual: none}
+  - {pair: chat-reasoning--icon.light, classes: [kit-chat-reasoning-leading-icon-alone], residual: none}
+  - {pair: chat-reasoning--icon.dark, classes: [kit-chat-reasoning-leading-icon-alone], residual: none}

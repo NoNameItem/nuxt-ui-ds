@@ -1,0 +1,33 @@
+/* Хром doc-страниц. Намеренно не использует Tailwind-утилиты: tokens/utilities.css
+   сгенерирован ровно под классы кита, и новый класс потребовал бы его регенерации. */
+.ds-page { max-width: 72rem; margin: 0 auto; padding: 2rem 1rem; font: 14px/1.5 ui-sans-serif, system-ui, sans-serif; }
+/* Потомковый селектор хрома попадает на элементы, которые рисует сам
+   компонент; измерено: `.ds-section h2` сбивал `text-xl` у заголовков
+   `BlogPost` и `Empty` с 20px до 16px. Дочерний комбинатор безопасен здесь:
+   в разметке (pipeline/lib/docs.js) h1 и оба p — прямые дети header.ds-head. */
+.ds-head > h1 { font-size: 1.75rem; margin: 0 0 .25rem; }
+.ds-head > p { margin: 0 0 .25rem; color: var(--ui-text-muted); }
+.ds-note { font-size: .8125rem; }
+.ds-props { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: .8125rem; }
+.ds-props th, .ds-props td { text-align: left; padding: .375rem .5rem; border-bottom: 1px solid var(--ui-border); vertical-align: top; }
+.ds-props th { color: var(--ui-text-muted); font-weight: 500; }
+.ds-section { margin: 2.5rem 0; }
+/* Потомковый селектор хрома попадает на элементы, которые рисует сам
+   компонент; измерено: `.ds-section h2` сбивал `text-xl` у заголовков
+   `BlogPost` и `Empty` с 20px до 16px. Дочерний комбинатор безопасен здесь:
+   в разметке (pipeline/lib/docs.js) h2 — прямой ребёнок section.ds-section. */
+.ds-section > h2 { font-size: 1rem; margin: 0 0 .75rem; display: flex; gap: .5rem; align-items: baseline; }
+.ds-anchor { font-size: .75rem; font-weight: 400; color: var(--ui-text-dimmed); }
+.ds-preview { border: 1px solid var(--ui-border); border-radius: 8px; overflow: hidden; }
+.ds-row { display: flex; flex-wrap: wrap; gap: 1rem; padding: 1rem; align-items: flex-start; }
+.ds-row + .ds-row { border-top: 1px solid var(--ui-border); }
+.ds-cell { display: flex; flex-direction: column; gap: .375rem; }
+.ds-cell-label { font-size: .6875rem; letter-spacing: .04em; text-transform: uppercase; color: var(--ui-text-dimmed); }
+.ds-frame { position: relative; width: 20rem; height: 12rem; overflow: hidden; border: 1px solid var(--ui-border); border-radius: 6px; }
+.ds-slotmark { font-size: .6875rem; padding: 0 .25rem; border-radius: 3px; background: var(--ui-bg-elevated); color: var(--ui-text-toned); }
+.ds-code { margin: .5rem 0 0; padding: .75rem; border: 1px solid var(--ui-border); border-radius: 6px; background: var(--ui-bg-muted); overflow-x: auto; font-size: .75rem; }
+.ds-code-jsx { border-top: 0; border-radius: 0 0 6px 6px; }
+.ds-foot { margin-top: 3rem; font-size: .75rem; color: var(--ui-text-dimmed); }
+.ds-placeholder { border: 1px dashed var(--ui-border-accented); border-radius: 6px; min-height: 3rem; }
+.ds-index { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); gap: .25rem .75rem; }
+.ds-index a { color: inherit; }

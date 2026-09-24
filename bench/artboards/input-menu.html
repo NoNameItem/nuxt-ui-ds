@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>parity · input-menu</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { InputMenu } = window.NuxtUIDesignSystem_69ebe5;
+const items = [{ label: 'Home', value: 'home', icon: 'i-lucide-home' }, { label: 'Profile', value: 'profile', icon: 'i-lucide-user' }, { label: 'Settings', value: 'settings', icon: 'i-lucide-settings' }, { label: 'Favorites', value: 'favorites', icon: 'i-lucide-star' }, { label: 'Mail', value: 'mail', icon: 'i-lucide-mail' }];
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputMenu variant="outline" placeholder="Placeholder" /></div>
+        <div className="w-64"><InputMenu variant="soft" placeholder="Placeholder" /></div>
+        <div className="w-64"><InputMenu variant="subtle" placeholder="Placeholder" /></div>
+        <div className="w-64"><InputMenu variant="ghost" placeholder="Placeholder" /></div>
+        <div className="w-64"><InputMenu variant="none" placeholder="Placeholder" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputMenu highlight color="primary" /></div>
+        <div className="w-64"><InputMenu highlight color="secondary" /></div>
+        <div className="w-64"><InputMenu highlight color="success" /></div>
+        <div className="w-64"><InputMenu highlight color="info" /></div>
+        <div className="w-64"><InputMenu highlight color="warning" /></div>
+        <div className="w-64"><InputMenu highlight color="error" /></div>
+        <div className="w-64"><InputMenu highlight color="neutral" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputMenu size="xs" /></div>
+        <div className="w-64"><InputMenu size="sm" /></div>
+        <div className="w-64"><InputMenu size="md" /></div>
+        <div className="w-64"><InputMenu size="lg" /></div>
+        <div className="w-64"><InputMenu size="xl" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputMenu icon="i-lucide-rocket" size="xs" /></div>
+        <div className="w-64"><InputMenu icon="i-lucide-rocket" size="sm" /></div>
+        <div className="w-64"><InputMenu icon="i-lucide-rocket" size="md" /></div>
+        <div className="w-64"><InputMenu icon="i-lucide-rocket" size="lg" /></div>
+        <div className="w-64"><InputMenu icon="i-lucide-rocket" size="xl" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputMenu trailingIcon="i-lucide-arrow-right" size="xs" /></div>
+        <div className="w-64"><InputMenu trailingIcon="i-lucide-arrow-right" size="sm" /></div>
+        <div className="w-64"><InputMenu trailingIcon="i-lucide-arrow-right" size="md" /></div>
+        <div className="w-64"><InputMenu trailingIcon="i-lucide-arrow-right" size="lg" /></div>
+        <div className="w-64"><InputMenu trailingIcon="i-lucide-arrow-right" size="xl" /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputMenu items={items} modelValue="home" /></div>
+        <div className="w-64 h-80"><InputMenu items={items} open portal={false} /></div>
+        <div className="w-64"><InputMenu multiple items={items} modelValue={['home', 'profile']} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputMenu loading /></div>
+        <div className="w-64"><InputMenu size="xs" fixed /></div>
+        <div className="w-64 h-80"><InputMenu items={items} open portal={false} virtualize /></div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

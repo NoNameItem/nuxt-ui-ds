@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>parity · toast--color</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Toaster } = window.NuxtUIDesignSystem_69ebe5;
+const TOASTS = [
+  { title: 'Title', icon: 'i-lucide-rocket', color: 'primary' },
+  { title: 'Title', icon: 'i-lucide-rocket', color: 'secondary' },
+  { title: 'Title', icon: 'i-lucide-rocket', color: 'success' },
+  { title: 'Title', icon: 'i-lucide-rocket', color: 'info' },
+  { title: 'Title', icon: 'i-lucide-rocket', color: 'warning' },
+  { title: 'Title', icon: 'i-lucide-rocket', color: 'error' },
+  { title: 'Title', icon: 'i-lucide-rocket', color: 'neutral' }
+];
+function Page() {
+  return (
+    <Toaster position="top-right" expand toasts={TOASTS} />
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

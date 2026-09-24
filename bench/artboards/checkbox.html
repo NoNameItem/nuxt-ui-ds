@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>parity · checkbox</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Checkbox } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <Checkbox label="Label" variant="card" indicator="start" />
+        <Checkbox label="Label" variant="card" indicator="end" />
+        <Checkbox label="Label" variant="card" indicator="hidden" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Checkbox label="Label" indicator="hidden" size="xs" />
+        <Checkbox label="Label" indicator="hidden" size="sm" />
+        <Checkbox label="Label" indicator="hidden" size="md" />
+        <Checkbox label="Label" indicator="hidden" size="lg" />
+        <Checkbox label="Label" indicator="hidden" size="xl" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Checkbox label="Label" variant="card" size="xs" />
+        <Checkbox label="Label" variant="card" size="sm" />
+        <Checkbox label="Label" variant="card" size="md" />
+        <Checkbox label="Label" variant="card" size="lg" />
+        <Checkbox label="Label" variant="card" size="xl" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Checkbox label="Label" variant="card" color="primary" />
+        <Checkbox label="Label" variant="card" color="secondary" />
+        <Checkbox label="Label" variant="card" color="success" />
+        <Checkbox label="Label" variant="card" color="info" />
+        <Checkbox label="Label" variant="card" color="warning" />
+        <Checkbox label="Label" variant="card" color="error" />
+        <Checkbox label="Label" variant="card" color="neutral" />
+        <Checkbox label="Label" variant="card" color="primary" checked />
+        <Checkbox label="Label" variant="card" color="secondary" checked />
+        <Checkbox label="Label" variant="card" color="success" checked />
+        <Checkbox label="Label" variant="card" color="info" checked />
+        <Checkbox label="Label" variant="card" color="warning" checked />
+        <Checkbox label="Label" variant="card" color="error" checked />
+        <Checkbox label="Label" variant="card" color="neutral" checked />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Checkbox label="Label" indicator="start" color="primary" />
+        <Checkbox label="Label" indicator="end" color="primary" />
+        <Checkbox label="Label" indicator="start" color="secondary" />
+        <Checkbox label="Label" indicator="end" color="secondary" />
+        <Checkbox label="Label" indicator="start" color="success" />
+        <Checkbox label="Label" indicator="end" color="success" />
+        <Checkbox label="Label" indicator="start" color="info" />
+        <Checkbox label="Label" indicator="end" color="info" />
+        <Checkbox label="Label" indicator="start" color="warning" />
+        <Checkbox label="Label" indicator="end" color="warning" />
+        <Checkbox label="Label" indicator="start" color="error" />
+        <Checkbox label="Label" indicator="end" color="error" />
+        <Checkbox label="Label" indicator="start" color="neutral" />
+        <Checkbox label="Label" indicator="end" color="neutral" />
+        <Checkbox label="Label" indicator="hidden" color="primary" />
+        <Checkbox label="Label" indicator="hidden" color="secondary" />
+        <Checkbox label="Label" indicator="hidden" color="success" />
+        <Checkbox label="Label" indicator="hidden" color="info" />
+        <Checkbox label="Label" indicator="hidden" color="warning" />
+        <Checkbox label="Label" indicator="hidden" color="error" />
+        <Checkbox label="Label" indicator="hidden" color="neutral" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Checkbox label="Label" indicator="hidden" highlight color="primary" />
+        <Checkbox label="Label" indicator="hidden" highlight color="secondary" />
+        <Checkbox label="Label" indicator="hidden" highlight color="success" />
+        <Checkbox label="Label" indicator="hidden" highlight color="info" />
+        <Checkbox label="Label" indicator="hidden" highlight color="warning" />
+        <Checkbox label="Label" indicator="hidden" highlight color="error" />
+        <Checkbox label="Label" indicator="hidden" highlight color="neutral" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Checkbox label="Label" highlight color="primary" />
+        <Checkbox label="Label" highlight color="secondary" />
+        <Checkbox label="Label" highlight color="success" />
+        <Checkbox label="Label" highlight color="info" />
+        <Checkbox label="Label" highlight color="warning" />
+        <Checkbox label="Label" highlight color="error" />
+        <Checkbox label="Label" highlight color="neutral" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Checkbox label="Label" checked color="primary" />
+        <Checkbox label="Label" checked color="secondary" />
+        <Checkbox label="Label" checked color="success" />
+        <Checkbox label="Label" checked color="info" />
+        <Checkbox label="Label" checked color="warning" />
+        <Checkbox label="Label" checked color="error" />
+        <Checkbox label="Label" checked color="neutral" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Checkbox label="Label" />
+        <Checkbox label="Label" checked />
+        <Checkbox label="Label" indeterminate />
+        <Checkbox label="Label" description="Description text for the parity testbed." />
+        <Checkbox label="Label" disabled />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Checkbox label="Label" required />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

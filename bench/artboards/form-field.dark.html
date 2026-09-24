@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang="en" class="dark"><head><meta charset="utf-8"><title>parity · form-field</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { FormField, Input } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><FormField size="xs" label="Label" description="Description text for the parity testbed." hint="Hint" help="Help"><Input placeholder="Placeholder" /></FormField></div>
+        <div className="w-64"><FormField size="sm" label="Label" description="Description text for the parity testbed." hint="Hint" help="Help"><Input placeholder="Placeholder" /></FormField></div>
+        <div className="w-64"><FormField size="md" label="Label" description="Description text for the parity testbed." hint="Hint" help="Help"><Input placeholder="Placeholder" /></FormField></div>
+        <div className="w-64"><FormField size="lg" label="Label" description="Description text for the parity testbed." hint="Hint" help="Help"><Input placeholder="Placeholder" /></FormField></div>
+        <div className="w-64"><FormField size="xl" label="Label" description="Description text for the parity testbed." hint="Hint" help="Help"><Input placeholder="Placeholder" /></FormField></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><FormField orientation="vertical" label="Label"><Input placeholder="Placeholder" /></FormField></div>
+        <div className="w-64"><FormField orientation="horizontal" label="Label"><Input placeholder="Placeholder" /></FormField></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><FormField required label="Label"><Input placeholder="Placeholder" /></FormField></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><FormField error="Error message" label="Label"><Input placeholder="Placeholder" /></FormField></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><FormField label="Label"><Input placeholder="Placeholder" /></FormField></div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>parity · input-tags</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { InputTags } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputTags variant="outline" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags variant="soft" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags variant="subtle" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags variant="ghost" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags variant="none" modelValue={['Home', 'Profile']} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputTags highlight color="primary" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags highlight color="secondary" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags highlight color="success" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags highlight color="info" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags highlight color="warning" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags highlight color="error" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags highlight color="neutral" modelValue={['Home', 'Profile']} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputTags size="xs" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags size="sm" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags size="md" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags size="lg" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags size="xl" modelValue={['Home', 'Profile']} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputTags leadingIcon="i-lucide-rocket" size="xs" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags leadingIcon="i-lucide-rocket" size="sm" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags leadingIcon="i-lucide-rocket" size="md" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags leadingIcon="i-lucide-rocket" size="lg" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags leadingIcon="i-lucide-rocket" size="xl" modelValue={['Home', 'Profile']} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputTags trailingIcon="i-lucide-arrow-right" size="xs" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags trailingIcon="i-lucide-arrow-right" size="sm" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags trailingIcon="i-lucide-arrow-right" size="md" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags trailingIcon="i-lucide-arrow-right" size="lg" modelValue={['Home', 'Profile']} /></div>
+        <div className="w-64"><InputTags trailingIcon="i-lucide-arrow-right" size="xl" modelValue={['Home', 'Profile']} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputTags modelValue={['Home', 'Profile']} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputTags loading modelValue={['Home', 'Profile']} /></div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-64"><InputTags fixed modelValue={['Home', 'Profile']} /></div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

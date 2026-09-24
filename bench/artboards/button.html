@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>parity · button</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.2/dist/iconify-icon.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="./_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ui-bg)!important}</style>
+</head><body class="bg-default text-default">
+<div id="root"></div>
+<script type="text/babel">
+const { Button } = window.NuxtUIDesignSystem_69ebe5;
+function Page() {
+  return (
+    <div className="p-4 space-y-4">
+      <div className="flex flex-wrap gap-4 items-start">
+        <Button label="Label" color="primary" variant="solid" />
+        <Button label="Label" color="primary" variant="outline" />
+        <Button label="Label" color="primary" variant="soft" />
+        <Button label="Label" color="primary" variant="subtle" />
+        <Button label="Label" color="primary" variant="ghost" />
+        <Button label="Label" color="primary" variant="link" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Button label="Label" color="secondary" variant="solid" />
+        <Button label="Label" color="secondary" variant="outline" />
+        <Button label="Label" color="secondary" variant="soft" />
+        <Button label="Label" color="secondary" variant="subtle" />
+        <Button label="Label" color="secondary" variant="ghost" />
+        <Button label="Label" color="secondary" variant="link" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Button label="Label" color="success" variant="solid" />
+        <Button label="Label" color="success" variant="outline" />
+        <Button label="Label" color="success" variant="soft" />
+        <Button label="Label" color="success" variant="subtle" />
+        <Button label="Label" color="success" variant="ghost" />
+        <Button label="Label" color="success" variant="link" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Button label="Label" color="info" variant="solid" />
+        <Button label="Label" color="info" variant="outline" />
+        <Button label="Label" color="info" variant="soft" />
+        <Button label="Label" color="info" variant="subtle" />
+        <Button label="Label" color="info" variant="ghost" />
+        <Button label="Label" color="info" variant="link" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Button label="Label" color="warning" variant="solid" />
+        <Button label="Label" color="warning" variant="outline" />
+        <Button label="Label" color="warning" variant="soft" />
+        <Button label="Label" color="warning" variant="subtle" />
+        <Button label="Label" color="warning" variant="ghost" />
+        <Button label="Label" color="warning" variant="link" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Button label="Label" color="error" variant="solid" />
+        <Button label="Label" color="error" variant="outline" />
+        <Button label="Label" color="error" variant="soft" />
+        <Button label="Label" color="error" variant="subtle" />
+        <Button label="Label" color="error" variant="ghost" />
+        <Button label="Label" color="error" variant="link" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Button label="Label" color="neutral" variant="solid" />
+        <Button label="Label" color="neutral" variant="outline" />
+        <Button label="Label" color="neutral" variant="soft" />
+        <Button label="Label" color="neutral" variant="subtle" />
+        <Button label="Label" color="neutral" variant="ghost" />
+        <Button label="Label" color="neutral" variant="link" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Button leadingIcon="i-lucide-plus" square size="xs" />
+        <Button leadingIcon="i-lucide-plus" square size="sm" />
+        <Button leadingIcon="i-lucide-plus" square size="md" />
+        <Button leadingIcon="i-lucide-plus" square size="lg" />
+        <Button leadingIcon="i-lucide-plus" square size="xl" />
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <div className="w-80">
+          <Button block label="Label" />
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-4 items-start">
+        <Button label="Label" leadingIcon="i-lucide-rocket" />
+        <Button label="Label" trailingIcon="i-lucide-arrow-right" />
+        <Button leadingIcon="i-lucide-plus" />
+        <Button label="Label" loading />
+        <Button label="Label" loading trailingIcon="i-lucide-arrow-right" />
+        <Button label="Label" disabled />
+        <Button label="Label" leadingAvatar={{ src: 'assets/demo.png' }} />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Page />);
+</script>
+</body></html>

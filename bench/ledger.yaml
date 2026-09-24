@@ -1,6 +1,6 @@
 kit:
-  bundle_size: 1041625
-  statics_copied: 2026-09-24T13:24:53.331Z
+  bundle_size: 1043125
+  statics_copied: 2026-09-24T16:59:01.209Z
 
 classes:
   - id: kit-repeat
@@ -1572,7 +1572,7 @@ classes:
   - id: kit-button-children-anchor
     title: "Button выносит children соседом <button>: якорь безымянного слота встаёт на сквозной ULink"
     side: kit
-    status: open
+    status: fixed
     report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-37v)
     files: [lib/factory.jsx]
     components: [button--children]
@@ -1593,7 +1593,7 @@ classes:
   - id: kit-navmenu-label-draws-link
     title: "NavigationMenu рисует у пункта type:'label' и лейбл, и ссылку при любой ориентации"
     side: kit
-    status: open
+    status: fixed
     report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-g7z)
     files: [components/navigation/NavigationMenu.jsx]
     components: [navigation-menu--label]

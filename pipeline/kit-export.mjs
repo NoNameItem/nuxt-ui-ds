@@ -25,6 +25,11 @@ export const LEDGER = 'bench/ledger.yaml'
 /* Выходы сборки платформы: бандл пересобирается последним, и эта тройка пишется одним ходом
    сборки. В «исходники» для проверки конца хода они не входят. */
 export const BUILD_OUTPUTS = new Set(['_ds_bundle.js', '_ds_manifest.json', '_adherence.oxlintrc.json'])
+/* Файлы, которые ни в один выход сборки не попадают: их свежесть о конце хода ничего не
+   говорит. readme.md платформа правит шагом «Fixing design-system issues» уже после
+   пересборки (24.09.2026, раунд 126: на 8 секунд позже бандла), и без исключения каждый
+   такой ход выглядел бы незаконченным навсегда. */
+const NOT_BUILT = new Set(['readme.md'])
 export const LISTING_MAX_AGE_MS = 10 * 60 * 1000
 const MANIFEST = '_ds_manifest.json'
 /* .thumbnail платформа генерирует сама и отдаёт перекодированным — в кит он не входит. */
@@ -79,7 +84,7 @@ export function turnRefusal(files) {
   if (bundleTag === null) return `_ds_bundle.js has a non-numeric etag «${bundle.etag}»`
   let newest = null
   for (const f of files) {
-    if (BUILD_OUTPUTS.has(f.path)) continue
+    if (BUILD_OUTPUTS.has(f.path) || NOT_BUILT.has(f.path)) continue
     const t = tag(f)
     if (t === null) return `${f.path} has a non-numeric etag «${f.etag}»`
     if (t > bundleTag && (!newest || t > newest.t)) newest = { path: f.path, t }

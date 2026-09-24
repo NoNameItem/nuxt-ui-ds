@@ -1,6 +1,6 @@
 kit:
-  bundle_size: 1044948
-  statics_copied: 2026-09-24T17:54:25.971Z
+  bundle_size: 1051393
+  statics_copied: 2026-09-24T18:38:31.111Z
 
 classes:
   - id: kit-repeat
@@ -1614,24 +1614,38 @@ classes:
   - id: kit-select-menu-display-value
     title: "SelectMenu показывает value пункта вместо подписи при valueKey и при modelValue-объекте"
     side: kit
-    status: open
+    status: fixed
     report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-ni3)
     files: [components/forms/SelectMenu.jsx]
     components: [select-menu--value]
   - id: kit-bare-leading-slot-more-hosts
     title: "голый слот leading/trailing теряется и у Alert, Banner, Empty, FileUpload, DashboardNavbar: правка раунда 122 закрыла только Button и Badge"
     side: kit
-    status: open
+    status: fixed
     report: зонд probe7 на бандле 1 044 583, 2026-09-24 (задача nuxt-ui-ds-44m)
     files: [lib/factory.jsx]
     components: [alert--slots, banner--slots, empty--slots, file-upload--slots, dashboard-navbar--slots]
   - id: kit-select-children-slot
     title: "children у Select и SelectMenu встают мимо безымянного слота: у Select после trailing, у SelectMenu внутри trailing"
     side: kit
-    status: open
+    status: fixed
     report: зонд children306 на бандле 1 044 948, 2026-09-24 (задача nuxt-ui-ds-306)
     files: [components/forms/Select.jsx, components/forms/SelectMenu.jsx]
     components: [select--children, select-menu--children]
+  - id: kit-color-mode-select-missing
+    title: "в ките нет ColorModeSelect — обёртки над SelectMenu с тремя пунктами цветового режима"
+    side: kit
+    status: fixed
+    report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-qg2)
+    files: [components/color-mode/ColorModeSelect.jsx]
+    components: [color-mode-select]
+  - id: kit-navmenu-link-as-child-attrs
+    title: "NavigationMenu рисует NavigationMenuLink элементом: лишний div между li[item] и ссылкой, data-state=active вместо data-active и aria-current на ссылке"
+    side: kit
+    status: open
+    report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-8cz, часть 2); зонд navactive
+    files: [components/navigation/NavigationMenu.jsx]
+    components: [navigation-menu--active]
 pairs:
   - {pair: avatar-group.light, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
   - {pair: avatar-group.dark, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
@@ -1959,3 +1973,7 @@ pairs:
   - {pair: select--children.dark, classes: [kit-select-children-slot], residual: none}
   - {pair: select-menu--children.light, classes: [kit-select-children-slot], residual: none}
   - {pair: select-menu--children.dark, classes: [kit-select-children-slot], residual: none}
+  - {pair: color-mode-select.light, classes: [kit-color-mode-select-missing], residual: none}
+  - {pair: color-mode-select.dark, classes: [kit-color-mode-select-missing], residual: none}
+  - {pair: navigation-menu--active.light, classes: [kit-navmenu-link-as-child-attrs], blind: true, residual: none}
+  - {pair: navigation-menu--active.dark, classes: [kit-navmenu-link-as-child-attrs], blind: true, residual: none}

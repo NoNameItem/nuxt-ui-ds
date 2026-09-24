@@ -41,9 +41,9 @@ Differences found by the comparison and accepted on purpose. Each one is describ
   (`group-hover:ring-primary`, `group-hover/blog-post:shadow-none`) do not match the
   library.
 - **Not in the kit:** `ChangelogVersion`, `ChangelogVersions`, `PricingPlan`,
-  `PricingPlans`, `PricingTable`, the `ColorMode*` components and `LocaleSelect`, the
-  `Content*` components for `@nuxt/content` and the `Prose*` typography. The Nuxt UI
-  documentation shows how they look.
+  `PricingPlans`, `PricingTable`, the `ColorMode*` components except `ColorModeSelect`,
+  `LocaleSelect`, the `Content*` components for `@nuxt/content` and the `Prose*`
+  typography. The Nuxt UI documentation shows how they look.
 - **Editor** has no Tiptap inside: it is a static stand-in, the ProseMirror classes sit on
   the root, and there is no `content` node.
 - **Toaster:** stacked toasts are laid out in normal flow with a gap, not positioned

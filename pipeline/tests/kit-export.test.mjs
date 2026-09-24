@@ -89,6 +89,18 @@ test('конец хода: выходы сборки новее бандла н�
   assert.equal(turnRefusal(files), null)
 })
 
+test('конец хода: readme.md новее бандла не мешает — в сборку он не входит', () => {
+  /* 24.09.2026, раунд 126: шаг платформы «Fixing design-system issues» дописал строку в
+     readme.md через 8 секунд после пересборки, и бандл за ним уже не пересобирался. */
+  const files = [
+    { path: '_ds_bundle.js', size: 1, etag: '20' },
+    { path: 'components/x/X.jsx', size: 1, etag: '19' },
+    { path: 'readme.md', size: 1, etag: '28' }
+  ]
+  assert.equal(turnRefusal(files), null)
+  assert.match(turnRefusal([...files, { path: 'components/x/Y.jsx', size: 1, etag: '27' }]), /Y\.jsx.*newer/)
+})
+
 test('конец хода: без бандла и с нечисловым etag — отказ', () => {
   assert.match(turnRefusal([{ path: 'a.js', size: 1, etag: '1' }]), /_ds_bundle\.js/)
   assert.match(turnRefusal([{ path: '_ds_bundle.js', size: 1, etag: '2' }, { path: 'a.js', size: 1, etag: 'x' }]), /etag/)

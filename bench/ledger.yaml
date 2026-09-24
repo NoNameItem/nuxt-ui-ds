@@ -1569,6 +1569,55 @@ classes:
     report: приёмка тем audit:kit 2026-09-24, бандлы 117-120 (задача nuxt-ui-ds-baw)
     files: [components/forms/Editor.jsx]
     components: []
+  - id: kit-button-children-anchor
+    title: "Button выносит children соседом <button>: якорь безымянного слота встаёт на сквозной ULink"
+    side: kit
+    status: open
+    report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-37v)
+    files: [lib/factory.jsx]
+    components: [button--children]
+  - id: kit-bare-leading-trailing-slots
+    title: "содержимое голых слотов leading/trailing (без своей обёртки-span) кит молча теряет"
+    side: kit
+    status: open
+    report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-101)
+    files: [lib/factory.jsx]
+    components: [button--slots, badge--slots]
+  - id: kit-tree-leaf-trailing
+    title: "Tree рисует linkTrailing только у веток, у листа хвоста нет ни с trailingIcon, ни с содержимым"
+    side: kit
+    status: open
+    report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-882)
+    files: [components/navigation/Tree.jsx]
+    components: [tree--trailing]
+  - id: kit-navmenu-label-draws-link
+    title: "NavigationMenu рисует у пункта type:'label' и лейбл, и ссылку при любой ориентации"
+    side: kit
+    status: open
+    report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-g7z)
+    files: [components/navigation/NavigationMenu.jsx]
+    components: [navigation-menu--label]
+  - id: kit-navmenu-badge-object-class
+    title: "NavigationMenu теряет class у badge пункта, заданного объектом пропов"
+    side: kit
+    status: open
+    report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-8cz)
+    files: [components/navigation/NavigationMenu.jsx]
+    components: [navigation-menu--badge]
+  - id: kit-reka-root-wrapper
+    title: "SelectRoot и ComboboxRoot рисуют лишний div вокруг кнопки — в flex-колонке она не растягивается"
+    side: kit
+    status: open
+    report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-ni3)
+    files: [components/forms/Select.jsx, components/forms/SelectMenu.jsx]
+    components: [select--stretch, select-menu--stretch]
+  - id: kit-select-menu-display-value
+    title: "SelectMenu показывает value пункта вместо подписи при valueKey и при modelValue-объекте"
+    side: kit
+    status: open
+    report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-ni3)
+    files: [components/forms/SelectMenu.jsx]
+    components: [select-menu--value]
 pairs:
   - {pair: avatar-group.light, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
   - {pair: avatar-group.dark, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
@@ -1864,3 +1913,21 @@ pairs:
   - {pair: page-card--spotlight.dark, classes: [kit-page-card-spotlight-off-at-rest], residual: none}
   - {pair: chat-reasoning--icon.light, classes: [kit-chat-reasoning-leading-icon-alone], residual: none}
   - {pair: chat-reasoning--icon.dark, classes: [kit-chat-reasoning-leading-icon-alone], residual: none}
+  - {pair: button--children.light, classes: [kit-button-children-anchor], residual: none}
+  - {pair: button--children.dark, classes: [kit-button-children-anchor], residual: none}
+  - {pair: button--slots.light, classes: [kit-bare-leading-trailing-slots], residual: none}
+  - {pair: button--slots.dark, classes: [kit-bare-leading-trailing-slots], residual: none}
+  - {pair: badge--slots.light, classes: [kit-bare-leading-trailing-slots], residual: none}
+  - {pair: badge--slots.dark, classes: [kit-bare-leading-trailing-slots], residual: none}
+  - {pair: tree--trailing.light, classes: [kit-tree-leaf-trailing], residual: none}
+  - {pair: tree--trailing.dark, classes: [kit-tree-leaf-trailing], residual: none}
+  - {pair: navigation-menu--label.light, classes: [kit-navmenu-label-draws-link], residual: none}
+  - {pair: navigation-menu--label.dark, classes: [kit-navmenu-label-draws-link], residual: none}
+  - {pair: navigation-menu--badge.light, classes: [kit-navmenu-badge-object-class], residual: none}
+  - {pair: navigation-menu--badge.dark, classes: [kit-navmenu-badge-object-class], residual: none}
+  - {pair: select--stretch.light, classes: [kit-reka-root-wrapper], residual: none}
+  - {pair: select--stretch.dark, classes: [kit-reka-root-wrapper], residual: none}
+  - {pair: select-menu--stretch.light, classes: [kit-reka-root-wrapper], residual: none}
+  - {pair: select-menu--stretch.dark, classes: [kit-reka-root-wrapper], residual: none}
+  - {pair: select-menu--value.light, classes: [kit-select-menu-display-value], residual: none}
+  - {pair: select-menu--value.dark, classes: [kit-select-menu-display-value], residual: none}

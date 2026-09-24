@@ -1,6 +1,6 @@
 kit:
-  bundle_size: 1051393
-  statics_copied: 2026-09-24T18:38:31.111Z
+  bundle_size: 1052961
+  statics_copied: 2026-09-24T19:13:34.503Z
 
 classes:
   - id: kit-repeat
@@ -1642,7 +1642,7 @@ classes:
   - id: kit-navmenu-link-as-child-attrs
     title: "NavigationMenu рисует NavigationMenuLink элементом: лишний div между li[item] и ссылкой, data-state=active вместо data-active и aria-current на ссылке"
     side: kit
-    status: open
+    status: fixed
     report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-8cz, часть 2); зонд navactive
     files: [components/navigation/NavigationMenu.jsx]
     components: [navigation-menu--active]

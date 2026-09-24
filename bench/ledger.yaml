@@ -1,6 +1,6 @@
 kit:
-  bundle_size: 1043125
-  statics_copied: 2026-09-24T16:59:01.209Z
+  bundle_size: 1044583
+  statics_copied: 2026-09-24T17:29:37.631Z
 
 classes:
   - id: kit-repeat
@@ -1579,14 +1579,14 @@ classes:
   - id: kit-bare-leading-trailing-slots
     title: "содержимое голых слотов leading/trailing (без своей обёртки-span) кит молча теряет"
     side: kit
-    status: open
+    status: fixed
     report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-101)
     files: [lib/factory.jsx]
     components: [button--slots, badge--slots]
   - id: kit-tree-leaf-trailing
     title: "Tree рисует linkTrailing только у веток, у листа хвоста нет ни с trailingIcon, ни с содержимым"
     side: kit
-    status: open
+    status: fixed
     report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-882)
     files: [components/navigation/Tree.jsx]
     components: [tree--trailing]
@@ -1618,6 +1618,13 @@ classes:
     report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-ni3)
     files: [components/forms/SelectMenu.jsx]
     components: [select-menu--value]
+  - id: kit-bare-leading-slot-more-hosts
+    title: "голый слот leading/trailing теряется и у Alert, Banner, Empty, FileUpload, DashboardNavbar: правка раунда 122 закрыла только Button и Badge"
+    side: kit
+    status: open
+    report: зонд probe7 на бандле 1 044 583, 2026-09-24 (задача nuxt-ui-ds-44m)
+    files: [lib/factory.jsx]
+    components: [alert--slots, banner--slots, empty--slots, file-upload--slots, dashboard-navbar--slots]
 pairs:
   - {pair: avatar-group.light, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
   - {pair: avatar-group.dark, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
@@ -1931,3 +1938,13 @@ pairs:
   - {pair: select-menu--stretch.dark, classes: [kit-reka-root-wrapper], residual: none}
   - {pair: select-menu--value.light, classes: [kit-select-menu-display-value], residual: none}
   - {pair: select-menu--value.dark, classes: [kit-select-menu-display-value], residual: none}
+  - {pair: alert--slots.light, classes: [kit-bare-leading-slot-more-hosts], residual: none}
+  - {pair: alert--slots.dark, classes: [kit-bare-leading-slot-more-hosts], residual: none}
+  - {pair: banner--slots.light, classes: [kit-bare-leading-slot-more-hosts], residual: none}
+  - {pair: banner--slots.dark, classes: [kit-bare-leading-slot-more-hosts], residual: none}
+  - {pair: empty--slots.light, classes: [kit-bare-leading-slot-more-hosts], residual: none}
+  - {pair: empty--slots.dark, classes: [kit-bare-leading-slot-more-hosts], residual: none}
+  - {pair: file-upload--slots.light, classes: [kit-bare-leading-slot-more-hosts], residual: none}
+  - {pair: file-upload--slots.dark, classes: [kit-bare-leading-slot-more-hosts], residual: none}
+  - {pair: dashboard-navbar--slots.light, classes: [kit-bare-leading-slot-more-hosts], residual: none}
+  - {pair: dashboard-navbar--slots.dark, classes: [kit-bare-leading-slot-more-hosts], residual: none}

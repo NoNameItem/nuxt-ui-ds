@@ -1,6 +1,6 @@
 kit:
-  bundle_size: 1044583
-  statics_copied: 2026-09-24T17:29:37.631Z
+  bundle_size: 1044948
+  statics_copied: 2026-09-24T17:54:25.971Z
 
 classes:
   - id: kit-repeat
@@ -1600,14 +1600,14 @@ classes:
   - id: kit-navmenu-badge-object-class
     title: "NavigationMenu теряет class у badge пункта, заданного объектом пропов"
     side: kit
-    status: open
+    status: fixed
     report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-8cz)
     files: [components/navigation/NavigationMenu.jsx]
     components: [navigation-menu--badge]
   - id: kit-reka-root-wrapper
     title: "SelectRoot и ComboboxRoot рисуют лишний div вокруг кнопки — в flex-колонке она не растягивается"
     side: kit
-    status: open
+    status: fixed
     report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-ni3)
     files: [components/forms/Select.jsx, components/forms/SelectMenu.jsx]
     components: [select--stretch, select-menu--stretch]
@@ -1625,6 +1625,13 @@ classes:
     report: зонд probe7 на бандле 1 044 583, 2026-09-24 (задача nuxt-ui-ds-44m)
     files: [lib/factory.jsx]
     components: [alert--slots, banner--slots, empty--slots, file-upload--slots, dashboard-navbar--slots]
+  - id: kit-select-children-slot
+    title: "children у Select и SelectMenu встают мимо безымянного слота: у Select после trailing, у SelectMenu внутри trailing"
+    side: kit
+    status: open
+    report: зонд children306 на бандле 1 044 948, 2026-09-24 (задача nuxt-ui-ds-306)
+    files: [components/forms/Select.jsx, components/forms/SelectMenu.jsx]
+    components: [select--children, select-menu--children]
 pairs:
   - {pair: avatar-group.light, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
   - {pair: avatar-group.dark, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
@@ -1948,3 +1955,7 @@ pairs:
   - {pair: file-upload--slots.dark, classes: [kit-bare-leading-slot-more-hosts], residual: none}
   - {pair: dashboard-navbar--slots.light, classes: [kit-bare-leading-slot-more-hosts], residual: none}
   - {pair: dashboard-navbar--slots.dark, classes: [kit-bare-leading-slot-more-hosts], residual: none}
+  - {pair: select--children.light, classes: [kit-select-children-slot], residual: none}
+  - {pair: select--children.dark, classes: [kit-select-children-slot], residual: none}
+  - {pair: select-menu--children.light, classes: [kit-select-children-slot], residual: none}
+  - {pair: select-menu--children.dark, classes: [kit-select-children-slot], residual: none}

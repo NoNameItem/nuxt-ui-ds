@@ -25,8 +25,8 @@ the light and the dark theme.
 
 Each release is a git tag named after the Nuxt UI version the kit reproduces: `v4.11.1` is
 the kit for `@nuxt/ui` 4.11.1. `main` holds the latest one. If the kit is exported again for
-the same Nuxt UI version, the new release gets a suffix (`v4.11.1-2`); a published tag never
-moves.
+the same Nuxt UI version, the tag moves to the new release: `v4.11.1` always points at the
+latest kit for `@nuxt/ui` 4.11.1.
 
 Project-level theme overrides (`app.config.ts`) are not part of the kit: it reproduces the
 library as shipped.

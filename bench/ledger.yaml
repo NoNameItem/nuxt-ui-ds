@@ -1,6 +1,6 @@
 kit:
   bundle_size: 1052961
-  statics_copied: 2026-09-24T19:13:34.503Z
+  statics_copied: 2026-09-25T09:31:55.508Z
 
 classes:
   - id: kit-repeat
@@ -1649,7 +1649,7 @@ classes:
   - id: kit-dashboard-navbar-toggle-outside
     title: "DashboardNavbar ставит кнопку toggle соседом left/right, а не внутрь: justify-between корня уводит left (toggleSide left) или right (toggleSide right) в середину"
     side: kit
-    status: open
+    status: fixed
     report: "замер 2026-09-25 на ширине 768, пара dashboard-navbar--narrow, бандл 1 052 961 (задача nuxt-ui-ds-n33)"
     files: [components/dashboard/DashboardNavbar.jsx]
     components: [dashboard-navbar--narrow]

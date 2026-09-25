@@ -49,11 +49,13 @@ try {
   for (const f of files) {
     const target = path.join(out, f)
     if (!opt.force && existsSync(target)) continue
+    /* max-width, а не width: снимок узкой страницы (--narrow, 768, viewport.mjs) иначе
+       растягивался бы до 1280 и читался глазами не в том масштабе, в котором снят. */
     await page.setContent(`<!DOCTYPE html><style>
       body{margin:0;background:#888;font:16px/1.4 system-ui}
       main{display:grid;grid-template-columns:1280px 1280px;gap:40px;align-items:start}
       h1{margin:0;padding:8px;font-size:16px;color:#fff;background:#444}
-      img{display:block;width:1280px} .none{margin:0;padding:24px;color:#fff}
+      img{display:block;max-width:1280px} .none{margin:0;padding:24px;color:#fff}
     </style><main>
       <section><h1>кит · ${f}</h1>${await img(dirs.kit, f)}</section>
       <section><h1>приложение · ${f}</h1>${await img(dirs.app, f)}</section>

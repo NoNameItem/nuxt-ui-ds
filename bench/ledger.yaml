@@ -1646,6 +1646,13 @@ classes:
     report: макеты emby-dedup на ките v4.11.1, 2026-09-24 (задача nuxt-ui-ds-8cz, часть 2); зонд navactive
     files: [components/navigation/NavigationMenu.jsx]
     components: [navigation-menu--active]
+  - id: kit-dashboard-navbar-toggle-outside
+    title: "DashboardNavbar ставит кнопку toggle соседом left/right, а не внутрь: justify-between корня уводит left (toggleSide left) или right (toggleSide right) в середину"
+    side: kit
+    status: open
+    report: "замер 2026-09-25 на ширине 768, пара dashboard-navbar--narrow, бандл 1 052 961 (задача nuxt-ui-ds-n33)"
+    files: [components/dashboard/DashboardNavbar.jsx]
+    components: [dashboard-navbar--narrow]
 pairs:
   - {pair: avatar-group.light, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
   - {pair: avatar-group.dark, classes: [kit-group-context, kit-avatar-group-root-instead-of-base, kit-avatar-group-color-context], residual: "?"}
@@ -1977,3 +1984,5 @@ pairs:
   - {pair: color-mode-select.dark, classes: [kit-color-mode-select-missing], residual: none}
   - {pair: navigation-menu--active.light, classes: [kit-navmenu-link-as-child-attrs], blind: true, residual: none}
   - {pair: navigation-menu--active.dark, classes: [kit-navmenu-link-as-child-attrs], blind: true, residual: none}
+  - {pair: dashboard-navbar--narrow.light, classes: [kit-dashboard-navbar-toggle-outside], residual: none}
+  - {pair: dashboard-navbar--narrow.dark, classes: [kit-dashboard-navbar-toggle-outside], residual: none}

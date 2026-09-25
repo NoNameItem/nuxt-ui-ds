@@ -27,6 +27,7 @@ import { serve } from '../../pipeline/audit/local-kit.mjs'
 import { KIT_LIVE } from '../../pipeline/kit-export.mjs'
 import { parseOnly } from './only.mjs'
 import { pageNames } from './pages.mjs'
+import { viewportFor } from './viewport.mjs'
 
 const { values: opt } = parseArgs({ options: {
   force: { type: 'boolean', default: false },
@@ -91,7 +92,7 @@ async function shoot(browser, url, side, name, theme, file) {
   const errors = []
   let ctx
   try {
-    ctx = await browser.newContext({ colorScheme: theme, reducedMotion: 'reduce', viewport: { width: 1280, height: 800 }, deviceScaleFactor: 1 })
+    ctx = await browser.newContext({ colorScheme: theme, reducedMotion: 'reduce', viewport: viewportFor(name), deviceScaleFactor: 1 })
     const page = await ctx.newPage()
     page.on('pageerror', (e) => errors.push(String(e)))
     page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()) })

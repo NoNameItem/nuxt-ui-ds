@@ -29,6 +29,7 @@ import path from 'node:path'
 import { parseArgs } from 'node:util'
 import { parseOnly } from './only.mjs'
 import { pageNames } from './pages.mjs'
+import { VIEWPORT, viewportFor } from './viewport.mjs'
 const { values: opt } = parseArgs({ options: { kit: { type: 'string' }, only: { type: 'string' }, app: { type: 'string' } } })
 if (!opt.kit) throw new Error('--kit обязателен: serve_url артборда, где имя страницы заменено на PAGE')
 if (!opt.kit.includes('PAGE')) throw new Error('--kit должен содержать PAGE вместо имени страницы')
@@ -49,7 +50,7 @@ const srv = createServer(async (req, res) => {
 await new Promise((r) => srv.listen(0, r))
 const port = srv.address().port
 const b = await chromium.launch()
-const page = await b.newPage({ viewport: { width: 1280, height: 800 }, colorScheme: 'light' })
+const page = await b.newPage({ viewport: VIEWPORT, colorScheme: 'light' })
 const grab = () => page.evaluate(() => {
   if (getComputedStyle(document.body).marginTop !== '0px') return { unstyled: true }
   const root = document.querySelector('[data-slot="root"]') || document.querySelector('[data-slot]')
@@ -76,6 +77,7 @@ const grab = () => page.evaluate(() => {
            rootH: Math.round(root.getBoundingClientRect().height), kids, hist, allRoots, imgs }
 })
 for (const n of NAMES) {
+  await page.setViewportSize(viewportFor(n))
   await page.goto(`http://127.0.0.1:${port}/parity/${n}/`, { waitUntil: 'networkidle' }); await page.waitForTimeout(300)
   const app = await grab()
   if (app.unstyled) throw new Error(`страница приложения ${n} без стилей — замер бессмыслен`)

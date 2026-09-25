@@ -24,6 +24,7 @@ import path from 'node:path'
 import { parseArgs } from 'node:util'
 import { parseOnly } from './only.mjs'
 import { pageNames } from './pages.mjs'
+import { VIEWPORT, viewportFor } from './viewport.mjs'
 
 const { values: opt } = parseArgs({ options: { kit: { type: 'string' }, only: { type: 'string' }, app: { type: 'string' } } })
 if (!opt.kit) throw new Error('--kit обязателен: serve_url артборда, где имя страницы заменено на PAGE')
@@ -51,7 +52,7 @@ const srv = createServer(async (req, res) => {
 await new Promise((r) => srv.listen(0, r))
 const port = srv.address().port
 const browser = await chromium.launch()
-const page = await browser.newPage({ viewport: { width: 1280, height: 800 }, colorScheme: 'light' })
+const page = await browser.newPage({ viewport: VIEWPORT, colorScheme: 'light' })
 
 const grab = () => page.evaluate(() => {
   const out = []; const seen = {}
@@ -69,6 +70,7 @@ let total = 0
 for (const n of names) {
   let app, kit
   try {
+    await page.setViewportSize(viewportFor(n))
     await page.goto(`http://127.0.0.1:${port}/parity/${n}/`, { waitUntil: 'networkidle', timeout: 30000 })
     await page.waitForTimeout(200)
     /* Неостилённая страница обязана падать, а не мериться. Свой сервер однажды отдавал только
